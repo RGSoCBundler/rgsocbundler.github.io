@@ -5,7 +5,7 @@
   <id>http://rgsocbundler.github.io/</id>
   <link href="http://rgsocbundler.github.io/"/>
   <link href="http://rgsocbundler.github.io/feed.xml" rel="self"/>
-  <updated>2013-07-02T00:00:00Z</updated>
+  <updated>2013-07-16T00:00:00Z</updated>
   <author>
     <name>Jen Diamond</name>
   </author>
@@ -15,6 +15,229 @@
   <author>
     <name>Jessica Suttles</name>
   </author>
+  <entry>
+    <title>Blog Setup</title>
+    <link rel="alternate" href="/2013/07/16/blog-setup.html"/>
+    <id>/2013/07/16/blog-setup.html</id>
+    <published>2013-07-16T00:00:00Z</published>
+    <updated>2013-07-16T00:00:00Z</updated>
+    <author>
+      <name>RGSoCBundler</name>
+    </author>
+    <content type="html">&lt;h1 id="blog-setup"&gt;Blog Setup&lt;/h1&gt;
+
+&lt;h2 id="github-pageshttppagesgithubcom"&gt;&lt;a href="http://pages.github.com/"&gt;Github Pages&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;Where to host our blog? Github of course! Github is the best place to
+collaborate on open source code and content. Github Pages offers free hosting,
+page generation with themes, and manually generated pages. We want to dig into
+some code, so we're going the manual pages route of course! Rails is famous for
+the 15 minute blog but we decided to go with a different Ruby solution that we
+could use with Github Pages.&lt;/p&gt;
+
+&lt;p&gt;Our blog code can be found at
+&lt;a href="https://github.com/RGSoCBundler/rgsocbundler.github.io"&gt;https://github.com/RGSoCBundler/rgsocbundler.github.io&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id="middlemanhttpmiddlemanappcomgetting-started"&gt;&lt;a href="http://middlemanapp.com/getting-started/"&gt;middleman&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;Middleman is a command-line tool for creating static websites using all the
+shortcuts and tools of the modern web development environment.&lt;/p&gt;
+
+&lt;p&gt;Middleman assumes familiarity with the command-line. The Ruby language and the
+Sinatra web framework form the base of the tool. Familiarity with both will go
+a long way in helping users understand why Middleman works the way it does.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ gem install middleman
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id="middleman-bloghttpmiddlemanappcomblogging"&gt;&lt;a href="http://middlemanapp.com/blogging/"&gt;middleman-blog&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;Middleman-blog is an official extension to support blogging, articles and
+tagging. If we use the middleman generator with a blog template, middleman-blog
+with automatically be added to our Gemfile.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ middleman init rgsocbundler --template=blog
+Sass is in the process of being separated from Haml,
+and will no longer be bundled at all in Haml 3.2.0.
+Please install the 'sass' gem if you want to use Sass.
+
+      create  rgsocbundler/Gemfile
+         run  bundle install from "."
+The source :rubygems is deprecated because HTTP requests are insecure.
+Please change your source to 'https://rubygems.org' if possible, or 'http://rubygems.org' if not.
+Fetching gem metadata from http://rubygems.org/........
+Fetching gem metadata from http://rubygems.org/..
+Resolving dependencies...
+Using i18n (0.6.4)
+Using multi_json (1.7.7)
+Using activesupport (3.2.12)
+Using builder (3.0.4)
+Using bundler (1.3.4)
+Using chunky_png (1.2.8)
+Using coffee-script-source (1.6.2)
+Using execjs (1.4.0)
+Using coffee-script (2.2.0)
+Using fssm (0.2.10)
+Using sass (3.2.9)
+Using compass (0.12.2)
+Using ffi (1.9.0)
+Using tilt (1.3.7)
+Using haml (4.0.3)
+Using hike (1.2.3)
+Using kramdown (1.0.2)
+Using rb-fsevent (0.9.3)
+Using rb-inotify (0.9.0)
+Using rb-kqueue (0.2.0)
+Using listen (1.2.2)
+Using syntax (1.0.0)
+Using maruku (0.6.1)
+Using rack (1.5.2)
+Using rack-test (0.6.2)
+Using thor (0.18.1)
+Using middleman-core (3.1.2)
+Using middleman-more (3.1.2)
+Using sprockets (2.10.0)
+Using sprockets-helpers (1.0.1)
+Using sprockets-sass (1.0.1)
+Using middleman-sprockets (3.1.2)
+Using uglifier (2.1.1)
+Using middleman (3.1.2)
+Using tzinfo (0.3.37)
+Using middleman-blog (3.2.0)
+Your bundle is complete!
+Use `bundle show [gemname]` to see where a bundled gem is installed.
+      create  rgsocbundler/.gitignore
+      create  rgsocbundler/config.rb
+      create  rgsocbundler/source
+      create  rgsocbundler/source/2012-01-01-example-article.html.markdown
+      create  rgsocbundler/source/calendar.html.erb
+      create  rgsocbundler/source/feed.xml.builder
+      create  rgsocbundler/source/index.html.erb
+      create  rgsocbundler/source/layout.erb
+      create  rgsocbundler/source/tag.html.erb
+      create  rgsocbundler/source/stylesheets
+      create  rgsocbundler/source/javascripts
+      create  rgsocbundler/source/images
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Change directory into the new blog directory.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cd rgsocbundler
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Start the server to make sure everything works.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ bundle exec middleman server
+== The Middleman is loading
+== The Middleman is standing watch at http://0.0.0.0:4567
+== Inspect your site configuration at http://0.0.0.0:4567/__middleman/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Point your web browser to &lt;a href="http://0.0.0.0:4567"&gt;http://0.0.0.0:4567&lt;/a&gt; and you
+should see an example page!&lt;/p&gt;
+
+&lt;p&gt;The server can be killed with &lt;code&gt;control+C&lt;/code&gt; and restarted with &lt;code&gt;bundle exec
+middleman server&lt;/code&gt; or &lt;code&gt;bundle exec middleman&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Push to Github as soon as possible!&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git init
+$ git add .
+$ git commit -m "$ middleman init rgsocbundler --template=blog"
+$ git remote add origin git@github.com:RGSoCBundler/rgsocbundler.github.io.git
+$ git push -u origin master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Add &lt;code&gt;.gitignore&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# See http://help.github.com/ignore-files/ for more about ignoring files.
+#
+# If you find yourself ignoring temporary files generated by your text editor
+# or operating system, you probably want to add a global ignore instead:
+# git config --global core.excludesfile ~/.gitignore_global
+
+# Ignore bundler config
+/.bundle
+
+# Ignore the build directory
+/build
+
+# Ignore Sass' cache
+/.sass-cache
+
+.DS_store
+
+# (optional) local gems, installed with
+# bundle install --path vendor/bundle
+# also a checkout of bundler for manpages and releases
+/vendor
+
+# Bundler binstubs
+/bin
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Add Twitter Bootstrap files. First, &lt;a href="http://twitter.github.io/bootstrap/"&gt;download
+it&lt;/a&gt; and unzip it.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cp ~/Downloads/bootstrap/css/*.min.css ./source/stylesheets
+$ cp ~/Downloads/bootstrap/img/* ./source/images
+$ cp ~/Downloads/bootstrap/js/*.min.js ./source/javascripts
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Include Twitter Bootstrap files in &lt;code&gt;./source/layout.erb&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;link href="stylesheets/bootstrap.min.css" rel="stylesheet" /&amp;gt;
+&amp;lt;script type="text/javascript" src="javascripts/bootstrap.min.js" /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id="middleman-deployhttpsgithubcomtvaughanmiddleman-deploy"&gt;&lt;a href="https://github.com/tvaughan/middleman-deploy"&gt;middleman-deploy&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;Middleman-deploy is an unofficial extenstion that helps deploy middleman sites.
+Since we are making an Organization Github Page, Github expects our compiled
+site to be on the &lt;code&gt;master&lt;/code&gt; branch. Middleman-deploy will take care of that for
+us if we give it a little configuration.&lt;/p&gt;
+
+&lt;p&gt;Add dependency to the &lt;code&gt;Gemfile&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;gem "middleman-deploy"
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Install.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ bundle
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Activate deploy in &lt;code&gt;config.rb&lt;/code&gt; and tell it to deploy to master. If you are not
+creating a user or organization Github page then Github expects the compiled
+site to be on the &lt;code&gt;gh-pages&lt;/code&gt; branch.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;activate :deploy do |deploy|
+  deploy.method = :git
+  deploy.branch = "master"
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Edit &lt;code&gt;Rakefile&lt;/code&gt; to add helpful tasks.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;require "middleman"
+
+task :build do
+  sh "middleman build --clean"
+end
+
+task :publish do
+  sh "middleman build --clean"
+  sh "middleman deploy --clean"
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Publish to Github.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ rake build
+$ rake publish
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+  </entry>
   <entry>
     <title>Accounts Setup</title>
     <link rel="alternate" href="/2013/07/02/accounts-setup.html"/>

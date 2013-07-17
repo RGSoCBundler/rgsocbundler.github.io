@@ -99,14 +99,14 @@ Wikipedia&lt;/a&gt;&lt;/p&gt;
 peer-directed projects. freenode is the largest IRC network. The servers are
 all accessible from the domain name
 &lt;a href="irc://chat.freenode.net"&gt;chat.freenode.net&lt;/a&gt;. Primary on-topic channels begin
-with a single #, e.g. #rgsoc-team is the channel name for RGSoC Teams to
+with a single #, e.g. #rgsoc-teams is the channel name for RGSoC Teams to
 discuss projects. &lt;a href="http://en.wikipedia.org/wiki/Freenode"&gt;Learn more on
 Wikipedia&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id="rooms-were-in"&gt;Rooms We're In&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;#rgsoc-team&lt;/li&gt;
+  &lt;li&gt;#rgsoc-teams&lt;/li&gt;
   &lt;li&gt;#bundler&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -144,7 +144,9 @@ private.&lt;/p&gt;
     <author>
       <name>RGSoCBundler</name>
     </author>
-    <content type="html">&lt;h1 id="week-1-day-1-blogging-using-middleman-gem"&gt;Week 1 Day 1 Blogging using Middleman Gem&lt;/h1&gt;
+    <content type="html">&lt;h1 id="week-1-day-1"&gt;Week 1 Day 1&lt;/h1&gt;
+
+&lt;h2 id="blogging-using-middleman-gem"&gt;Blogging using Middleman Gem&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Created our Team Blog on github using Middleman Gem &lt;/li&gt;
@@ -153,8 +155,7 @@ private.&lt;/p&gt;
   &lt;li&gt;Added pages and updated them&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id="bundle-exec-rake-publish"&gt;bundle exec rake publish&lt;/h2&gt;
-
+&lt;p&gt;&lt;strong&gt;bundle exec rake publish&lt;/strong&gt;&lt;/p&gt;
 </content>
   </entry>
   <entry>

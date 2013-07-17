@@ -5,7 +5,7 @@
   <id>http://rgsocbundler.github.io/</id>
   <link href="http://rgsocbundler.github.io/"/>
   <link href="http://rgsocbundler.github.io/feed.xml" rel="self"/>
-  <updated>2013-07-16T00:00:00Z</updated>
+  <updated>2013-07-17T00:00:00Z</updated>
   <author>
     <name>Jen Diamond</name>
   </author>
@@ -15,6 +15,148 @@
   <author>
     <name>Jessica Suttles</name>
   </author>
+  <entry>
+    <title>Git Branches &amp;  GitHub Pull Requests</title>
+    <link rel="alternate" href="/2013/07/17/pull-requests.html"/>
+    <id>/2013/07/17/pull-requests.html</id>
+    <published>2013-07-17T00:00:00Z</published>
+    <updated>2013-07-17T00:00:00Z</updated>
+    <author>
+      <name>RGSoCBundler</name>
+    </author>
+    <content type="html">&lt;h1 id="git-branches--github-pull-requests"&gt;Git Branches &amp;amp; GitHub Pull Requests&lt;/h1&gt;
+
+&lt;h2 id="git-branches"&gt;Git Branches&lt;/h2&gt;
+
+&lt;h3 id="peepcodehttpspeepcodecom"&gt;&lt;a href="https://peepcode.com/"&gt;Peepcode&lt;/a&gt;&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://peepcode.com/products/git"&gt;Git Screencast&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://peepcode.com/products/git-internals-pdf"&gt;Git Internals&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="pro-git-chapter-3-git-branchinghttpgit-scmcombookengit-branching"&gt;&lt;a href="http://git-scm.com/book/en/Git-Branching"&gt;Pro Git Chapter 3 Git Branching&lt;/a&gt;&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="http://git-scm.com/book/en/Git-Branching-What-a-Branch-Is"&gt;3.1 Git Branching - What a Branch Is&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://git-scm.com/book/en/Git-Branching-Basic-Branching-and-Merging"&gt;3.2 Git Branching - Basic Branching and Merging&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://git-scm.com/book/en/Git-Branching-Branch-Management"&gt;3.3 Git Branching - Branch Management&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://git-scm.com/book/en/Git-Branching-Branching-Workflows"&gt;3.4 Git Branching - Branching Workflows&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://git-scm.com/book/en/Git-Branching-Remote-Branches"&gt;3.5 Git Branching - Remote Branches&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://git-scm.com/book/en/Git-Branching-Rebasing"&gt;3.6 Git Branching - Rebasing&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://git-scm.com/book/en/Git-Branching-Summary"&gt;3.7 Git Branching - Summary&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="github-pull-requests"&gt;GitHub Pull Requests&lt;/h2&gt;
+
+&lt;h3 id="github-help-collaboratinghttpshelpgithubcomcategories63articles"&gt;&lt;a href="https://help.github.com/categories/63/articles"&gt;GitHub Help: Collaborating&lt;/a&gt;&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://help.github.com/articles/using-pull-requests"&gt;Using Pull Requests&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://help.github.com/articles/creating-a-pull-request"&gt;Creating a pull request&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://help.github.com/articles/merging-a-pull-request"&gt;Merging a pull request&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://help.github.com/articles/closing-a-pull-request"&gt;Closing a pull request&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://help.github.com/articles/tidying-up-pull-requests"&gt;Tidying up Pull Requests&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://help.github.com/articles/syncing-a-fork"&gt;Syncing a fork&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://help.github.com/articles/issue-attachments"&gt;Issue attachments&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://help.github.com/articles/adding-commit-comments"&gt;Adding commit comments&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://help.github.com/articles/checking-out-pull-requests-locally"&gt;Checking out Pull Requests locally&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="other"&gt;Other&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="http://scottchacon.com/2011/08/31/github-flow.html"&gt;GitHub Flow by Scott Chacon&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://zachholman.com/talk/how-github-uses-github-to-build-github/"&gt;How GitHub Uses GitHub to Build GitHub by Zach Holman&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Chat</title>
+    <link rel="alternate" href="/2013/07/17/chat.html"/>
+    <id>/2013/07/17/chat.html</id>
+    <published>2013-07-17T00:00:00Z</published>
+    <updated>2013-07-17T00:00:00Z</updated>
+    <author>
+      <name>RGSoCBundler</name>
+    </author>
+    <content type="html">&lt;h1 id="chat"&gt;Chat&lt;/h1&gt;
+
+&lt;h2 id="irc"&gt;IRC&lt;/h2&gt;
+
+&lt;h3 id="what-is-irc"&gt;What is IRC?&lt;/h3&gt;
+
+&lt;p&gt;Internet Relay Chat (IRC) is a protocol for chat created in 1988. It supports
+group chats in channels, one-to-one communication via private message, and file
+sharing. IRC Clients are available for every major operating system that
+supports Internet access. Millions of people use IRC every day. &lt;a href="http://en.wikipedia.org/wiki/Internet_Relay_Chat"&gt;Learn more on
+Wikipedia&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id="chatfreenodenet"&gt;chat.freenode.net&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href="http://freenode.net"&gt;freenode&lt;/a&gt; is a free and open source software focused IRC
+&lt;strong&gt;network&lt;/strong&gt;. The network hosts IRC &lt;strong&gt;channels&lt;/strong&gt; where people discuss
+peer-directed projects. freenode is the largest IRC network. The servers are
+all accessible from the domain name
+&lt;a href="irc://chat.freenode.net"&gt;chat.freenode.net&lt;/a&gt;. Primary on-topic channels begin
+with a single #, e.g. #rgsoc-team is the channel name for RGSoC Teams to
+discuss projects. &lt;a href="http://en.wikipedia.org/wiki/Freenode"&gt;Learn more on
+Wikipedia&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id="rooms-were-in"&gt;Rooms We're In&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;#rgsoc-team&lt;/li&gt;
+  &lt;li&gt;#bundler&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="campfire"&gt;Campfire&lt;/h2&gt;
+
+&lt;h3 id="what-is-campfire"&gt;What is Campfire?&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href="http://campfirenow.com/"&gt;Campfire&lt;/a&gt; is like instant messaging, but designed
+exclusively for groups. Share text, files, and code in real time. Save
+transcripts so you don’t forget. You can use Campfire in your web browser or
+&lt;a href="http://campfirenow.com/extras"&gt;download a desktop application&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;What's the best part about Campfire? &lt;a href="http://www.emoji-cheat-sheet.com/"&gt;It supports
+emoji!&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id="bundler-campfire"&gt;Bundler Campfire&lt;/h3&gt;
+
+&lt;p&gt;Bundler core has a chat room and now RGSoCBundler has one too! These rooms are
+private.&lt;/p&gt;
+
+&lt;h3 id="rooms-were-in-1"&gt;Rooms We're In&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Bundler Chats&lt;/li&gt;
+  &lt;li&gt;RailsGirls SoC&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Week 1 Day 1 Blogging using Middleman Gem</title>
+    <link rel="alternate" href="/2013/07/16/week1-day1.html"/>
+    <id>/2013/07/16/week1-day1.html</id>
+    <published>2013-07-16T00:00:00Z</published>
+    <updated>2013-07-16T00:00:00Z</updated>
+    <author>
+      <name>RGSoCBundler</name>
+    </author>
+    <content type="html">&lt;h1 id="week-1-day-1-blogging-using-middleman-gem"&gt;Week 1 Day 1 Blogging using Middleman Gem&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Created our Team Blog on github using Middleman Gem &lt;/li&gt;
+  &lt;li&gt;Discussed the difference between using a user page and a project page in gitpages&lt;/li&gt;
+  &lt;li&gt;Created a Rakefile with the task 'rake build' and 'rake publish'&lt;/li&gt;
+  &lt;li&gt;Added pages and updated them&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="bundle-exec-rake-publish"&gt;bundle exec rake publish&lt;/h2&gt;
+
+</content>
+  </entry>
   <entry>
     <title>Blog Setup</title>
     <link rel="alternate" href="/2013/07/16/blog-setup.html"/>
@@ -283,20 +425,16 @@ documentation and man page documentation.&lt;/p&gt;
     </author>
     <content type="html">&lt;h1 id="hello-world"&gt;Hello World&lt;/h1&gt;
 
-&lt;p&gt;Hello, from the Rails Girls Summer of Code Bundler Team! 15 July 2013 marks the
-start of the summer for our team and we are already so excited.&lt;/p&gt;
+&lt;p&gt;Hello, from the Rails Girls Summer of Code Bundler Team! 15 July 2013 marks the start of the summer for our team and we are already so excited.&lt;/p&gt;
 
 &lt;h2 id="open-source-communication"&gt;Open Source Communication&lt;/h2&gt;
 
-&lt;p&gt;RGSoC is all about helping women contribute to open source projects. Open
-source software takes a lot of online communication. To get as much practice as
-possible we will open source our communication!&lt;/p&gt;
+&lt;p&gt;RGSoC is all about helping women contribute to open source projects. Open source software takes a lot of online communication. To get as much practice as possible we will open source our communication!&lt;/p&gt;
 
-&lt;p&gt;All summer we will be posting all of our #tools, #goals, #progress, and #achievements
-to this blog so others can learn from what we have learned!&lt;/p&gt;
+&lt;p&gt;All summer we will be posting all of our #tools, #goals, #progress, and #achievements to this blog so others can learn from what we have learned!&lt;/p&gt;
 
-&lt;p&gt;Each of our posts will serve as a living document that will be updated when we
-learn more about a subject. The documents are immutable, but copies can be made.&lt;/p&gt;
+&lt;p&gt;Each of our posts will serve as a living document that will be updated when we learn more about a subject. The documents are immutable, but copies can be made.&lt;/p&gt;
+
 </content>
   </entry>
 </feed>

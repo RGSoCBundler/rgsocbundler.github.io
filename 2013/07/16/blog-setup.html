@@ -1,0 +1,321 @@
+<!doctype html>
+<html>
+  <head>
+    <title>RGSoCBundler Team Blog</title>
+    <meta charset="utf-8" />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RGSoC Bundler Team Blog">
+    <meta name="author" content="Jen Diamond, Joyce Hsu, Jessica Lynn Suttles">
+    <link rel="alternate" type="application/rss+xml"
+      title="RGSoCBundler Team Blog - RSS"
+      href="http://rgsocbundler.github.io/feed.xml"
+    />
+    <link rel="alternate" type="application/atom+xml"
+      title="RGSoCBundler Team Blog - RSS"
+      href="http://rgsocbundler.github.io/feed.xml"
+    />
+
+    <link href="/stylesheets/all.css" rel="stylesheet">
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="/stylesheets/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="/stylesheets/social-buttons.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+
+
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="/stylesheets/html5shiv.js"></script>
+    <![endif]-->
+
+  </head>
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="/">RGSoC Bundler Team</a>
+          <div class="nav-collapse collapse">
+            <p class="navbar-text pull-right">
+              Fork this blog on <a href="https://github.com/RGSoCBundler/rgsocbundler.github.io" class="navbar-link">Github</a>!
+            </p>
+            <ul class="nav">
+              <li><a rel="alternate" href="/feed.xml">RSS</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span9">
+          <div class="row-fluid">
+            <div id="main" role="main" class="well">
+              <h1 id="blog-setup">Blog Setup</h1>
+
+<h2 id="github-pageshttppagesgithubcom"><a href="http://pages.github.com/">Github Pages</a></h2>
+
+<p>Where to host our blog? Github of course! Github is the best place to
+collaborate on open source code and content. Github Pages offers free hosting,
+page generation with themes, and manually generated pages. We want to dig into
+some code, so we're going the manual pages route of course! Rails is famous for
+the 15 minute blog but we decided to go with a different Ruby solution that we
+could use with Github Pages.</p>
+
+<p>Our blog code can be found at
+<a href="https://github.com/RGSoCBundler/rgsocbundler.github.io">https://github.com/RGSoCBundler/rgsocbundler.github.io</a>.</p>
+
+<h2 id="middlemanhttpmiddlemanappcomgetting-started"><a href="http://middlemanapp.com/getting-started/">middleman</a></h2>
+
+<p>Middleman is a command-line tool for creating static websites using all the
+shortcuts and tools of the modern web development environment.</p>
+
+<p>Middleman assumes familiarity with the command-line. The Ruby language and the
+Sinatra web framework form the base of the tool. Familiarity with both will go
+a long way in helping users understand why Middleman works the way it does.</p>
+
+<pre><code>$ gem install middleman
+</code></pre>
+
+<h2 id="middleman-bloghttpmiddlemanappcomblogging"><a href="http://middlemanapp.com/blogging/">middleman-blog</a></h2>
+
+<p>Middleman-blog is an official extension to support blogging, articles and
+tagging. If we use the middleman generator with a blog template, middleman-blog
+with automatically be added to our Gemfile.</p>
+
+<pre><code>$ middleman init rgsocbundler --template=blog
+Sass is in the process of being separated from Haml,
+and will no longer be bundled at all in Haml 3.2.0.
+Please install the 'sass' gem if you want to use Sass.
+
+      create  rgsocbundler/Gemfile
+         run  bundle install from "."
+The source :rubygems is deprecated because HTTP requests are insecure.
+Please change your source to 'https://rubygems.org' if possible, or 'http://rubygems.org' if not.
+Fetching gem metadata from http://rubygems.org/........
+Fetching gem metadata from http://rubygems.org/..
+Resolving dependencies...
+Using i18n (0.6.4)
+Using multi_json (1.7.7)
+Using activesupport (3.2.12)
+Using builder (3.0.4)
+Using bundler (1.3.4)
+Using chunky_png (1.2.8)
+Using coffee-script-source (1.6.2)
+Using execjs (1.4.0)
+Using coffee-script (2.2.0)
+Using fssm (0.2.10)
+Using sass (3.2.9)
+Using compass (0.12.2)
+Using ffi (1.9.0)
+Using tilt (1.3.7)
+Using haml (4.0.3)
+Using hike (1.2.3)
+Using kramdown (1.0.2)
+Using rb-fsevent (0.9.3)
+Using rb-inotify (0.9.0)
+Using rb-kqueue (0.2.0)
+Using listen (1.2.2)
+Using syntax (1.0.0)
+Using maruku (0.6.1)
+Using rack (1.5.2)
+Using rack-test (0.6.2)
+Using thor (0.18.1)
+Using middleman-core (3.1.2)
+Using middleman-more (3.1.2)
+Using sprockets (2.10.0)
+Using sprockets-helpers (1.0.1)
+Using sprockets-sass (1.0.1)
+Using middleman-sprockets (3.1.2)
+Using uglifier (2.1.1)
+Using middleman (3.1.2)
+Using tzinfo (0.3.37)
+Using middleman-blog (3.2.0)
+Your bundle is complete!
+Use `bundle show [gemname]` to see where a bundled gem is installed.
+      create  rgsocbundler/.gitignore
+      create  rgsocbundler/config.rb
+      create  rgsocbundler/source
+      create  rgsocbundler/source/2012-01-01-example-article.html.markdown
+      create  rgsocbundler/source/calendar.html.erb
+      create  rgsocbundler/source/feed.xml.builder
+      create  rgsocbundler/source/index.html.erb
+      create  rgsocbundler/source/layout.erb
+      create  rgsocbundler/source/tag.html.erb
+      create  rgsocbundler/source/stylesheets
+      create  rgsocbundler/source/javascripts
+      create  rgsocbundler/source/images
+</code></pre>
+
+<p>Change directory into the new blog directory.</p>
+
+<pre><code>$ cd rgsocbundler
+</code></pre>
+
+<p>Start the server to make sure everything works.</p>
+
+<pre><code>$ bundle exec middleman server
+== The Middleman is loading
+== The Middleman is standing watch at http://0.0.0.0:4567
+== Inspect your site configuration at http://0.0.0.0:4567/__middleman/
+</code></pre>
+
+<p>Point your web browser to <a href="http://0.0.0.0:4567">http://0.0.0.0:4567</a> and you
+should see an example page!</p>
+
+<p>The server can be killed with <code>control+C</code> and restarted with <code>bundle exec
+middleman server</code> or <code>bundle exec middleman</code>.</p>
+
+<p>Push to Github as soon as possible!</p>
+
+<pre><code>$ git init
+$ git add .
+$ git commit -m "$ middleman init rgsocbundler --template=blog"
+$ git remote add origin git@github.com:RGSoCBundler/rgsocbundler.github.io.git
+$ git push -u origin master
+</code></pre>
+
+<p>Add <code>.gitignore</code></p>
+
+<pre><code># See http://help.github.com/ignore-files/ for more about ignoring files.
+#
+# If you find yourself ignoring temporary files generated by your text editor
+# or operating system, you probably want to add a global ignore instead:
+# git config --global core.excludesfile ~/.gitignore_global
+
+# Ignore bundler config
+/.bundle
+
+# Ignore the build directory
+/build
+
+# Ignore Sass' cache
+/.sass-cache
+
+.DS_store
+
+# (optional) local gems, installed with
+# bundle install --path vendor/bundle
+# also a checkout of bundler for manpages and releases
+/vendor
+
+# Bundler binstubs
+/bin
+</code></pre>
+
+<p>Add Twitter Bootstrap files. First, <a href="http://twitter.github.io/bootstrap/">download
+it</a> and unzip it.</p>
+
+<pre><code>$ cp ~/Downloads/bootstrap/css/*.min.css ./source/stylesheets
+$ cp ~/Downloads/bootstrap/img/* ./source/images
+$ cp ~/Downloads/bootstrap/js/*.min.js ./source/javascripts
+</code></pre>
+
+<p>Include Twitter Bootstrap files in <code>./source/layout.erb</code></p>
+
+<pre><code>&lt;link href="stylesheets/bootstrap.min.css" rel="stylesheet" /&gt;
+&lt;script type="text/javascript" src="javascripts/bootstrap.min.js" /&gt;
+</code></pre>
+
+<h2 id="middleman-deployhttpsgithubcomtvaughanmiddleman-deploy"><a href="https://github.com/tvaughan/middleman-deploy">middleman-deploy</a></h2>
+
+<p>Middleman-deploy is an unofficial extenstion that helps deploy middleman sites.
+Since we are making an Organization Github Page, Github expects our compiled
+site to be on the <code>master</code> branch. Middleman-deploy will take care of that for
+us if we give it a little configuration.</p>
+
+<p>Add dependency to the <code>Gemfile</code>.</p>
+
+<pre><code>gem "middleman-deploy"
+</code></pre>
+
+<p>Install.</p>
+
+<pre><code>$ bundle
+</code></pre>
+
+<p>Activate deploy in <code>config.rb</code> and tell it to deploy to master. If you are not
+creating a user or organization Github page then Github expects the compiled
+site to be on the <code>gh-pages</code> branch.</p>
+
+<pre><code>activate :deploy do |deploy|
+  deploy.method = :git
+  deploy.branch = "master"
+end
+</code></pre>
+
+<p>Edit <code>Rakefile</code> to add helpful tasks.</p>
+
+<pre><code>require "middleman"
+
+task :build do
+  sh "middleman build --clean"
+end
+
+task :publish do
+  sh "middleman build --clean"
+  sh "middleman deploy --clean"
+end
+</code></pre>
+
+<p>Publish to Github.</p>
+
+<pre><code>$ rake build
+$ rake publish
+</code></pre>
+
+            </div>
+          </div>
+        </div>
+        <div class="span3">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Recent Posts</li>
+              
+                <li><a href="/2013/07/17/week1-day2.html">Week 1 Day 2 Chat and Git With It</a></li>
+              
+                <li><a href="/2013/07/17/pull-requests.html">Git Branches &  GitHub Pull Requests</a></li>
+              
+                <li><a href="/2013/07/17/chat.html">Chat</a></li>
+              
+                <li><a href="/2013/07/16/week1-day1.html">Week 1 Day 1 Blogging using Middleman Gem</a></li>
+              
+                <li><a href="/2013/07/16/blog-setup.html">Blog Setup</a></li>
+              
+                <li><a href="/2013/07/02/accounts-setup.html">Accounts Setup</a></li>
+              
+                <li><a href="/2013/06/30/hello-world.html">Hello World</a></li>
+              
+              <li class="nav-header">Tags</li>
+              
+                <li><a href="/tags/goals.html">#goals (1)</a></a></li>
+              
+                <li><a href="/tags/tools.html">#tools (4)</a></a></li>
+              
+                <li><a href="/tags/log.html">#log (2)</a></a></li>
+              
+              <li class="nav-header">Contributors</li>
+              <li><a href="/jen-diamond">Jen Diamond / Student</a></li>
+              <li><a href="/joyce-hsu">Joyce Hsu / Student</a></li>
+              <li><a href="/jessica-lynn-suttles">Jessica Suttles / Coach</a></li>
+              <li><a href="/andre-arko">Andre Arko / Mentor</a></li>
+              <li class="nav-header">Elsewhere</li>
+
+              <li><a href="http://github.com/RGSoCBundler"><button class="btn btn-github"><i class="icon-github"></i>Github</button></a></li>
+              <li><a href="http://twitter.com/RGSoCBundler"><button class="btn btn-twitter"><i class="icon-twitter"></i>Twitter</button></a></li>
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+      </div>
+    </div>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>RGSoC Bundler Team Blog</title>
+  <subtitle>Women Contributing to Open Source Software</subtitle>
+  <id>http://rgsocbundler.github.io/</id>
+  <link href="http://rgsocbundler.github.io/"/>
+  <link href="http://rgsocbundler.github.io/feed.xml" rel="self"/>
+  <updated>2013-07-18T07:00:00Z</updated>
+  <author>
+    <name>Jen Diamond</name>
+  </author>
+  <author>
+    <name>Joyce Hsu</name>
+  </author>
+  <author>
+    <name>Jessica Suttles</name>
+  </author>
+  <entry>
+    <title>Week 1 Day 3 Github Workflow</title>
+    <link rel="alternate" href="/2013/07/18/week1-day3.html"/>
+    <id>/2013/07/18/week1-day3.html</id>
+    <published>2013-07-18T07:00:00Z</published>
+    <updated>2013-07-18T07:00:00Z</updated>
+    <author>
+      <name>RGSoCBundler</name>
+    </author>
+    <content type="html">&lt;h1 id="week-1-day-3"&gt;Week 1 Day 3&lt;/h1&gt;
+
+&lt;h2 id="github-workflow"&gt;Github Workflow&lt;/h2&gt;
+&lt;p&gt;Combined the intricacies of Git Branching and Pull Requests together to form the proper Github Workflow&lt;/p&gt;
+
+&lt;p&gt;Performed the steps and made the Cheat Sheet - &lt;a href="http://localhost:4567/cheatsheets/pull.html"&gt;Pull Request Cheat Sheet&lt;/a&gt;&lt;/p&gt;
+
+</content>
+  </entry>
+  <entry>
+    <title>Chat</title>
+    <link rel="alternate" href="/2013/07/17/chat.html"/>
+    <id>/2013/07/17/chat.html</id>
+    <published>2013-07-17T07:00:00Z</published>
+    <updated>2013-07-17T07:00:00Z</updated>
+    <author>
+      <name>RGSoCBundler</name>
+    </author>
+    <content type="html">&lt;h1 id="chat"&gt;Chat&lt;/h1&gt;
+
+&lt;h2 id="irc"&gt;IRC&lt;/h2&gt;
+
+&lt;h3 id="what-is-irc"&gt;What is IRC?&lt;/h3&gt;
+
+&lt;p&gt;Internet Relay Chat (IRC) is a protocol for chat created in 1988. It supports
+group chats in channels, one-to-one communication via private message, and file
+sharing. IRC Clients are available for every major operating system that
+supports Internet access. Millions of people use IRC every day. &lt;a href="http://en.wikipedia.org/wiki/Internet_Relay_Chat"&gt;Learn more on
+Wikipedia&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id="chatfreenodenet"&gt;chat.freenode.net&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href="http://freenode.net"&gt;freenode&lt;/a&gt; is a free and open source software focused IRC
+&lt;strong&gt;network&lt;/strong&gt;. The network hosts IRC &lt;strong&gt;channels&lt;/strong&gt; where people discuss
+peer-directed projects. freenode is the largest IRC network. The servers are
+all accessible from the domain name
+&lt;a href="irc://chat.freenode.net"&gt;chat.freenode.net&lt;/a&gt;. Primary on-topic channels begin
+with a single #, e.g. #rgsoc-teams is the channel name for RGSoC Teams to
+discuss projects. &lt;a href="http://en.wikipedia.org/wiki/Freenode"&gt;Learn more on
+Wikipedia&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id="rooms-were-in"&gt;Rooms We're In&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;#rgsoc-teams&lt;/li&gt;
+  &lt;li&gt;#bundler&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="campfire"&gt;Campfire&lt;/h2&gt;
+
+&lt;h3 id="what-is-campfire"&gt;What is Campfire?&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href="http://campfirenow.com/"&gt;Campfire&lt;/a&gt; is like instant messaging, but designed
+exclusively for groups. Share text, files, and code in real time. Save
+transcripts so you don’t forget. You can use Campfire in your web browser or
+&lt;a href="http://campfirenow.com/extras"&gt;download a desktop application&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;What's the best part about Campfire? &lt;a href="http://www.emoji-cheat-sheet.com/"&gt;It supports
+emoji!&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id="bundler-campfire"&gt;Bundler Campfire&lt;/h3&gt;
+
+&lt;p&gt;Bundler core has a chat room and now RGSoCBundler has one too! These rooms are
+private.&lt;/p&gt;
+
+&lt;h3 id="rooms-were-in-1"&gt;Rooms We're In&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Bundler Chats&lt;/li&gt;
+  &lt;li&gt;RailsGirls SoC&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Git Branches &amp;  GitHub Pull Requests</title>
+    <link rel="alternate" href="/2013/07/17/pull-requests.html"/>
+    <id>/2013/07/17/pull-requests.html</id>
+    <published>2013-07-17T07:00:00Z</published>
+    <updated>2013-07-17T07:00:00Z</updated>
+    <author>
+      <name>RGSoCBundler</name>
+    </author>
+    <content type="html">&lt;h1 id="git-branches--github-pull-requests"&gt;Git Branches &amp;amp; GitHub Pull Requests&lt;/h1&gt;
+
+&lt;h2 id="git-branches"&gt;Git Branches&lt;/h2&gt;
+
+&lt;h3 id="peepcodehttpspeepcodecom"&gt;&lt;a href="https://peepcode.com/"&gt;Peepcode&lt;/a&gt;&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://peepcode.com/products/git"&gt;Git Screencast&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://peepcode.com/products/git-internals-pdf"&gt;Git Internals&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="pro-git-chapter-3-git-branchinghttpgit-scmcombookengit-branching"&gt;&lt;a href="http://git-scm.com/book/en/Git-Branching"&gt;Pro Git Chapter 3 Git Branching&lt;/a&gt;&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="http://git-scm.com/book/en/Git-Branching-What-a-Branch-Is"&gt;3.1 Git Branching - What a Branch Is&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://git-scm.com/book/en/Git-Branching-Basic-Branching-and-Merging"&gt;3.2 Git Branching - Basic Branching and Merging&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://git-scm.com/book/en/Git-Branching-Branch-Management"&gt;3.3 Git Branching - Branch Management&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://git-scm.com/book/en/Git-Branching-Branching-Workflows"&gt;3.4 Git Branching - Branching Workflows&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://git-scm.com/book/en/Git-Branching-Remote-Branches"&gt;3.5 Git Branching - Remote Branches&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://git-scm.com/book/en/Git-Branching-Rebasing"&gt;3.6 Git Branching - Rebasing&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://git-scm.com/book/en/Git-Branching-Summary"&gt;3.7 Git Branching - Summary&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="github-pull-requests"&gt;GitHub Pull Requests&lt;/h2&gt;
+
+&lt;h3 id="github-help-collaboratinghttpshelpgithubcomcategories63articles"&gt;&lt;a href="https://help.github.com/categories/63/articles"&gt;GitHub Help: Collaborating&lt;/a&gt;&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://help.github.com/articles/using-pull-requests"&gt;Using Pull Requests&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://help.github.com/articles/creating-a-pull-request"&gt;Creating a pull request&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://help.github.com/articles/merging-a-pull-request"&gt;Merging a pull request&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://help.github.com/articles/closing-a-pull-request"&gt;Closing a pull request&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://help.github.com/articles/tidying-up-pull-requests"&gt;Tidying up Pull Requests&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://help.github.com/articles/syncing-a-fork"&gt;Syncing a fork&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://help.github.com/articles/issue-attachments"&gt;Issue attachments&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://help.github.com/articles/adding-commit-comments"&gt;Adding commit comments&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://help.github.com/articles/checking-out-pull-requests-locally"&gt;Checking out Pull Requests locally&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="other"&gt;Other&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="http://scottchacon.com/2011/08/31/github-flow.html"&gt;GitHub Flow by Scott Chacon&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://zachholman.com/talk/how-github-uses-github-to-build-github/"&gt;How GitHub Uses GitHub to Build GitHub by Zach Holman&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Week 1 Day 2 Chat and Git With It</title>
+    <link rel="alternate" href="/2013/07/17/week1-day2.html"/>
+    <id>/2013/07/17/week1-day2.html</id>
+    <published>2013-07-17T07:00:00Z</published>
+    <updated>2013-07-17T07:00:00Z</updated>
+    <author>
+      <name>RGSoCBundler</name>
+    </author>
+    <content type="html">&lt;h1 id="week-1-day-2"&gt;Week 1 Day 2&lt;/h1&gt;
+
+&lt;h2 id="chatty-kathy"&gt;Chatty Kathy&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Learned about IRC and setup IRC chat to #rgsoc-teams and #bundler&lt;/li&gt;
+  &lt;li&gt;Joined the bundler Campfire chat for team collaboration&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="git-with-it"&gt;Git With It&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Created new issues on Github&lt;/li&gt;
+  &lt;li&gt;Fixed issues on our blog&lt;/li&gt;
+  &lt;li&gt;Closed issues&lt;/li&gt;
+  &lt;li&gt;Watched Peepcode Git Screencast&lt;/li&gt;
+  &lt;li&gt;Learn aboutz Branching and Collaborating&lt;/li&gt;
+  &lt;li&gt;Created Branches&lt;/li&gt;
+  &lt;li&gt;Created, Merged, Closed Pull Requests&lt;/li&gt;
+  &lt;li&gt;Commenting&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+  </entry>
+  <entry>
+    <title>Week 1 Day 1 Blogging using Middleman Gem</title>
+    <link rel="alternate" href="/2013/07/16/week1-day1.html"/>
+    <id>/2013/07/16/week1-day1.html</id>
+    <published>2013-07-16T07:00:00Z</published>
+    <updated>2013-07-16T07:00:00Z</updated>
+    <author>
+      <name>RGSoCBundler</name>
+    </author>
+    <content type="html">&lt;h1 id="week-1-day-1"&gt;Week 1 Day 1&lt;/h1&gt;
+
+&lt;h2 id="blogging-using-middleman-gem"&gt;Blogging using Middleman Gem&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Created our Team Blog on github using Middleman Gem &lt;/li&gt;
+  &lt;li&gt;Discussed the difference between using a user page and a project page in gitpages&lt;/li&gt;
+  &lt;li&gt;Created a Rakefile with the task 'rake build' and 'rake publish'&lt;/li&gt;
+  &lt;li&gt;Added pages and updated them&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;bundle exec rake publish&lt;/strong&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Blog Setup</title>
+    <link rel="alternate" href="/2013/07/16/blog-setup.html"/>
+    <id>/2013/07/16/blog-setup.html</id>
+    <published>2013-07-16T07:00:00Z</published>
+    <updated>2013-07-16T07:00:00Z</updated>
+    <author>
+      <name>RGSoCBundler</name>
+    </author>
+    <content type="html">&lt;h1 id="blog-setup"&gt;Blog Setup&lt;/h1&gt;
+
+&lt;h2 id="github-pageshttppagesgithubcom"&gt;&lt;a href="http://pages.github.com/"&gt;Github Pages&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;Where to host our blog? Github of course! Github is the best place to
+collaborate on open source code and content. Github Pages offers free hosting,
+page generation with themes, and manually generated pages. We want to dig into
+some code, so we're going the manual pages route of course! Rails is famous for
+the 15 minute blog but we decided to go with a different Ruby solution that we
+could use with Github Pages.&lt;/p&gt;
+
+&lt;p&gt;Our blog code can be found at
+&lt;a href="https://github.com/RGSoCBundler/rgsocbundler.github.io"&gt;https://github.com/RGSoCBundler/rgsocbundler.github.io&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id="middlemanhttpmiddlemanappcomgetting-started"&gt;&lt;a href="http://middlemanapp.com/getting-started/"&gt;middleman&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;Middleman is a command-line tool for creating static websites using all the
+shortcuts and tools of the modern web development environment.&lt;/p&gt;
+
+&lt;p&gt;Middleman assumes familiarity with the command-line. The Ruby language and the
+Sinatra web framework form the base of the tool. Familiarity with both will go
+a long way in helping users understand why Middleman works the way it does.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ gem install middleman
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id="middleman-bloghttpmiddlemanappcomblogging"&gt;&lt;a href="http://middlemanapp.com/blogging/"&gt;middleman-blog&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;Middleman-blog is an official extension to support blogging, articles and
+tagging. If we use the middleman generator with a blog template, middleman-blog
+with automatically be added to our Gemfile.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ middleman init rgsocbundler --template=blog
+Sass is in the process of being separated from Haml,
+and will no longer be bundled at all in Haml 3.2.0.
+Please install the 'sass' gem if you want to use Sass.
+
+      create  rgsocbundler/Gemfile
+         run  bundle install from "."
+The source :rubygems is deprecated because HTTP requests are insecure.
+Please change your source to 'https://rubygems.org' if possible, or 'http://rubygems.org' if not.
+Fetching gem metadata from http://rubygems.org/........
+Fetching gem metadata from http://rubygems.org/..
+Resolving dependencies...
+Using i18n (0.6.4)
+Using multi_json (1.7.7)
+Using activesupport (3.2.12)
+Using builder (3.0.4)
+Using bundler (1.3.4)
+Using chunky_png (1.2.8)
+Using coffee-script-source (1.6.2)
+Using execjs (1.4.0)
+Using coffee-script (2.2.0)
+Using fssm (0.2.10)
+Using sass (3.2.9)
+Using compass (0.12.2)
+Using ffi (1.9.0)
+Using tilt (1.3.7)
+Using haml (4.0.3)
+Using hike (1.2.3)
+Using kramdown (1.0.2)
+Using rb-fsevent (0.9.3)
+Using rb-inotify (0.9.0)
+Using rb-kqueue (0.2.0)
+Using listen (1.2.2)
+Using syntax (1.0.0)
+Using maruku (0.6.1)
+Using rack (1.5.2)
+Using rack-test (0.6.2)
+Using thor (0.18.1)
+Using middleman-core (3.1.2)
+Using middleman-more (3.1.2)
+Using sprockets (2.10.0)
+Using sprockets-helpers (1.0.1)
+Using sprockets-sass (1.0.1)
+Using middleman-sprockets (3.1.2)
+Using uglifier (2.1.1)
+Using middleman (3.1.2)
+Using tzinfo (0.3.37)
+Using middleman-blog (3.2.0)
+Your bundle is complete!
+Use `bundle show [gemname]` to see where a bundled gem is installed.
+      create  rgsocbundler/.gitignore
+      create  rgsocbundler/config.rb
+      create  rgsocbundler/source
+      create  rgsocbundler/source/2012-01-01-example-article.html.markdown
+      create  rgsocbundler/source/calendar.html.erb
+      create  rgsocbundler/source/feed.xml.builder
+      create  rgsocbundler/source/index.html.erb
+      create  rgsocbundler/source/layout.erb
+      create  rgsocbundler/source/tag.html.erb
+      create  rgsocbundler/source/stylesheets
+      create  rgsocbundler/source/javascripts
+      create  rgsocbundler/source/images
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Change directory into the new blog directory.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cd rgsocbundler
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Start the server to make sure everything works.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ bundle exec middleman server
+== The Middleman is loading
+== The Middleman is standing watch at http://0.0.0.0:4567
+== Inspect your site configuration at http://0.0.0.0:4567/__middleman/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Point your web browser to &lt;a href="http://0.0.0.0:4567"&gt;http://0.0.0.0:4567&lt;/a&gt; and you
+should see an example page!&lt;/p&gt;
+
+&lt;p&gt;The server can be killed with &lt;code&gt;control+C&lt;/code&gt; and restarted with &lt;code&gt;bundle exec
+middleman server&lt;/code&gt; or &lt;code&gt;bundle exec middleman&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Push to Github as soon as possible!&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git init
+$ git add .
+$ git commit -m "$ middleman init rgsocbundler --template=blog"
+$ git remote add origin git@github.com:RGSoCBundler/rgsocbundler.github.io.git
+$ git push -u origin master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Add &lt;code&gt;.gitignore&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# See http://help.github.com/ignore-files/ for more about ignoring files.
+#
+# If you find yourself ignoring temporary files generated by your text editor
+# or operating system, you probably want to add a global ignore instead:
+# git config --global core.excludesfile ~/.gitignore_global
+
+# Ignore bundler config
+/.bundle
+
+# Ignore the build directory
+/build
+
+# Ignore Sass' cache
+/.sass-cache
+
+.DS_store
+
+# (optional) local gems, installed with
+# bundle install --path vendor/bundle
+# also a checkout of bundler for manpages and releases
+/vendor
+
+# Bundler binstubs
+/bin
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Add Twitter Bootstrap files. First, &lt;a href="http://twitter.github.io/bootstrap/"&gt;download
+it&lt;/a&gt; and unzip it.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cp ~/Downloads/bootstrap/css/*.min.css ./source/stylesheets
+$ cp ~/Downloads/bootstrap/img/* ./source/images
+$ cp ~/Downloads/bootstrap/js/*.min.js ./source/javascripts
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Include Twitter Bootstrap files in &lt;code&gt;./source/layout.erb&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;link href="stylesheets/bootstrap.min.css" rel="stylesheet" /&amp;gt;
+&amp;lt;script type="text/javascript" src="javascripts/bootstrap.min.js" /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id="middleman-deployhttpsgithubcomtvaughanmiddleman-deploy"&gt;&lt;a href="https://github.com/tvaughan/middleman-deploy"&gt;middleman-deploy&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;Middleman-deploy is an unofficial extenstion that helps deploy middleman sites.
+Since we are making an Organization Github Page, Github expects our compiled
+site to be on the &lt;code&gt;master&lt;/code&gt; branch. Middleman-deploy will take care of that for
+us if we give it a little configuration.&lt;/p&gt;
+
+&lt;p&gt;Add dependency to the &lt;code&gt;Gemfile&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;gem "middleman-deploy"
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Install.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ bundle
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Activate deploy in &lt;code&gt;config.rb&lt;/code&gt; and tell it to deploy to master. If you are not
+creating a user or organization Github page then Github expects the compiled
+site to be on the &lt;code&gt;gh-pages&lt;/code&gt; branch.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;activate :deploy do |deploy|
+  deploy.method = :git
+  deploy.branch = "master"
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Edit &lt;code&gt;Rakefile&lt;/code&gt; to add helpful tasks.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;require "middleman"
+
+task :build do
+  sh "middleman build --clean"
+end
+
+task :publish do
+  sh "middleman build --clean"
+  sh "middleman deploy --clean"
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Publish to Github.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ rake build
+$ rake publish
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+  </entry>
+</feed>

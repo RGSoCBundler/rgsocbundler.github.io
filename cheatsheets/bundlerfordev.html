@@ -59,10 +59,53 @@
         <div class="span9">
           <div class="row-fluid">
             <div id="main" role="main" class="well">
-              <h1>Jessica Lynn Suttles</h1>
- <h4>Coach</h4>
- <p>Jessica has been a Rubyist for 4 years. She attended Rails Girls SF in February and then organized Rails Girls LA in April. She also joined the Bundler core team in March. And now the two interests have merged to form RGSoCBundler!</p>
- <a href="https://twitter.com/jlsuttles"><button class="btn btn-twitter"><i class="icon-twitter"></i>Twitter</button></a>
+              <h1 id="how-to-set-up-bundler-for-development">How to Set Up Bundler for Development</h1>
+
+<ol>
+  <li>
+    <p>Fork Bundler</p>
+
+    <p>Go to the Bundler Github <a href="https://github.com/bundler/bundler">https://github.com/bundler/bundler</a></p>
+
+    <p>Press the fork button.</p>
+
+    <p>Fork Bundler so you can create pull requests with your changes</p>
+
+    <p><img src="../images/fork1.jpg" /></p>
+  </li>
+  <li>
+    <p>Download a copy of your fork of Bundler</p>
+
+    <p><code>$ git clone https://github.com/user_name/bundler.git</code></p>
+  </li>
+  <li>
+    <p>Change into the Bundler directory</p>
+
+    <p><code>$ cd bundler</code></p>
+  </li>
+  <li>
+    <p>Configure the remote</p>
+
+    <p><code>$ git remote add upstream https://github.com/bundler/bundler.git</code></p>
+
+    <p>This connects your local repo to the upstream repo at Github. </p>
+  </li>
+  <li>
+    <p>Install Bundler development dependencies</p>
+
+    <p><code>$ rake spec:deps</code></p>
+
+    <p>What is rake? <a href="http://rake.rubyforge.org/">http://rake.rubyforge.org/</a></p>
+  </li>
+  <li>
+    <p>Run the Bundler test suite</p>
+
+    <p><code>$ rake spec</code></p>
+
+    <p>This could take up to 15 minutes.</p>
+  </li>
+</ol>
+
 
             </div>
           </div>

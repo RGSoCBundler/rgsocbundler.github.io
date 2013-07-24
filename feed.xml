@@ -89,6 +89,64 @@ error: failed to push some refs to 'https://github.com/joyicecloud/rgsocbundler.
 </content>
   </entry>
   <entry>
+    <title>Week 1 Day 4 First Friday</title>
+    <link rel="alternate" href="/2013/07/19/week1-day4.html"/>
+    <id>/2013/07/19/week1-day4.html</id>
+    <published>2013-07-20T00:48:00Z</published>
+    <updated>2013-07-20T00:48:00Z</updated>
+    <author>
+      <name>RGSoCBundler</name>
+    </author>
+    <content type="html">&lt;h1 id="week-1-day-4-first-friday"&gt;Week 1 Day 4 First Friday&lt;/h1&gt;
+
+&lt;h3 id="thursday-night-workshop"&gt;Thursday Night Workshop&lt;/h3&gt;
+
+&lt;p&gt;Thursday night, we attended the &lt;a href="http://www.meetup.com/Los-Angeles-Womens-Ruby-on-Rails-Group/events/124552602/"&gt;Los Angeles Women's Ruby on Rails Monthly Bash.&lt;/a&gt; At this month's workshop Hannah Howard presented a hands-on workshop on Active Record and Data Modeling. We created a music catalog consisting of four models: songs, artists, albums, and playlists. It was great seeing new and familiar faces at this month's Monthly Bash.
+Our team, &lt;a href="http://rgsocbundler.github.io/"&gt;Team Bundler&lt;/a&gt;, and &lt;a href="http://dysania.github.io/blog/"&gt;Team Dysania&lt;/a&gt; gave a brief introduction and updates on our learning.&lt;/p&gt;
+
+&lt;p&gt;From the first RailsGirls LA back in April to now, it is amazing to see how everyone has been progressing.&lt;/p&gt;
+
+&lt;h3 id="friday"&gt;Friday&lt;/h3&gt;
+&lt;p&gt;Jessica was sick today so we used the Bundler campfire chat we setup previously for collaboration.&lt;/p&gt;
+
+&lt;h3 id="joyces-friday"&gt;Joyce's Friday&lt;/h3&gt;
+&lt;p&gt;I noticed our blog time was set as 0:00 and went to figure out how to display the correct time. In the configuration file, changed and set the timezone, the format of our blog URLs, and the type of file format to use (ex. markdown, erb) for our blog posts.&lt;/p&gt;
+
+&lt;p&gt;Initially, we were manually creating the file, but I discovered it can be simpified with this command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;middleman article "title of your post"
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Also added photos for each of us and added a Home icon next to RGSoC Bundler Team on the homepage!&lt;/p&gt;
+
+&lt;p&gt;Sent these off as Pull Requests.&lt;/p&gt;
+
+&lt;h3 id="jens-friday"&gt;Jen's Friday&lt;/h3&gt;
+
+&lt;p&gt;I went over to &lt;a href="https://generalassemb.ly/education?where=los-angeles"&gt;General Assembly&lt;/a&gt; today. They screened the &lt;a href="http://sheplusplus.stanford.edu/"&gt;She++ Film.&lt;/a&gt; It was informational and inspiring. But my favorite part of the day was the panel of women developers after the film. Chris Meaono, Crystal Rose, Erica, Cherise &amp;amp; Shirin. Ted from G.A. was the moderator. Jessica was supposed to be on the panel but she was sick.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;blockquote&gt;
+    &lt;p&gt;This short documentary collects research and inspirational pieces of Silicon Valley's unsung heroes to galvanize us to explore our potential as 'femgineers'. Written and directed by recent Stanford University good girls gone geek, Ayna Agarwal and Ellora Israni, she++: The Documentary encourages the future CEOs, the innovative engineers, the techies and the fuzzies, the sisters, cousins, and daughters, to break away from the stereotype into a revolutionary field. As technology is becoming increasingly ubiquitous, all demographics must harness new ideas to transform and empower technology. Think of what more 'femgineers' could do. - The Chic Geek&lt;/p&gt;
+  &lt;/blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Key ideas:
+embrace failure, be passionate, be fearless, stay open to ideas, be a mentor, there are no hurdles&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Strategies for tech interviews:
+practice speaking your code outloud with other people, do fake interviews to get used to talking about your experience and the code.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;One of the questions was, How did you decide to work in tech? I realized that some of the panelists mentioned reasons that aligned with mine. I am a problem solver, I'm handy and like fixing things and making things better. I can visualize, organize and love lists.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
     <title>Week 1 Day 3 Github Workflow</title>
     <link rel="alternate" href="/2013/07/18/week1-day3.html"/>
     <id>/2013/07/18/week1-day3.html</id>
@@ -192,70 +250,6 @@ error: failed to push some refs to 'https://github.com/joyicecloud/rgsocbundler.
   &lt;li&gt;Commenting&lt;/li&gt;
 &lt;/ul&gt;
 
-</content>
-  </entry>
-  <entry>
-    <title>Chat</title>
-    <link rel="alternate" href="/2013/07/17/chat.html"/>
-    <id>/2013/07/17/chat.html</id>
-    <published>2013-07-17T07:00:00Z</published>
-    <updated>2013-07-17T07:00:00Z</updated>
-    <author>
-      <name>RGSoCBundler</name>
-    </author>
-    <content type="html">&lt;h1 id="chat"&gt;Chat&lt;/h1&gt;
-
-&lt;h2 id="irc"&gt;IRC&lt;/h2&gt;
-
-&lt;h3 id="what-is-irc"&gt;What is IRC?&lt;/h3&gt;
-
-&lt;p&gt;Internet Relay Chat (IRC) is a protocol for chat created in 1988. It supports
-group chats in channels, one-to-one communication via private message, and file
-sharing. IRC Clients are available for every major operating system that
-supports Internet access. Millions of people use IRC every day. &lt;a href="http://en.wikipedia.org/wiki/Internet_Relay_Chat"&gt;Learn more on
-Wikipedia&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id="chatfreenodenet"&gt;chat.freenode.net&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href="http://freenode.net"&gt;freenode&lt;/a&gt; is a free and open source software focused IRC
-&lt;strong&gt;network&lt;/strong&gt;. The network hosts IRC &lt;strong&gt;channels&lt;/strong&gt; where people discuss
-peer-directed projects. freenode is the largest IRC network. The servers are
-all accessible from the domain name
-&lt;a href="irc://chat.freenode.net"&gt;chat.freenode.net&lt;/a&gt;. Primary on-topic channels begin
-with a single #, e.g. #rgsoc-teams is the channel name for RGSoC Teams to
-discuss projects. &lt;a href="http://en.wikipedia.org/wiki/Freenode"&gt;Learn more on
-Wikipedia&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id="rooms-were-in"&gt;Rooms We're In&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;#rgsoc-teams&lt;/li&gt;
-  &lt;li&gt;#bundler&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id="campfire"&gt;Campfire&lt;/h2&gt;
-
-&lt;h3 id="what-is-campfire"&gt;What is Campfire?&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href="http://campfirenow.com/"&gt;Campfire&lt;/a&gt; is like instant messaging, but designed
-exclusively for groups. Share text, files, and code in real time. Save
-transcripts so you don’t forget. You can use Campfire in your web browser or
-&lt;a href="http://campfirenow.com/extras"&gt;download a desktop application&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;What's the best part about Campfire? &lt;a href="http://www.emoji-cheat-sheet.com/"&gt;It supports
-emoji!&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id="bundler-campfire"&gt;Bundler Campfire&lt;/h3&gt;
-
-&lt;p&gt;Bundler core has a chat room and now RGSoCBundler has one too! These rooms are
-private.&lt;/p&gt;
-
-&lt;h3 id="rooms-were-in-1"&gt;Rooms We're In&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Bundler Chats&lt;/li&gt;
-  &lt;li&gt;RailsGirls SoC&lt;/li&gt;
-&lt;/ul&gt;
 </content>
   </entry>
 </feed>

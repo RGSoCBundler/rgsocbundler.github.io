@@ -59,32 +59,37 @@
         <div class="span9">
           <div class="row-fluid">
             <div id="main" role="main" class="well">
-              <h1 id="week-2-day-5">Week 2 Day 5</h1>
+              <hr />
+<p>title:Week 2 Day 6 Exceptions &amp; Error
+date: 2013-07-23 17:49 PDT
+tags: log
+—</p>
 
-<h2 id="first-pull-request-to-bundler">First Pull Request to Bundler!!!</h2>
+<h2 id="what-we-did">What we did.</h2>
 
-<h3 id="what-we-did">What We Did</h3>
-<ul>
-  <li>Reviewed how to make changes by branching and making pull requests</li>
-  <li>Troubleshooted what happened when files seemed to disappear, or why we couldn’t push our files.</li>
-  <li>Setup Bundler for development</li>
-  <li>Wrote documentation on How to Setup Bundler for Development</li>
-  <li>Submitted a Pull Request for our documentation on How to Setup Bundler for development</li>
-  <li>Received comments from Bundler core team</li>
-  <li>Made updates to the documentation and resubmitted with the updates</li>
-</ul>
+<h3 id="we-are-still-trying-to-get-out-first-bundler-pull-request-merged">We are still trying to get out first Bundler pull request merged.</h3>
+<p>We stripped down the "Bundler for Development" section on the Bundler Contribute Page. We added the entirety of it on our Team Bundler Website in the Cheatsheet section and on the Rails Girls Guides</p>
 
-<h3 id="what-we-learned-from-our-boo-boos">What We Learned from our Boo Boo’s?</h3>
-<ul>
-  <li>We learned if you are going to create new branches, make sure you are on the master branch! Or else, you will end up creating branches within another branch.</li>
-  <li>Make sure your remote is pulling upstream from the github repo you forked not from your own github repo. </li>
-  <li>
-    <p>The command to show the remotes</p>
+<p>Struggled with unwanted white space. Joyce used travis-ci.org and I modified my .gvimrc</p>
 
-    <p><code>git remote -v</code></p>
-  </li>
-  <li>Merge conflict - have to update our local repository to have the same content as the remote repository on github.com. Use git fetch and git merge OR git pull</li>
-</ul>
+<p>Read about exceptions in the Pragmatic Programmers' Guide / Pickaxe.</p>
+
+<p>Then we started to figure out the errors when you try to do the bundle i command. Which gives you a stack trace instead of an error. We realized the the class is ArgumentError and that it doesn't understand whether you want to  bundle init bundle inject or bundle install. We worked in the friendly_errors file and tried to figure out how to raise the right exception. We also created an rspec test for it. We will be continuing to work on this tomorrow.</p>
+
+<h2 id="what-we-learned-from-our-boo-boos">What we Learned from our Boo Boo’s?</h2>
+
+<h3 id="amending-commit-messages-caused-push-rejection">Amending Commit Messages Caused Push Rejection</h3>
+<p>Joyce pushed a commit and then wanted to change the commit message 
+This caused a push rejection.</p>
+
+<pre><code>To https://github.com/joyicecloud/rgsocbundler.github.io.git
+! [rejected]        blog-log -&gt; blog-log (non-fast-forward)
+error: failed to push some refs to 'https://github.com/joyicecloud/rgsocbundler.github.io.git'
+</code></pre>
+
+<p>Amending a commit that you already pushed creates a new commit. If you check the commit SHA, the numbers are different. That means you will need to force push because it rewrites the commit history.</p>
+
+<p>It is best to avoid amending commits that you have already pushed. <strong>Make amends before pushing the commit.</strong></p>
 
             </div>
           </div>

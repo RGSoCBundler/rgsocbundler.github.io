@@ -5,7 +5,7 @@
   <id>http://rgsocbundler.github.io/</id>
   <link href="http://rgsocbundler.github.io/"/>
   <link href="http://rgsocbundler.github.io/feed.xml" rel="self"/>
-  <updated>2013-07-24T00:49:00Z</updated>
+  <updated>2013-07-25T00:23:00Z</updated>
   <author>
     <name>Jen Diamond</name>
   </author>
@@ -15,6 +15,68 @@
   <author>
     <name>Jessica Suttles</name>
   </author>
+  <entry>
+    <title>Week 2 Day 7 RSpec</title>
+    <link rel="alternate" href="/2013/07/24/week2-day7.html"/>
+    <id>/2013/07/24/week2-day7.html</id>
+    <published>2013-07-25T00:23:00Z</published>
+    <updated>2013-07-25T00:23:00Z</updated>
+    <author>
+      <name>RGSoCBundler</name>
+    </author>
+    <content type="html">&lt;h1 id="week-2-day-7"&gt;Week 2 Day 7&lt;/h1&gt;
+
+&lt;h2 id="rspec"&gt;RSpec&lt;/h2&gt;
+
+&lt;h3 id="what-we-did-and-learned"&gt;What We Did and Learned&lt;/h3&gt;
+&lt;p&gt;We continued by reading the &lt;a href="https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers/raise-error-matcher"&gt;RSpec Expectations&lt;/a&gt; for syntax and writing a test to fail when typing &lt;code&gt;bundle i&lt;/code&gt; it should not raise an error. However, neither of us could get our test to fail, which is what we want.&lt;/p&gt;
+
+&lt;p&gt;We also did not know what and where &lt;code&gt;Bundler.ui.error&lt;/code&gt; does. We learned how to quickly search for code in files by either using the tool ack or using the commandline &lt;a href="http://www.cyberciti.biz/faq/howto-use-grep-command-in-linux-unix/"&gt;grep&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;grep -r "def ui" .&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;-r is short for recursive. This searches within the current directory and all directories within it with the words "def ui."&lt;/p&gt;
+
+&lt;p&gt;Jessica explained recursion. It is called recursion because it calls itself. One calls one and the return is the basecase.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;def one(any_int)
+  return any_int if any_int == 1
+  one(any_int - 1)
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We also learned that in Ruby convention, the name of the Class is the filename. Classes are &lt;code&gt;CamelCaps&lt;/code&gt; and files are &lt;code&gt;snake_case&lt;/code&gt;. Example: Class UI would have a file called ui.rb&lt;/p&gt;
+
+&lt;p&gt;Our coach, Jessica, poked around the specs in Bundler and found the Bundler test is handled differently. She directed us to how our test should look like. After implementing the correct test, we got our test to fail and we are working on getting it to pass.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;require 'spec_helper'
+
+describe "Argument Error when typing bundle i" do
+  it "should not raise error" do
+    bundle "i"
+    expect(err).to be_empty
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Failures:
+
+1) Argument Error when typing bundle i should not raise error
+  Failure/Error: expect(err).to be_empty
+   expected empty? to return true, got false
+ # ./spec/bundle_i_spec.rb:6:in `block (2 levels) in &amp;lt;top (required)&amp;gt;'
+
+Finished in 2.02 seconds
+1 example, 1 failure
+
+Failed examples:
+
+rspec ./spec/bundle_i_spec.rb:4 # Argument Error when typing bundle i should not raise error
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+  </entry>
   <entry>
     <title>Week 2 Day 6 Exceptions &amp; Error</title>
     <link rel="alternate" href="/2013/07/23/week2-day6.html"/>
@@ -162,62 +224,6 @@ practice speaking your code outloud with other people, do fake interviews to get
 
 &lt;p&gt;Performed the steps and made the Cheat Sheet - &lt;a href="http://localhost:4567/cheatsheets/pull.html"&gt;Pull Request Cheat Sheet&lt;/a&gt;&lt;/p&gt;
 
-</content>
-  </entry>
-  <entry>
-    <title>Git Branches &amp;  GitHub Pull Requests</title>
-    <link rel="alternate" href="/2013/07/17/pull-requests.html"/>
-    <id>/2013/07/17/pull-requests.html</id>
-    <published>2013-07-17T07:00:00Z</published>
-    <updated>2013-07-17T07:00:00Z</updated>
-    <author>
-      <name>RGSoCBundler</name>
-    </author>
-    <content type="html">&lt;h1 id="git-branches--github-pull-requests"&gt;Git Branches &amp;amp; GitHub Pull Requests&lt;/h1&gt;
-
-&lt;h2 id="git-branches"&gt;Git Branches&lt;/h2&gt;
-
-&lt;h3 id="peepcodehttpspeepcodecom"&gt;&lt;a href="https://peepcode.com/"&gt;Peepcode&lt;/a&gt;&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://peepcode.com/products/git"&gt;Git Screencast&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://peepcode.com/products/git-internals-pdf"&gt;Git Internals&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id="pro-git-chapter-3-git-branchinghttpgit-scmcombookengit-branching"&gt;&lt;a href="http://git-scm.com/book/en/Git-Branching"&gt;Pro Git Chapter 3 Git Branching&lt;/a&gt;&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="http://git-scm.com/book/en/Git-Branching-What-a-Branch-Is"&gt;3.1 Git Branching - What a Branch Is&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://git-scm.com/book/en/Git-Branching-Basic-Branching-and-Merging"&gt;3.2 Git Branching - Basic Branching and Merging&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://git-scm.com/book/en/Git-Branching-Branch-Management"&gt;3.3 Git Branching - Branch Management&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://git-scm.com/book/en/Git-Branching-Branching-Workflows"&gt;3.4 Git Branching - Branching Workflows&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://git-scm.com/book/en/Git-Branching-Remote-Branches"&gt;3.5 Git Branching - Remote Branches&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://git-scm.com/book/en/Git-Branching-Rebasing"&gt;3.6 Git Branching - Rebasing&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://git-scm.com/book/en/Git-Branching-Summary"&gt;3.7 Git Branching - Summary&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id="github-pull-requests"&gt;GitHub Pull Requests&lt;/h2&gt;
-
-&lt;h3 id="github-help-collaboratinghttpshelpgithubcomcategories63articles"&gt;&lt;a href="https://help.github.com/categories/63/articles"&gt;GitHub Help: Collaborating&lt;/a&gt;&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://help.github.com/articles/using-pull-requests"&gt;Using Pull Requests&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://help.github.com/articles/creating-a-pull-request"&gt;Creating a pull request&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://help.github.com/articles/merging-a-pull-request"&gt;Merging a pull request&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://help.github.com/articles/closing-a-pull-request"&gt;Closing a pull request&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://help.github.com/articles/tidying-up-pull-requests"&gt;Tidying up Pull Requests&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://help.github.com/articles/syncing-a-fork"&gt;Syncing a fork&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://help.github.com/articles/issue-attachments"&gt;Issue attachments&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://help.github.com/articles/adding-commit-comments"&gt;Adding commit comments&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://help.github.com/articles/checking-out-pull-requests-locally"&gt;Checking out Pull Requests locally&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id="other"&gt;Other&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="http://scottchacon.com/2011/08/31/github-flow.html"&gt;GitHub Flow by Scott Chacon&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://zachholman.com/talk/how-github-uses-github-to-build-github/"&gt;How GitHub Uses GitHub to Build GitHub by Zach Holman&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </content>
   </entry>
   <entry>

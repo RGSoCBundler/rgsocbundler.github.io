@@ -59,49 +59,57 @@
         <div class="span9">
           <div class="row-fluid">
             <div id="main" role="main" class="well">
-              <h2 id="proper-github-workflow">Proper Github Workflow</h2>
+              <h1 id="week-2-day-7">Week 2 Day 7</h1>
 
-<p><img src="https://bundler.campfirenow.com/room/566068/uploads/4699656/GitHub-Diagram.png" /></p>
+<h2 id="rspec">RSpec</h2>
 
-<h4 id="fork-the-repo-original-repo-you-want-to-work-on-to-your-github-account-repo">Fork the Repo (original repo) you want to work on to your Github account repo</h4>
-<pre><code>Press the Fork button (which is on Github.com)
+<h3 id="what-we-did-and-learned">What We Did and Learned</h3>
+<p>We continued by reading the <a href="https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers/raise-error-matcher">RSpec Expectations</a> for syntax and writing a test to fail when typing <code>bundle i</code> it should not raise an error. However, neither of us could get our test to fail, which is what we want.</p>
+
+<p>We also did not know what and where <code>Bundler.ui.error</code> does. We learned how to quickly search for code in files by either using the tool ack or using the commandline <a href="http://www.cyberciti.biz/faq/howto-use-grep-command-in-linux-unix/">grep</a>.</p>
+
+<p><code>grep -r "def ui" .</code></p>
+
+<p>-r is short for recursive. This searches within the current directory and all directories within it with the words "def ui."</p>
+
+<p>Jessica explained recursion. It is called recursion because it calls itself. One calls one and the return is the basecase.</p>
+
+<pre><code>def one(any_int)
+  return any_int if any_int == 1
+  one(any_int - 1)
+end
 </code></pre>
 
-<p>https://help.github.com/articles/fork-a-repo</p>
+<p>We also learned that in Ruby convention, the name of the Class is the filename. Classes are <code>CamelCaps</code> and files are <code>snake_case</code>. Example: Class UI would have a file called ui.rb</p>
 
-<p>Explanation: It creates a copy of the Repo to your account.</p>
+<p>Our coach, Jessica, poked around the specs in Bundler and found the Bundler test is handled differently. She directed us to how our test should look like. After implementing the correct test, we got our test to fail and we are working on getting it to pass.</p>
 
-<h4 id="clone-the-repo-on-your-github-account-to-local">Clone the Repo on your Github account to local</h4>
-<pre><code>git clone https://github.com/RGSoCBundler/rgsocbundler.github.io.git
+<pre><code>require 'spec_helper'
+
+describe "Argument Error when typing bundle i" do
+  it "should not raise error" do
+    bundle "i"
+    expect(err).to be_empty
+  end
+end
 </code></pre>
 
-<h4 id="link-the-original-repo-to-your-local-repo-so-you-can-pull-the-latest-updates-and-make-sure-your-copy-is-in-sync-with-the-original-repo">Link the original repo to your local repo so you can pull the latest updates and make sure your copy is in sync with the original repo</h4>
-<pre><code>cd rgsocbundler.github.io
-git remote add upstream https://github.com/RGSoCBundler/rgsocbundler.github.io.git
+<p><br /></p>
+
+<pre><code>Failures:
+
+1) Argument Error when typing bundle i should not raise error
+  Failure/Error: expect(err).to be_empty
+   expected empty? to return true, got false
+ # ./spec/bundle_i_spec.rb:6:in `block (2 levels) in &lt;top (required)&gt;'
+
+Finished in 2.02 seconds
+1 example, 1 failure
+
+Failed examples:
+
+rspec ./spec/bundle_i_spec.rb:4 # Argument Error when typing bundle i should not raise error
 </code></pre>
-
-<h4 id="create-feature-branch">Create Feature Branch</h4>
-<pre><code>git checkout -b branch-name
-
-(example: git checkout -b pull-cheatsheet)
-</code></pre>
-
-<p>(The git checkout -b command automatically switches to the branch)</p>
-
-<h4 id="check-that-you-are-on-the-correct-branch-make-sure-there-is-an-asterik-next-to-the-branch-name">Check that you are on the correct branch. Make sure there is an asterik next to the branch name.</h4>
-<pre><code>git branch
-</code></pre>
-
-<h4 id="make-your-changesfixesfeatures-and-commit-it-to-origin-the-repo-on-your-github-account">Make Your Changes/Fixes/Features and commit it to origin (the repo on your github account)</h4>
-<pre><code>git add .
-git commit -m "write what changes you made"
-git push origin pull-cheatsheet
-</code></pre>
-
-<h4 id="send-a-pull-request---from-origin-to-upstream-your-account-repo-to-the-original-repo">Send a Pull Request - from origin to upstream (your account repo to the original repo)</h4>
-<pre><code>Click Compare &amp; pull request or the Green button on your Github repository
-</code></pre>
-
 
             </div>
           </div>

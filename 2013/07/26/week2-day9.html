@@ -59,18 +59,34 @@
         <div class="span9">
           <div class="row-fluid">
             <div id="main" role="main" class="well">
-              <h1>Archive for
-  
-    Jul 22 2013
-  
-</h1>
+              <h1 id="week-2-day-9">Week 2 Day 9</h1>
 
+<h2 id="testing-testing-1-2-3">Testing Testing 1, 2, 3</h2>
 
-<ul>
-  
-    <li><a href="/2013/07/22/week2-day5.html">Week 2 Day 5</a> <span>Jul 22</span></li>
-  
-</ul>
+<p>To easily make comments on our progress, we sent pull requests to our coach’s Bundler repo on Github containing our new code and test spec.</p>
+
+<h3 id="pass-the-1st-test">Pass The 1st Test</h3>
+<p>The goal was to get our first test to pass, which was to get an empty field when we run <code>dbundle i</code> rather than a stacktrace.</p>
+
+<p>We read articles on <a href="http://rubylearning.com/satishtalim/ruby_exceptions.html">Ruby Exceptions</a> and <a href="http://www.mikeperham.com/2012/03/03/the-perils-of-rescue-exception/">The Perils of rescue Exception</a>. We spent the day figuring out the importance of the Ruby exception hierarchy and that the order of the exception within the file also mattered.</p>
+
+<p>The first step was to use the correct Exception class. Our stacktrace displayed the error as an ArgumentError, which is a descendent of Exception. We need to be more specific of what error we are capturing because if we use <code>rescue Exception</code> or <code>rescue StandardError</code>, it will potentially catch other errors.</p>
+
+<p><img src="/images/bundler/ruby-exception-hierarchy.jpg" alt="Ruby exception hierarchy" /></p>
+
+<p>If the rescue code gets added to the bottom of the file, the test will not pass. We have to add it above the other rescue's. The order/hierarchy matters.</p>
+
+<p><img src="/images/bundler/First-Test-Friendly-Error.png" alt="First Test of Friendly Errors" /></p>
+
+<p>To manually see that it works, we type in <code>dbundle i</code> in our rgsocbundler directory and wahlah. Nothing gets displayed. Before, when we ran <code>dbundle i</code>, we got a stacktrace.</p>
+
+<h3 id="pass-the-second-test">Pass the Second Test</h3>
+<p>The next step, we created our second test to print out a message. When we type <code>dbundle i</code>, we want it to print out a message.</p>
+
+<p>We used <a href="https://github.com/bundler/bundler/blob/master/spec/update/gems_spec.rb#L147-L152">this file</a> for reference on the variables used for the error and output and rspec syntax (the correct term is <a href="https://www.relishapp.com/rspec/rspec-expectations/v/2-14/docs/built-in-matchers">matcher</a>).</p>
+
+<h3 id="more-learning">More Learning</h3>
+<p>We just wrote some Integration Tests. Now we started reading what are Integration Tests and Unit Tests and what is the difference between the two of them?</p>
 
 
             </div>

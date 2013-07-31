@@ -59,18 +59,44 @@
         <div class="span9">
           <div class="row-fluid">
             <div id="main" role="main" class="well">
-              <h1>Archive for
-  
-    Jul 22 2013
-  
-</h1>
+              <h1 id="week-3-day-10">Week 3 Day 10</h1>
 
+<h2 id="unit-tests-vs-integrations-tests">Unit Tests vs. Integrations Tests</h2>
 
-<ul>
-  
-    <li><a href="/2013/07/22/week2-day5.html">Week 2 Day 5</a> <span>Jul 22</span></li>
-  
-</ul>
+<h3 id="unit-tests">Unit Tests</h3>
+<blockquote>
+  <blockquote>
+    <p>A unit test is a test written by the programmer to verify that a relatively small piece of code is doing what it is intended to do. They are narrow in scope, they should be easy to write and execute, and their effectiveness depends on what the programmer considers to be useful. The tests are intended for the use of the programmer, they are not directly useful to anybody else, though, if they do their job, testers and users downstream should benefit from seeing less bugs. -<a href="http://stackoverflow.com/questions/5357601/whats-the-difference-between-unit-tests-and-integration-tests">Nathan Hughes</a></p>
+  </blockquote>
+</blockquote>
+
+<h3 id="integration-tests">Integration Tests</h3>
+<blockquote>
+  <blockquote>
+    <p>An integration test is done to demonstrate that different pieces of the system work together. Integration tests cover whole applications, and they require much more effort to put together. They usually require resources like database instances and hardware to be allocated for them. The integration tests do a more convincing job of demonstrating the system works (especially to non-programmers) than a set of unit tests can, at least to the extent the integration test environment resembles production.<br />
+Actually "integration test" gets used for a wide variety of things, from full-on system tests against an environment made to resemble production to any test that uses a resource (like a database or queue) that isn't mocked out.</p>
+  </blockquote>
+</blockquote>
+
+<p>We created a Unit Test. <code>spec/bundler/friendly_errors_spec.rb</code></p>
+
+<pre><code>require "spec_helper"
+require "bundler/friendly_errors"
+
+describe "friendly error" do
+  it "rescues Argument Errors" do
+   expect { Bundler.with_friendly_errors{ raise ArgumentError } }.not_to raise_error()
+  end
+end
+</code></pre>
+
+<h2 id="diy-gem">DIY Gem</h2>
+<p>We created our own Lorem Ipsum Generator Gem with the help of this RailsCast 
+<a href="http://railscasts.com/episodes/245-new-gem-with-bundler">#245 New Gem with Bundler</a></p>
+
+<h3 id="more-bash-aliaseshttpwwwtechrepubliccomblog10-thingscut-down-on-linux-command-line-typing-with-these-10-handy-bash-aliases"><a href="http://www.techrepublic.com/blog/10-things/cut-down-on-linux-command-line-typing-with-these-10-handy-bash-aliases/">More Bash Aliases</a></h3>
+
+<p>Jen changed her .bashrc to have shortcuts to sign into the Bundler and Rails Girls files. Now she can use "rg" instead of "cd Desktop/railsgirls/rgsocbundler.github.io/" and "bu" instead of "cd /Desktop/railsgirls/bundler". Way shorter!</p>
 
 
             </div>

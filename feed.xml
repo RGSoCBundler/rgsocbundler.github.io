@@ -5,7 +5,7 @@
   <id>http://rgsocbundler.github.io/</id>
   <link href="http://rgsocbundler.github.io/"/>
   <link href="http://rgsocbundler.github.io/feed.xml" rel="self"/>
-  <updated>2013-07-25T00:23:00Z</updated>
+  <updated>2013-07-31T00:21:00Z</updated>
   <author>
     <name>Jen Diamond</name>
   </author>
@@ -15,6 +15,225 @@
   <author>
     <name>Jessica Suttles</name>
   </author>
+  <entry>
+    <title>Week 3 Day 11 It's Hammertime</title>
+    <link rel="alternate" href="/2013/07/30/week3-day11.html"/>
+    <id>/2013/07/30/week3-day11.html</id>
+    <published>2013-07-31T00:21:00Z</published>
+    <updated>2013-07-31T00:21:00Z</updated>
+    <author>
+      <name>RGSoCBundler</name>
+    </author>
+    <content type="html">&lt;h1 id="week-3-day-11"&gt;Week 3 Day 11&lt;/h1&gt;
+
+&lt;h2 id="its-hammertime"&gt;It's Hammertime&lt;/h2&gt;
+&lt;p&gt;We are talking about the Rubygem &lt;a href="http://whatisthor.com/"&gt;Thor&lt;/a&gt;, of course.&lt;/p&gt;
+
+&lt;h3 id="what-we-did"&gt;What We Did&lt;/h3&gt;
+&lt;p&gt;Thor is a &lt;a href="http://rubygems.org/gems/thor"&gt;RubyGem&lt;/a&gt; that is used to replace rake, sake, and rubigen. However, that is not how Bundler uses it.&lt;/p&gt;
+
+&lt;p&gt;We focused on the Command Line Interface (CLI) aspect of Thor.&lt;/p&gt;
+
+&lt;p&gt;Yesterday, we created a new gem by following the now dated &lt;a href="http://railscasts.com/episodes/245-new-gem-with-bundler"&gt;RailsCast&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Today, we added Thor to our gem to build a command-line interface by reading &lt;a href="http://whatisthor.com/"&gt;What is Thor&lt;/a&gt; and &lt;a href="http://blog.paracode.com/2012/05/17/building-your-tools-with-thor/"&gt;Building your tools with Thor&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;For example, we would be creating a command to run our gem like &lt;code&gt;rails new&lt;/code&gt; would create a Rails app or running &lt;code&gt;bundle install&lt;/code&gt; would install the rubygems you need to run your app.&lt;/p&gt;
+
+&lt;h4 id="how-to-run-your-unpublished-gem"&gt;How to Run Your Unpublished Gem&lt;/h4&gt;
+&lt;p&gt;According to Andre Arko, there are 3 ways to run it.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code&gt;ruby -I lib bin/gem_command_name&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code&gt;bundle exec bin/gem_command_name&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code&gt;bundle exec gem_command_name&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="what-we-learned-from-our-boo-boos"&gt;What We Learned from our Boo Boo’s?&lt;/h3&gt;
+
+&lt;p&gt;Initially, Joyce couldn't get &lt;code&gt;bundle exec bin/gem_command_name&lt;/code&gt; to work because the &lt;code&gt;bin/gem_command_name&lt;/code&gt; file was missing the shebang &lt;code&gt;#!/usr/bin/env ruby&lt;/code&gt; at the very top of the file.&lt;/p&gt;
+
+&lt;p&gt;For the last command, we couldn't get &lt;code&gt;bundle excec gem_command_name&lt;/code&gt; to work and we don't know why.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Week3 Day10</title>
+    <link rel="alternate" href="/2013/07/29/week3-day10.html"/>
+    <id>/2013/07/29/week3-day10.html</id>
+    <published>2013-07-30T01:30:00Z</published>
+    <updated>2013-07-30T01:30:00Z</updated>
+    <author>
+      <name>RGSoCBundler</name>
+    </author>
+    <content type="html">&lt;h1 id="week-3-day-10"&gt;Week 3 Day 10&lt;/h1&gt;
+
+&lt;h2 id="unit-tests-vs-integrations-tests"&gt;Unit Tests vs. Integrations Tests&lt;/h2&gt;
+
+&lt;h3 id="unit-tests"&gt;Unit Tests&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;blockquote&gt;
+    &lt;p&gt;A unit test is a test written by the programmer to verify that a relatively small piece of code is doing what it is intended to do. They are narrow in scope, they should be easy to write and execute, and their effectiveness depends on what the programmer considers to be useful. The tests are intended for the use of the programmer, they are not directly useful to anybody else, though, if they do their job, testers and users downstream should benefit from seeing less bugs. -&lt;a href="http://stackoverflow.com/questions/5357601/whats-the-difference-between-unit-tests-and-integration-tests"&gt;Nathan Hughes&lt;/a&gt;&lt;/p&gt;
+  &lt;/blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id="integration-tests"&gt;Integration Tests&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;blockquote&gt;
+    &lt;p&gt;An integration test is done to demonstrate that different pieces of the system work together. Integration tests cover whole applications, and they require much more effort to put together. They usually require resources like database instances and hardware to be allocated for them. The integration tests do a more convincing job of demonstrating the system works (especially to non-programmers) than a set of unit tests can, at least to the extent the integration test environment resembles production.&lt;br /&gt;
+Actually "integration test" gets used for a wide variety of things, from full-on system tests against an environment made to resemble production to any test that uses a resource (like a database or queue) that isn't mocked out.&lt;/p&gt;
+  &lt;/blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;We created a Unit Test. &lt;code&gt;spec/bundler/friendly_errors_spec.rb&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;require "spec_helper"
+require "bundler/friendly_errors"
+
+describe "friendly error" do
+  it "rescues Argument Errors" do
+   expect { Bundler.with_friendly_errors{ raise ArgumentError } }.not_to raise_error()
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id="diy-gem"&gt;DIY Gem&lt;/h2&gt;
+&lt;p&gt;We created our own Lorem Ipsum Generator Gem with the help of this RailsCast 
+&lt;a href="http://railscasts.com/episodes/245-new-gem-with-bundler"&gt;#245 New Gem with Bundler&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id="more-bash-aliaseshttpwwwtechrepubliccomblog10-thingscut-down-on-linux-command-line-typing-with-these-10-handy-bash-aliases"&gt;&lt;a href="http://www.techrepublic.com/blog/10-things/cut-down-on-linux-command-line-typing-with-these-10-handy-bash-aliases/"&gt;More Bash Aliases&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;Jen changed her .bashrc to have shortcuts to sign into the Bundler and Rails Girls files. Now she can use "rg" instead of "cd Desktop/railsgirls/rgsocbundler.github.io/" and "bu" instead of "cd /Desktop/railsgirls/bundler". Way shorter!&lt;/p&gt;
+
+</content>
+  </entry>
+  <entry>
+    <title>Week 2 Day 9 Testing Testing 1, 2, 3</title>
+    <link rel="alternate" href="/2013/07/26/week2-day9.html"/>
+    <id>/2013/07/26/week2-day9.html</id>
+    <published>2013-07-27T01:41:00Z</published>
+    <updated>2013-07-27T01:41:00Z</updated>
+    <author>
+      <name>RGSoCBundler</name>
+    </author>
+    <content type="html">&lt;h1 id="week-2-day-9"&gt;Week 2 Day 9&lt;/h1&gt;
+
+&lt;h2 id="testing-testing-1-2-3"&gt;Testing Testing 1, 2, 3&lt;/h2&gt;
+
+&lt;p&gt;To easily make comments on our progress, we sent pull requests to our coach’s Bundler repo on Github containing our new code and test spec.&lt;/p&gt;
+
+&lt;h3 id="pass-the-1st-test"&gt;Pass The 1st Test&lt;/h3&gt;
+&lt;p&gt;The goal was to get our first test to pass, which was to get an empty field when we run &lt;code&gt;dbundle i&lt;/code&gt; rather than a stacktrace.&lt;/p&gt;
+
+&lt;p&gt;We read articles on &lt;a href="http://rubylearning.com/satishtalim/ruby_exceptions.html"&gt;Ruby Exceptions&lt;/a&gt; and &lt;a href="http://www.mikeperham.com/2012/03/03/the-perils-of-rescue-exception/"&gt;The Perils of rescue Exception&lt;/a&gt;. We spent the day figuring out the importance of the Ruby exception hierarchy and that the order of the exception within the file also mattered.&lt;/p&gt;
+
+&lt;p&gt;The first step was to use the correct Exception class. Our stacktrace displayed the error as an ArgumentError, which is a descendent of Exception. We need to be more specific of what error we are capturing because if we use &lt;code&gt;rescue Exception&lt;/code&gt; or &lt;code&gt;rescue StandardError&lt;/code&gt;, it will potentially catch other errors.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/images/bundler/ruby-exception-hierarchy.jpg" alt="Ruby exception hierarchy" /&gt;&lt;/p&gt;
+
+&lt;p&gt;If the rescue code gets added to the bottom of the file, the test will not pass. We have to add it above the other rescue's. The order/hierarchy matters.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/images/bundler/First-Test-Friendly-Error.png" alt="First Test of Friendly Errors" /&gt;&lt;/p&gt;
+
+&lt;p&gt;To manually see that it works, we type in &lt;code&gt;dbundle i&lt;/code&gt; in our rgsocbundler directory and wahlah. Nothing gets displayed. Before, when we ran &lt;code&gt;dbundle i&lt;/code&gt;, we got a stacktrace.&lt;/p&gt;
+
+&lt;h3 id="pass-the-second-test"&gt;Pass the Second Test&lt;/h3&gt;
+&lt;p&gt;The next step, we created our second test to print out a message. When we type &lt;code&gt;dbundle i&lt;/code&gt;, we want it to print out a message.&lt;/p&gt;
+
+&lt;p&gt;We used &lt;a href="https://github.com/bundler/bundler/blob/master/spec/update/gems_spec.rb#L147-L152"&gt;this file&lt;/a&gt; for reference on the variables used for the error and output and rspec syntax (the correct term is &lt;a href="https://www.relishapp.com/rspec/rspec-expectations/v/2-14/docs/built-in-matchers"&gt;matcher&lt;/a&gt;).&lt;/p&gt;
+
+&lt;h3 id="more-learning"&gt;More Learning&lt;/h3&gt;
+&lt;p&gt;We just wrote some Integration Tests. Now we started reading what are Integration Tests and Unit Tests and what is the difference between the two of them?&lt;/p&gt;
+
+</content>
+  </entry>
+  <entry>
+    <title>Week 2 Day 8 Bash</title>
+    <link rel="alternate" href="/2013/07/25/week2-day8.html"/>
+    <id>/2013/07/25/week2-day8.html</id>
+    <published>2013-07-26T00:23:00Z</published>
+    <updated>2013-07-26T00:23:00Z</updated>
+    <author>
+      <name>RGSoCBundler</name>
+    </author>
+    <content type="html">&lt;h1 id="week-2-day-8"&gt;Week 2 Day 8&lt;/h1&gt;
+
+&lt;h2 id="bash"&gt;Bash&lt;/h2&gt;
+
+&lt;h3 id="reproduce-the-bundle-i-error-for-the-bundler-repo"&gt;Reproduce the &lt;strong&gt;bundle i&lt;/strong&gt; error for the Bundler Repo&lt;/h3&gt;
+
+&lt;h4 id="our-quandary"&gt;Our Quandary&lt;/h4&gt;
+
+&lt;p&gt;How are we to reproduce the &lt;code&gt;bundle i&lt;/code&gt; error for the Bundler repo we cloned.&lt;/p&gt;
+
+&lt;p&gt;How would we be able to see if it fixed the error (instead of stacktrace, it displays a friendly error message) when we type bundle i?&lt;/p&gt;
+
+&lt;p&gt;For other rubygems, we would use bundler and specify in the gemfile. Then run, bundle install or bundle install gemname.&lt;/p&gt;
+
+&lt;h4 id="our-solution"&gt;Our Solution&lt;/h4&gt;
+
+&lt;p&gt;To use our cloned bundler on the commandline, our mentor, Andre Arko, said “back in the dark pre-bundler ages you always had to do this: ruby -I/path/to/gem/lib -S /path/to/gem/bin/foo.”&lt;br /&gt;
+The &lt;code&gt;-I&lt;/code&gt; tells Ruby where to load the library scripts. (Looked up -I in &lt;code&gt;man ruby&lt;/code&gt;)&lt;br /&gt;
+We created an alias named dbundle in our bash profile. (.bashrc or .bash_profile). It is a hidden file in your home directory. Sooo, you have to run &lt;code&gt;ls -a&lt;/code&gt; to see it.&lt;br /&gt;
+alias dbundle='ruby -I ~/sw/gems/bundler/lib ~/sw/gems/bundler/bin/bundle'
+This way we only have to type in dbundle rather than that long line every single time.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Put this into you .bashrc file (Make sure you have the right path to your file.)&lt;/p&gt;
+
+    &lt;pre&gt;&lt;code&gt; alias dbundle='ruby -I ~/Desktop/railsgirls/bundler/lib ~/Desktop/railsgirls/bundler/bin/bundle'
+&lt;/code&gt;&lt;/pre&gt;
+
+    &lt;p&gt;You can locate the .bashrc file by running:&lt;/p&gt;
+
+    &lt;pre&gt;&lt;code&gt; $ ls -a
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Now you can run this command in any directory with a Gemfile&lt;/p&gt;
+
+    &lt;pre&gt;&lt;code&gt; $ dbundle i
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id="our-struggles"&gt;Our Struggles&lt;/h3&gt;
+
+&lt;p&gt;Setting up the alias we got Bundler::GemfileNotFound
+In order for our alias to work, we have to run dbundle inside a directory that has a Gemfile. For example, our rgsocbundler.git.io blog has a Gemfile. We can run dbundle inside that directory. Now run &lt;code&gt;dbundle&lt;/code&gt; inside our rgsocbundler directory and wahlah! It works. And if run &lt;code&gt;dbundle i&lt;/code&gt;, it reproduces the error (stacktrace).&lt;/p&gt;
+
+&lt;h3 id="notes"&gt;Notes:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;source ~/.bashrc&lt;/strong&gt; - reloads the bash file&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;-I directory&lt;/strong&gt; Used to tell Ruby where to load the library scripts.
+    Directory path will be added to the load-path variable
+    ($:).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;-S&lt;/strong&gt; Makes Ruby use the PATH environment variable to search for script,unless if its name begins with a slash.  This is used to emulate #! on machines that don't support it, in the following manner:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#! /usr/local/bin/ruby
+# This line makes the next one a comment in Ruby \
+exec /usr/local/bin/ruby -S $0 $*
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;git remote -v&lt;/strong&gt; will display your remote and origin paths&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="other-stuff-we-did"&gt;Other Stuff We Did&lt;/h2&gt;
+
+&lt;p&gt;Based on the comments, we made changes and fixes to our pull requests that were submitted.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Week 2 Day 7 RSpec</title>
     <link rel="alternate" href="/2013/07/24/week2-day7.html"/>
@@ -86,174 +305,48 @@ rspec ./spec/bundle_i_spec.rb:4 # Argument Error when typing bundle i should not
     <author>
       <name>RGSoCBundler</name>
     </author>
-    <content type="html">&lt;h2 id="what-we-did"&gt;What we did.&lt;/h2&gt;
+    <content type="html">&lt;h1 id="week-2-day-6"&gt;Week 2 Day 6&lt;/h1&gt;
 
-&lt;h3 id="we-are-still-trying-to-get-out-first-bundler-pull-request-merged"&gt;We are still trying to get out first Bundler pull request merged.&lt;/h3&gt;
-&lt;p&gt;We stripped down the "Bundler for Development" section on the Bundler Contribute Page. We added the entirety of it on our Team Bundler Website in the Cheatsheet section and on the Rails Girls Guides&lt;/p&gt;
-
-&lt;p&gt;Struggled with unwanted white space. Joyce used travis-ci.org and I modified my .gvimrc&lt;/p&gt;
-
-&lt;p&gt;Read about exceptions in the Pragmatic Programmers' Guide / Pickaxe.&lt;/p&gt;
-
-&lt;p&gt;Then we started to figure out the errors when you try to do the bundle i command. Which gives you a stack trace instead of an error. We realized the the class is ArgumentError and that it doesn't understand whether you want to  bundle init bundle inject or bundle install. We worked in the friendly_errors file and tried to figure out how to raise the right exception. We also created an rspec test for it. We will be continuing to work on this tomorrow.&lt;/p&gt;
-
-&lt;h2 id="what-we-learned-from-our-boo-boos"&gt;What we Learned from our Boo Boo’s?&lt;/h2&gt;
-
-&lt;h3 id="amending-commit-messages-caused-push-rejection"&gt;Amending Commit Messages Caused Push Rejection&lt;/h3&gt;
-&lt;p&gt;Joyce pushed a commit and then wanted to change the commit message
-This caused a push rejection.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;To https://github.com/joyicecloud/rgsocbundler.github.io.git
-! [rejected]        blog-log -&amp;gt; blog-log (non-fast-forward)
-error: failed to push some refs to 'https://github.com/joyicecloud/rgsocbundler.github.io.git'
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Amending a commit that you already pushed creates a new commit. If you check the commit SHA, the numbers are different. That means you will need to force push because it rewrites the commit history.&lt;/p&gt;
-
-&lt;p&gt;It is best to avoid amending commits that you have already pushed. &lt;strong&gt;Make amends before pushing the commit.&lt;/strong&gt;&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Week 2 Day 5</title>
-    <link rel="alternate" href="/2013/07/22/week2-day5.html"/>
-    <id>/2013/07/22/week2-day5.html</id>
-    <published>2013-07-23T01:58:00Z</published>
-    <updated>2013-07-23T01:58:00Z</updated>
-    <author>
-      <name>RGSoCBundler</name>
-    </author>
-    <content type="html">&lt;h1 id="week-2-day-5"&gt;Week 2 Day 5&lt;/h1&gt;
-
-&lt;h2 id="first-pull-request-to-bundler"&gt;First Pull Request to Bundler!!!&lt;/h2&gt;
+&lt;h2 id="bundler-issue--1---bundle-i"&gt;Bundler Issue # 1 - &lt;em&gt;bundle i&lt;/em&gt;&lt;/h2&gt;
 
 &lt;h3 id="what-we-did"&gt;What We Did&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Reviewed how to make changes by branching and making pull requests&lt;/li&gt;
-  &lt;li&gt;Troubleshooted what happened when files seemed to disappear, or why we couldn’t push our files.&lt;/li&gt;
-  &lt;li&gt;Setup Bundler for development&lt;/li&gt;
-  &lt;li&gt;Wrote documentation on How to Setup Bundler for Development&lt;/li&gt;
-  &lt;li&gt;Submitted a Pull Request for our documentation on How to Setup Bundler for development&lt;/li&gt;
-  &lt;li&gt;Received comments from Bundler core team&lt;/li&gt;
-  &lt;li&gt;Made updates to the documentation and resubmitted with the updates&lt;/li&gt;
-&lt;/ul&gt;
 
-&lt;h3 id="what-we-learned-from-our-boo-boos"&gt;What We Learned from our Boo Boo’s?&lt;/h3&gt;
 &lt;ul&gt;
-  &lt;li&gt;We learned if you are going to create new branches, make sure you are on the master branch! Or else, you will end up creating branches within another branch.&lt;/li&gt;
-  &lt;li&gt;Make sure your remote is pulling upstream from the github repo you forked not from your own github repo. &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;The command to show the remotes&lt;/p&gt;
-
-    &lt;p&gt;&lt;code&gt;git remote -v&lt;/code&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;We are still trying to get out first Bundler pull request merged.&lt;/strong&gt;
+We stripped down the "Bundler for Development" section on the Bundler Contribute Page. We added the entirety of it on our Team Bundler Website in the Cheatsheet section and on the Rails Girls Guides&lt;/p&gt;
   &lt;/li&gt;
-  &lt;li&gt;Merge conflict - have to update our local repository to have the same content as the remote repository on github.com. Use git fetch and git merge OR git pull&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Struggled with unwanted white space. Joyce used travis-ci.org and I modified my .gvimrc&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Read about exceptions in the Pragmatic Programmers' Guide / Pickaxe.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;We started to work on our first issue in Bundler.&lt;/strong&gt; We are trying to figure out the errors caused when you try to do the bundle i command. Which gives you a stack trace instead of an error. We realized the the class is ArgumentError and that it doesn't understand whether you want to  bundle init bundle inject or bundle install. We worked in the friendly_errors file and tried to figure out how to raise the right exception. We also created an rspec test for it. We will be continuing to work on this tomorrow.&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Week 1 Day 4 First Friday</title>
-    <link rel="alternate" href="/2013/07/19/week1-day4.html"/>
-    <id>/2013/07/19/week1-day4.html</id>
-    <published>2013-07-20T00:48:00Z</published>
-    <updated>2013-07-20T00:48:00Z</updated>
-    <author>
-      <name>RGSoCBundler</name>
-    </author>
-    <content type="html">&lt;h1 id="week-1-day-4-first-friday"&gt;Week 1 Day 4 First Friday&lt;/h1&gt;
 
-&lt;h3 id="thursday-night-workshop"&gt;Thursday Night Workshop&lt;/h3&gt;
+&lt;h3 id="what-we-learned-from-our-boo-boos"&gt;What we Learned from our Boo Boo’s?&lt;/h3&gt;
 
-&lt;p&gt;Thursday night, we attended the &lt;a href="http://www.meetup.com/Los-Angeles-Womens-Ruby-on-Rails-Group/events/124552602/"&gt;Los Angeles Women's Ruby on Rails Monthly Bash.&lt;/a&gt; At this month's workshop Hannah Howard presented a hands-on workshop on Active Record and Data Modeling. We created a music catalog consisting of four models: songs, artists, albums, and playlists. It was great seeing new and familiar faces at this month's Monthly Bash.
-Our team, &lt;a href="http://rgsocbundler.github.io/"&gt;Team Bundler&lt;/a&gt;, and &lt;a href="http://dysania.github.io/blog/"&gt;Team Dysania&lt;/a&gt; gave a brief introduction and updates on our learning.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Amending Commit Messages Caused Push Rejection
+Joyce pushed a commit and then wanted to change the commit message &lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;From the first RailsGirls LA back in April to now, it is amazing to see how everyone has been progressing.&lt;/p&gt;
+&lt;p&gt;This caused a push rejection.&lt;/p&gt;
 
-&lt;h3 id="friday"&gt;Friday&lt;/h3&gt;
-&lt;p&gt;Jessica was sick today so we used the Bundler campfire chat we setup previously for collaboration.&lt;/p&gt;
+&lt;pre&gt; To https://github.com/joyicecloud/rgsocbundler.github.io.git
+    ! [rejected]        blog-log -&amp;gt; blog-log (non-fast-forward)
+    error: failed to push some refs to 'https://github.com/joyicecloud/rgsocbundler.github.io.git&lt;/pre&gt;
 
-&lt;h3 id="joyces-friday"&gt;Joyce's Friday&lt;/h3&gt;
-&lt;p&gt;I noticed our blog time was set as 0:00 and went to figure out how to display the correct time. In the configuration file, changed and set the timezone, the format of our blog URLs, and the type of file format to use (ex. markdown, erb) for our blog posts.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Amending a commit that you already pushed creates a new commit. If you check the commit SHA, the numbers are different.That means you will need to force push because it rewrites the commit history.
 
-&lt;p&gt;Initially, we were manually creating the file, but I discovered it can be simpified with this command:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;middleman article "title of your post"
+It is best to avoid amending commits that you ha
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Also added photos for each of us and added a Home icon next to RGSoC Bundler Team on the homepage!&lt;/p&gt;
-
-&lt;p&gt;Sent these off as Pull Requests.&lt;/p&gt;
-
-&lt;h3 id="jens-friday"&gt;Jen's Friday&lt;/h3&gt;
-
-&lt;p&gt;I went over to &lt;a href="https://generalassemb.ly/education?where=los-angeles"&gt;General Assembly&lt;/a&gt; today. They screened the &lt;a href="http://sheplusplus.stanford.edu/"&gt;She++ Film.&lt;/a&gt; It was informational and inspiring. But my favorite part of the day was the panel of women developers after the film. Chris Meaono, Crystal Rose, Erica, Cherise &amp;amp; Shirin. Ted from G.A. was the moderator. Jessica was supposed to be on the panel but she was sick.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;blockquote&gt;
-    &lt;p&gt;This short documentary collects research and inspirational pieces of Silicon Valley's unsung heroes to galvanize us to explore our potential as 'femgineers'. Written and directed by recent Stanford University good girls gone geek, Ayna Agarwal and Ellora Israni, she++: The Documentary encourages the future CEOs, the innovative engineers, the techies and the fuzzies, the sisters, cousins, and daughters, to break away from the stereotype into a revolutionary field. As technology is becoming increasingly ubiquitous, all demographics must harness new ideas to transform and empower technology. Think of what more 'femgineers' could do. - The Chic Geek&lt;/p&gt;
-  &lt;/blockquote&gt;
-&lt;/blockquote&gt;
-
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Key ideas:
-embrace failure, be passionate, be fearless, stay open to ideas, be a mentor, there are no hurdles&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Strategies for tech interviews:
-practice speaking your code outloud with other people, do fake interviews to get used to talking about your experience and the code.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;One of the questions was, How did you decide to work in tech? I realized that some of the panelists mentioned reasons that aligned with mine. I am a problem solver, I'm handy and like fixing things and making things better. I can visualize, organize and love lists.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Week 1 Day 3 Github Workflow</title>
-    <link rel="alternate" href="/2013/07/18/week1-day3.html"/>
-    <id>/2013/07/18/week1-day3.html</id>
-    <published>2013-07-18T07:00:00Z</published>
-    <updated>2013-07-18T07:00:00Z</updated>
-    <author>
-      <name>RGSoCBundler</name>
-    </author>
-    <content type="html">&lt;h1 id="week-1-day-3"&gt;Week 1 Day 3&lt;/h1&gt;
-
-&lt;h2 id="github-workflow"&gt;Github Workflow&lt;/h2&gt;
-&lt;p&gt;Combined the intricacies of Git Branching and Pull Requests together to form the proper Github Workflow&lt;/p&gt;
-
-&lt;p&gt;Performed the steps and made the Cheat Sheet - &lt;a href="http://localhost:4567/cheatsheets/pull.html"&gt;Pull Request Cheat Sheet&lt;/a&gt;&lt;/p&gt;
-
-</content>
-  </entry>
-  <entry>
-    <title>Week 1 Day 2 Chat and Git With It</title>
-    <link rel="alternate" href="/2013/07/17/week1-day2.html"/>
-    <id>/2013/07/17/week1-day2.html</id>
-    <published>2013-07-17T07:00:00Z</published>
-    <updated>2013-07-17T07:00:00Z</updated>
-    <author>
-      <name>RGSoCBundler</name>
-    </author>
-    <content type="html">&lt;h1 id="week-1-day-2"&gt;Week 1 Day 2&lt;/h1&gt;
-
-&lt;h2 id="chatty-kathy"&gt;Chatty Kathy&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;Learned about IRC and setup IRC chat to #rgsoc-teams and #bundler&lt;/li&gt;
-  &lt;li&gt;Joined the bundler Campfire chat for team collaboration&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id="git-with-it"&gt;Git With It&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Created new issues on Github&lt;/li&gt;
-  &lt;li&gt;Fixed issues on our blog&lt;/li&gt;
-  &lt;li&gt;Closed issues&lt;/li&gt;
-  &lt;li&gt;Watched Peepcode Git Screencast&lt;/li&gt;
-  &lt;li&gt;Learn aboutz Branching and Collaborating&lt;/li&gt;
-  &lt;li&gt;Created Branches&lt;/li&gt;
-  &lt;li&gt;Created, Merged, Closed Pull Requests&lt;/li&gt;
-  &lt;li&gt;Commenting&lt;/li&gt;
+  &lt;li&gt;Before buying broth read the package to see if it is chicken broth or vegetable broth. The packages are practically identical. :)&lt;/li&gt;
 &lt;/ul&gt;
 
 </content>

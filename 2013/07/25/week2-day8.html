@@ -59,19 +59,77 @@
         <div class="span9">
           <div class="row-fluid">
             <div id="main" role="main" class="well">
-              <h1>Archive for
-  
-    Jul 22 2013
-  
-</h1>
+              <h1 id="week-2-day-8">Week 2 Day 8</h1>
 
+<h2 id="bash">Bash</h2>
+
+<h3 id="reproduce-the-bundle-i-error-for-the-bundler-repo">Reproduce the <strong>bundle i</strong> error for the Bundler Repo</h3>
+
+<h4 id="our-quandary">Our Quandary</h4>
+
+<p>How are we to reproduce the <code>bundle i</code> error for the Bundler repo we cloned.</p>
+
+<p>How would we be able to see if it fixed the error (instead of stacktrace, it displays a friendly error message) when we type bundle i?</p>
+
+<p>For other rubygems, we would use bundler and specify in the gemfile. Then run, bundle install or bundle install gemname.</p>
+
+<h4 id="our-solution">Our Solution</h4>
+
+<p>To use our cloned bundler on the commandline, our mentor, Andre Arko, said “back in the dark pre-bundler ages you always had to do this: ruby -I/path/to/gem/lib -S /path/to/gem/bin/foo.”<br />
+The <code>-I</code> tells Ruby where to load the library scripts. (Looked up -I in <code>man ruby</code>)<br />
+We created an alias named dbundle in our bash profile. (.bashrc or .bash_profile). It is a hidden file in your home directory. Sooo, you have to run <code>ls -a</code> to see it.<br />
+alias dbundle='ruby -I ~/sw/gems/bundler/lib ~/sw/gems/bundler/bin/bundle'
+This way we only have to type in dbundle rather than that long line every single time.</p>
+
+<ol>
+  <li>
+    <p>Put this into you .bashrc file (Make sure you have the right path to your file.)</p>
+
+    <pre><code> alias dbundle='ruby -I ~/Desktop/railsgirls/bundler/lib ~/Desktop/railsgirls/bundler/bin/bundle'
+</code></pre>
+
+    <p>You can locate the .bashrc file by running:</p>
+
+    <pre><code> $ ls -a
+</code></pre>
+  </li>
+  <li>
+    <p>Now you can run this command in any directory with a Gemfile</p>
+
+    <pre><code> $ dbundle i
+</code></pre>
+  </li>
+</ol>
+
+<h3 id="our-struggles">Our Struggles</h3>
+
+<p>Setting up the alias we got Bundler::GemfileNotFound
+In order for our alias to work, we have to run dbundle inside a directory that has a Gemfile. For example, our rgsocbundler.git.io blog has a Gemfile. We can run dbundle inside that directory. Now run <code>dbundle</code> inside our rgsocbundler directory and wahlah! It works. And if run <code>dbundle i</code>, it reproduces the error (stacktrace).</p>
+
+<h3 id="notes">Notes:</h3>
 
 <ul>
-  
-    <li><a href="/2013/07/22/week2-day5.html">Week 2 Day 5</a> <span>Jul 22</span></li>
-  
+  <li><strong>source ~/.bashrc</strong> - reloads the bash file</li>
 </ul>
 
+<p><strong>-I directory</strong> Used to tell Ruby where to load the library scripts.
+    Directory path will be added to the load-path variable
+    ($:).</p>
+
+<p><strong>-S</strong> Makes Ruby use the PATH environment variable to search for script,unless if its name begins with a slash.  This is used to emulate #! on machines that don't support it, in the following manner:</p>
+
+<pre><code>#! /usr/local/bin/ruby
+# This line makes the next one a comment in Ruby \
+exec /usr/local/bin/ruby -S $0 $*
+</code></pre>
+
+<ul>
+  <li><strong>git remote -v</strong> will display your remote and origin paths</li>
+</ul>
+
+<h2 id="other-stuff-we-did">Other Stuff We Did</h2>
+
+<p>Based on the comments, we made changes and fixes to our pull requests that were submitted.</p>
 
             </div>
           </div>

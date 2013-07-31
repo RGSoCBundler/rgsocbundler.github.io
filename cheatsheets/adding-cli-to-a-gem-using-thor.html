@@ -59,19 +59,70 @@
         <div class="span9">
           <div class="row-fluid">
             <div id="main" role="main" class="well">
-              <h1>Archive for
-  
-    Jul 22 2013
-  
-</h1>
+              <h3 id="adding-cli-to-your-gem-using-thor">Adding CLI to Your Gem using Thor</h3>
+<p>Our example gem is called lorem. Replace lorem with your gem directory name accordingly.</p>
 
+<p><strong>1. Go into your Gem directory</strong></p>
+
+<p><code>cd lorem</code></p>
+
+<p><strong>2. Create the cli.rb in <code>lib/lorem</code></strong></p>
+
+<p><code>touch lib/lorem/cli.rb</code></p>
+
+<p><strong>3. In the cli.rb file, create a class that inherits from Thor</strong></p>
+
+<pre><code>require "thor"
+
+class CLI &lt; Thor
+  desc "ipsum", "Lorem text generator"
+  def ipsum
+    puts "Lorem Ipsum blah blah blah"
+  end
+end
+</code></pre>
+
+<p>Read more about this on the Thor website <a href="http://whatisthor.com/">http://whatisthor.com/</a></p>
+
+<p><strong>4. Create bin folder</strong></p>
+
+<p><code>mkdir bin</code></p>
+
+<p><strong>5. Create executable file naming it your gem command</strong></p>
+
+<p><code>touch bin/lorem</code></p>
+
+<p><strong>6. Add this into your <code>bin/lorem</code> file</strong></p>
+
+<pre><code>#!/usr/bin/env ruby
+require 'lorem/cli'
+
+CLI.start
+</code></pre>
+
+<p><strong>7. In lorem.gemspec, add this before <code>end</code></strong></p>
+
+<pre><code>spec.add_runtime_dependency "thor"
+</code></pre>
+
+<h3 id="how-to-run-your-unpublished-gem">How to Run Your Unpublished Gem</h3>
+<p>There are 3 possible ways to run it.</p>
 
 <ul>
-  
-    <li><a href="/2013/07/22/week2-day5.html">Week 2 Day 5</a> <span>Jul 22</span></li>
-  
-</ul>
+  <li>
+    <p><code>ruby -I lib bin/gem_command_name</code></p>
+  </li>
+  <li>
+    <p><code>bundle exec bin/gem_command_name</code></p>
 
+    <p>If you get a <code>bundler: not executable: bin/gem_command_name</code> error, run <code>chmod +x bin/gem_command_name</code></p>
+  </li>
+  <li>
+    <p><code>bundle exec gem_command_name</code></p>
+
+    <p>We currently haven't figured out why the last command doesn't work.</p>
+  </li>
+</ul>
 
             </div>
           </div>

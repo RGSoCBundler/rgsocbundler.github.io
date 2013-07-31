@@ -59,31 +59,50 @@
         <div class="span9">
           <div class="row-fluid">
             <div id="main" role="main" class="well">
-              <h2 id="what-we-did">What we did.</h2>
+              <h1 id="week-2-day-6">Week 2 Day 6</h1>
 
-<h3 id="we-are-still-trying-to-get-out-first-bundler-pull-request-merged">We are still trying to get out first Bundler pull request merged.</h3>
-<p>We stripped down the "Bundler for Development" section on the Bundler Contribute Page. We added the entirety of it on our Team Bundler Website in the Cheatsheet section and on the Rails Girls Guides</p>
+<h2 id="bundler-issue--1---bundle-i">Bundler Issue # 1 - <em>bundle i</em></h2>
 
-<p>Struggled with unwanted white space. Joyce used travis-ci.org and I modified my .gvimrc</p>
+<h3 id="what-we-did">What We Did</h3>
 
-<p>Read about exceptions in the Pragmatic Programmers' Guide / Pickaxe.</p>
+<ul>
+  <li>
+    <p><strong>We are still trying to get out first Bundler pull request merged.</strong>
+We stripped down the "Bundler for Development" section on the Bundler Contribute Page. We added the entirety of it on our Team Bundler Website in the Cheatsheet section and on the Rails Girls Guides</p>
+  </li>
+  <li>
+    <p>Struggled with unwanted white space. Joyce used travis-ci.org and I modified my .gvimrc</p>
+  </li>
+  <li>
+    <p>Read about exceptions in the Pragmatic Programmers' Guide / Pickaxe.</p>
+  </li>
+  <li>
+    <p><strong>We started to work on our first issue in Bundler.</strong> We are trying to figure out the errors caused when you try to do the bundle i command. Which gives you a stack trace instead of an error. We realized the the class is ArgumentError and that it doesn't understand whether you want to  bundle init bundle inject or bundle install. We worked in the friendly_errors file and tried to figure out how to raise the right exception. We also created an rspec test for it. We will be continuing to work on this tomorrow.</p>
+  </li>
+</ul>
 
-<p>Then we started to figure out the errors when you try to do the bundle i command. Which gives you a stack trace instead of an error. We realized the the class is ArgumentError and that it doesn't understand whether you want to  bundle init bundle inject or bundle install. We worked in the friendly_errors file and tried to figure out how to raise the right exception. We also created an rspec test for it. We will be continuing to work on this tomorrow.</p>
+<h3 id="what-we-learned-from-our-boo-boos">What we Learned from our Boo Boo’s?</h3>
 
-<h2 id="what-we-learned-from-our-boo-boos">What we Learned from our Boo Boo’s?</h2>
+<ul>
+  <li>Amending Commit Messages Caused Push Rejection
+Joyce pushed a commit and then wanted to change the commit message </li>
+</ul>
 
-<h3 id="amending-commit-messages-caused-push-rejection">Amending Commit Messages Caused Push Rejection</h3>
-<p>Joyce pushed a commit and then wanted to change the commit message
-This caused a push rejection.</p>
+<p>This caused a push rejection.</p>
 
-<pre><code>To https://github.com/joyicecloud/rgsocbundler.github.io.git
-! [rejected]        blog-log -&gt; blog-log (non-fast-forward)
-error: failed to push some refs to 'https://github.com/joyicecloud/rgsocbundler.github.io.git'
+<pre> To https://github.com/joyicecloud/rgsocbundler.github.io.git
+    ! [rejected]        blog-log -&gt; blog-log (non-fast-forward)
+    error: failed to push some refs to 'https://github.com/joyicecloud/rgsocbundler.github.io.git</pre>
+
+<pre><code>Amending a commit that you already pushed creates a new commit. If you check the commit SHA, the numbers are different.That means you will need to force push because it rewrites the commit history.
+
+It is best to avoid amending commits that you ha
 </code></pre>
 
-<p>Amending a commit that you already pushed creates a new commit. If you check the commit SHA, the numbers are different. That means you will need to force push because it rewrites the commit history.</p>
+<ul>
+  <li>Before buying broth read the package to see if it is chicken broth or vegetable broth. The packages are practically identical. :)</li>
+</ul>
 
-<p>It is best to avoid amending commits that you have already pushed. <strong>Make amends before pushing the commit.</strong></p>
 
             </div>
           </div>
@@ -92,6 +111,14 @@ error: failed to push some refs to 'https://github.com/joyicecloud/rgsocbundler.
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Recent Posts</li>
+              
+                <li><a href="/2013/07/30/week3-day11.html">Week 3 Day 11 It's Hammertime</a></li>
+              
+                <li><a href="/2013/07/29/week3-day10.html">Week3 Day10</a></li>
+              
+                <li><a href="/2013/07/26/week2-day9.html">Week 2 Day 9 Testing Testing 1, 2, 3</a></li>
+              
+                <li><a href="/2013/07/25/week2-day8.html">Week 2 Day 8 Bash</a></li>
               
                 <li><a href="/2013/07/24/week2-day7.html">Week 2 Day 7 RSpec</a></li>
               
@@ -103,15 +130,7 @@ error: failed to push some refs to 'https://github.com/joyicecloud/rgsocbundler.
               
                 <li><a href="/2013/07/18/week1-day3.html">Week 1 Day 3 Github Workflow</a></li>
               
-                <li><a href="/2013/07/17/week1-day2.html">Week 1 Day 2 Chat and Git With It</a></li>
-              
-                <li><a href="/2013/07/17/pull-requests.html">Git Branches &  GitHub Pull Requests</a></li>
-              
                 <li><a href="/2013/07/17/chat.html">Chat</a></li>
-              
-                <li><a href="/2013/07/16/week1-day1.html">Week 1 Day 1 Blogging using Middleman Gem</a></li>
-              
-                <li><a href="/2013/07/16/blog-setup.html">Blog Setup</a></li>
               
               <li class="nav-header">Tags</li>
               
@@ -119,7 +138,7 @@ error: failed to push some refs to 'https://github.com/joyicecloud/rgsocbundler.
               
                 <li><a href="/tags/tools.html">#tools (4)</a></a></li>
               
-                <li><a href="/tags/log.html">#log (7)</a></a></li>
+                <li><a href="/tags/log.html">#log (10)</a></a></li>
               
               <li class="nav-header">Contributors</li>
               <li><a href="/jen-diamond">Jen Diamond / Student</a></li>
@@ -138,7 +157,8 @@ error: failed to push some refs to 'https://github.com/joyicecloud/rgsocbundler.
               <li><a href="/links">Links</a></li>
               <li class="nav-header">Cheat Sheets</li>
               <li><a href="/cheatsheets/pull.html">Pull Requesting</a></li>
-	      <li><a href="/cheatsheets/bundlerfordev.html">Bundler for Development</a></li>
+	            <li><a href="/cheatsheets/bundlerfordev.html">Bundler for Development</a></li>
+              <li><a href="/cheatsheets/adding-cli-to-a-gem-using-thor.html">Using Thor to Add CLI</a></li>
 
             </ul>
           </div><!--/.well -->

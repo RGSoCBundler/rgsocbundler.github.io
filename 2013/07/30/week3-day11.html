@@ -59,19 +59,42 @@
         <div class="span9">
           <div class="row-fluid">
             <div id="main" role="main" class="well">
-              <h1>Archive for
-  
-    Jul 22 2013
-  
-</h1>
+              <h1 id="week-3-day-11">Week 3 Day 11</h1>
 
+<h2 id="its-hammertime">It's Hammertime</h2>
+<p>We are talking about the Rubygem <a href="http://whatisthor.com/">Thor</a>, of course.</p>
+
+<h3 id="what-we-did">What We Did</h3>
+<p>Thor is a <a href="http://rubygems.org/gems/thor">RubyGem</a> that is used to replace rake, sake, and rubigen. However, that is not how Bundler uses it.</p>
+
+<p>We focused on the Command Line Interface (CLI) aspect of Thor.</p>
+
+<p>Yesterday, we created a new gem by following the now dated <a href="http://railscasts.com/episodes/245-new-gem-with-bundler">RailsCast</a></p>
+
+<p>Today, we added Thor to our gem to build a command-line interface by reading <a href="http://whatisthor.com/">What is Thor</a> and <a href="http://blog.paracode.com/2012/05/17/building-your-tools-with-thor/">Building your tools with Thor</a></p>
+
+<p>For example, we would be creating a command to run our gem like <code>rails new</code> would create a Rails app or running <code>bundle install</code> would install the rubygems you need to run your app.</p>
+
+<h4 id="how-to-run-your-unpublished-gem">How to Run Your Unpublished Gem</h4>
+<p>According to Andre Arko, there are 3 ways to run it.</p>
 
 <ul>
-  
-    <li><a href="/2013/07/22/week2-day5.html">Week 2 Day 5</a> <span>Jul 22</span></li>
-  
+  <li>
+    <p><code>ruby -I lib bin/gem_command_name</code></p>
+  </li>
+  <li>
+    <p><code>bundle exec bin/gem_command_name</code></p>
+  </li>
+  <li>
+    <p><code>bundle exec gem_command_name</code></p>
+  </li>
 </ul>
 
+<h3 id="what-we-learned-from-our-boo-boos">What We Learned from our Boo Boo’s?</h3>
+
+<p>Initially, Joyce couldn't get <code>bundle exec bin/gem_command_name</code> to work because the <code>bin/gem_command_name</code> file was missing the shebang <code>#!/usr/bin/env ruby</code> at the very top of the file.</p>
+
+<p>For the last command, we couldn't get <code>bundle excec gem_command_name</code> to work and we don't know why.</p>
 
             </div>
           </div>

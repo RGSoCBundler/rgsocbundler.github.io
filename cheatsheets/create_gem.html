@@ -59,48 +59,87 @@
         <div class="span9">
           <div class="row-fluid">
             <div id="main" role="main" class="well">
-              <h2 id="proper-github-workflow">Proper Github Workflow</h2>
+              <h2 id="creating-your-own-gem">Creating your own Gem</h2>
 
-<p><img src="https://bundler.campfirenow.com/room/566068/uploads/4699656/GitHub-Diagram.png" /></p>
+<ol>
+  <li>
+    <p>Run this command in your Terminal. This creates and names all the files you need for your gem. We are going to create a Lorem Ipsum Generator; you can call it whatever you want but seeing as we are creating a <a href="http://en.wikipedia.org/wiki/Lorem_ipsum">Lorem Ipsum</a> generator we'll call it lorem. <a href="http://guides.rubygems.org/patterns/">Read about gem naming conventions.</a> </p>
 
-<h4 id="fork-the-repo-original-repo-you-want-to-work-on-to-your-github-account-repo">Fork the Repo (original repo) you want to work on to your Github account repo</h4>
-<pre><code>Press the Fork button (which is on Github.com)
+    <pre><code> $ bundle gem lorem
 </code></pre>
 
-<p>https://help.github.com/articles/fork-a-repo</p>
+    <p>Notice that this command also initialized a git repository for you on your local machine and gives you the path name for it.  </p>
+  </li>
+  <li>
+    <p>cd into lorem. Make your <code>lorem.gemspec</code> file look like this. Add your name and your email. <a href="http://docs.rubygems.org/read/chapter/20">Read more about the gemspec file.</a> </p>
 
-<p>Explanation: It creates a copy of the Repo to your account.</p>
+    <pre><code> \# coding: utf-8
+ lib = File.expand_path('../lib', __FILE__)
+ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+ require 'lorem/version'
 
-<h4 id="clone-the-repo-on-your-github-account-to-local">Clone the Repo on your Github account to local</h4>
-<pre><code>git clone https://github.com/RGSoCBundler/rgsocbundler.github.io.git
+ Gem::Specification.new do |spec|
+     spec.name          = "lorem"
+     spec.version       = Lorem::VERSION
+     spec.platform      = Gem::Platform::RUBY
+     spec.authors       = ["your name"]
+     spec.email         = ["your@email.com"]
+     spec.homepage      = ""
+     spec.summary       = %q{Jenipsum generator}
+     spec.description   = %q{Generates jenipsum text}
+     spec.license       = "MIT"
+
+     spec.add_development_dependency "bundler", "~&gt; 1.3"
+     spec.add_development_dependency "rake"
+
+     spec.files         = `git ls-files`.split($/)
+     spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
+     spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
+     spec.require_paths = ["lib"]
+
+ end
 </code></pre>
 
-<h4 id="link-the-original-repo-to-your-local-repo-so-you-can-pull-the-latest-updates-and-make-sure-your-copy-is-in-sync-with-the-original-repo">Link the original repo to your local repo so you can pull the latest updates and make sure your copy is in sync with the original repo</h4>
-<pre><code>cd rgsocbundler.github.io
-git remote add upstream https://github.com/RGSoCBundler/rgsocbundler.github.io.git
+    <p>If you neglect to change these areas you will get this error when you go to run $ gem build lipsum.gemspec </p>
+
+    <pre><code> ERROR:  While executing gem ... (Gem::InvalidSpecificationException) "FIXME" or "TODO" is not a description
 </code></pre>
+  </li>
+  <li>
+    <p>Open your file <code>lib/lipsum.rb</code> Make it look like this. This is the file that is loaded when people require your gem. You can customize it with the behavior you want it to have.</p>
 
-<h4 id="create-feature-branch">Create Feature Branch</h4>
-<pre><code>git checkout -b branch-name
-
-(example: git checkout -b pull-cheatsheet)
+    <pre><code> require "lipsum/version"
+    
+ module Lipsum
+     def self.ipsum
+         "Lorem ipsum bespoke flexitarian bitters, non next level consequat stumptown  
+         pork belly selfies sartorial. Laborum vegan excepteur ad, hashtag id non.  
+         Eiusmod Tonx squid intelligentsia biodiesel art party YOLO bicycle rights  
+         fashion axe, +1 roof party non quis do. Trust fund nesciunt odio, mustache  
+         Terry Richardson Odd Future vinyl thundercats kogi placeat cliche put a bird  
+         on it aliquip lo-fi. Pickled hashtag bitters american apparel fanny pack tempor.  
+         Accusamus pork belly do Williamsburg nihil, salvia eiusmod tattooed excepteur  
+         in street art. Meggings Tonx forage occaecat magna tote bag."
+     end
+ end
 </code></pre>
+  </li>
+  <li>
+    <p>Run this command.</p>
 
-<p>(The git checkout -b command automatically switches to the branch)</p>
-
-<h4 id="check-that-you-are-on-the-correct-branch-make-sure-there-is-an-asterik-next-to-the-branch-name">Check that you are on the correct branch. Make sure there is an asterik next to the branch name.</h4>
-<pre><code>git branch
+    <pre><code> $ gem build lipsum.gemspec
 </code></pre>
+  </li>
+</ol>
 
-<h4 id="make-your-changesfixesfeatures-and-commit-it-to-origin-the-repo-on-your-github-account">Make Your Changes/Fixes/Features and commit it to origin (the repo on your github account)</h4>
-<pre><code>git add .
-git commit -m "write what changes you made"
-git push origin pull-cheatsheet
-</code></pre>
+<h3 id="congratulations-you-have-created-a-gem">Congratulations, you have created a gem.</h3>
 
-<h4 id="send-a-pull-request---from-origin-to-upstream-your-account-repo-to-the-original-repo">Send a Pull Request - from origin to upstream (your account repo to the original repo)</h4>
-<pre><code>Click Compare &amp; pull request or the Green button on your Github repository
-</code></pre>
+<h3 id="now-you-can-add-thorhttprgsocbundlergithubiocheatsheetsadding-cli-to-a-gem-using-thorhtml"><a href="http://rgsocbundler.github.io/cheatsheets/adding-cli-to-a-gem-using-thor.html">Now you can add Thor.</a></h3>
+
+<p><strong>Here are some good resources if you have questions.</strong><br />
+<a href="http://railscasts.com/episodes/245-new-gem-with-bundler">Video tutorial that will explain all the files and file structure.</a><br />
+<a href="http://bundler.io/v1.3/rubygems.html">This is Bundler's Tutorial</a><br />
+<a href="http://guides.rubygems.org/make-your-own-gem/">RubyGems Guides</a></p>
 
 
             </div>

@@ -59,49 +59,66 @@
         <div class="span9">
           <div class="row-fluid">
             <div id="main" role="main" class="well">
-              <h2 id="proper-github-workflow">Proper Github Workflow</h2>
+              <h1 id="week-3-day-12">Week 3 Day 12</h1>
 
-<p><img src="https://bundler.campfirenow.com/room/566068/uploads/4699656/GitHub-Diagram.png" /></p>
+<h2 id="due-diligence---bundle-gem--thor-cli">Due Diligence - Bundle Gem &amp; Thor CLI</h2>
 
-<h4 id="fork-the-repo-original-repo-you-want-to-work-on-to-your-github-account-repo">Fork the Repo (original repo) you want to work on to your Github account repo</h4>
-<pre><code>Press the Fork button (which is on Github.com)
-</code></pre>
+<h3 id="what-we-did">What We Did</h3>
 
-<p>https://help.github.com/articles/fork-a-repo</p>
+<ul>
+  <li>
+    <p>More Thor. We created our cheatsheets for <a href="http://rgsocbundler.github.io/cheatsheets/create_gem.html">Creating a Gem</a> and <a href="http://rgsocbundler.github.io/cheatsheets/adding-cli-to-a-gem-using-thor.html">Using Thor to Add CLI.</a> We fixed the Thor files so it actually prints Lorem Ipsum instead of the Thor hello name message from the tutorial.</p>
+  </li>
+  <li>
+    <p>We found out that we get to attend the <a href="https://distill.engineyard.com/">Distill Conference</a> next week. This is perfect because Jessica will be speaking there and we will get to meet our mentor Andre in person. We are gearing up to give a lightning talk on Creating a Gem &amp; Using Thor to Add CLI.</p>
+  </li>
+  <li>
+    <p>Joyce played <a href="http://vim-adventures.com/">Vim Adventures</a> and played with options and flags in our Thor files.</p>
+  </li>
+  <li>
+    <p>Read about <a href="https://github.com/sstephenson/rbenv/wiki/Understanding-binstubs">binstubs.</a></p>
+  </li>
+  <li>
+    <p>Today we worked at <a href="http://farmhouse.la/">The Farmhouse</a> and got to have lunch with Shane. It is so pleasant working here with Civ the dog wandering around and the 100 year old Avocado tree in the back yard.</p>
+  </li>
+</ul>
 
-<p>Explanation: It creates a copy of the Repo to your account.</p>
+<h3 id="resources-we-used">Resources We Used</h3>
 
-<h4 id="clone-the-repo-on-your-github-account-to-local">Clone the Repo on your Github account to local</h4>
-<pre><code>git clone https://github.com/RGSoCBundler/rgsocbundler.github.io.git
-</code></pre>
+<ul>
+  <li>
+    <p><a href="http://railscasts.com/episodes/201-bundler-revised">#201 Bundler (revised) ☆</a>
+Mar 16, 2012<br />
+Bundler makes it easy to manage Ruby Gem dependencies. Learn how to use it in a Rails application, see what's new in Bundler 1.1, convenient ways to run bundle exec, and how to fix gem compilation issues.</p>
+  </li>
+  <li>
+    <p><a href="http://railscasts.com/episodes/245-new-gem-with-bundler">#245 New Gem with Bundler ☆</a>
+Dec 20, 2010<br />
+Creating new gems is easy with the <code>bundle gem</code> command. In this episode I will walk you through how this works.</p>
+  </li>
+  <li>
+    <p><a href="http://whatisthor.com/">What is Thor</a></p>
+  </li>
+  <li>
+    <p><a href="http://blog.paracode.com/2012/05/17/building-your-tools-with-thor/">Building Your Tools with Thor</a></p>
+  </li>
+  <li>
+    <p><a href="http://www.webopedia.com/TERM/E/executable_file.html">What is an executable?</a></p>
+  </li>
+  <li>
+    <p><a href="http://guides.rubygems.org/make-your-own-gem/">RubyGems.org - Make Your Own Gem</a></p>
+  </li>
+  <li>
+    <p><a href="http://bundler.io/v1.3/rubygems.html">Bundler gemspecs</a> Using Bundler with Rubygem gemspecs</p>
+  </li>
+  <li>
+    <p><a href="http://bundler.io/v1.3/gemfile.html">Bundler - Gemfile</a> Read the manual for an in-depth discussion of all of the options available in the Gemfile and how to use them.</p>
+  </li>
+</ul>
 
-<h4 id="link-the-original-repo-to-your-local-repo-so-you-can-pull-the-latest-updates-and-make-sure-your-copy-is-in-sync-with-the-original-repo">Link the original repo to your local repo so you can pull the latest updates and make sure your copy is in sync with the original repo</h4>
-<pre><code>cd rgsocbundler.github.io
-git remote add upstream https://github.com/RGSoCBundler/rgsocbundler.github.io.git
-</code></pre>
+<h3 id="what-we-learned-from-our-boo-boos">What We Learned from our Boo Boo’s?</h3>
 
-<h4 id="create-feature-branch">Create Feature Branch</h4>
-<pre><code>git checkout -b branch-name
-
-(example: git checkout -b pull-cheatsheet)
-</code></pre>
-
-<p>(The git checkout -b command automatically switches to the branch)</p>
-
-<h4 id="check-that-you-are-on-the-correct-branch-make-sure-there-is-an-asterik-next-to-the-branch-name">Check that you are on the correct branch. Make sure there is an asterik next to the branch name.</h4>
-<pre><code>git branch
-</code></pre>
-
-<h4 id="make-your-changesfixesfeatures-and-commit-it-to-origin-the-repo-on-your-github-account">Make Your Changes/Fixes/Features and commit it to origin (the repo on your github account)</h4>
-<pre><code>git add .
-git commit -m "write what changes you made"
-git push origin pull-cheatsheet
-</code></pre>
-
-<h4 id="send-a-pull-request---from-origin-to-upstream-your-account-repo-to-the-original-repo">Send a Pull Request - from origin to upstream (your account repo to the original repo)</h4>
-<pre><code>Click Compare &amp; pull request or the Green button on your Github repository
-</code></pre>
-
+<p>Jen's advice about your .bashrc - Do not name a shortcut named "gem" in your bashfile or any other keyword that would be used in the commandline. It will take hours off your life. ;)</p>
 
             </div>
           </div>

@@ -5,7 +5,7 @@
   <id>http://rgsocbundler.github.io/</id>
   <link href="http://rgsocbundler.github.io/"/>
   <link href="http://rgsocbundler.github.io/feed.xml" rel="self"/>
-  <updated>2013-07-31T00:21:00Z</updated>
+  <updated>2013-08-08T19:15:00Z</updated>
   <author>
     <name>Jen Diamond</name>
   </author>
@@ -16,339 +16,216 @@
     <name>Jessica Suttles</name>
   </author>
   <entry>
-    <title>Week 3 Day 11 It's Hammertime</title>
-    <link rel="alternate" href="/2013/07/30/week3-day11.html"/>
-    <id>/2013/07/30/week3-day11.html</id>
-    <published>2013-07-31T00:21:00Z</published>
-    <updated>2013-07-31T00:21:00Z</updated>
+    <title>Week 4 Day 18 Distill Day 1</title>
+    <link rel="alternate" href="/2013/08/08/week4-day18.html"/>
+    <id>/2013/08/08/week4-day18.html</id>
+    <published>2013-08-08T19:15:00Z</published>
+    <updated>2013-08-08T19:15:00Z</updated>
+    <author>
+      <name>RGSoCBundler</name>
+    </author>
+    <content type="html">&lt;h1 id="week-4-day-18"&gt;Week 4 Day 18&lt;/h1&gt;
+
+&lt;h2 id="distill-day-1"&gt;Distill Day 1&lt;/h2&gt;
+
+&lt;p&gt;We left the beautiful Hilton hotel on a bus bound for Treasure Island which is just off the Bay Bridge. We had a great view from the bus of the Golden Gate bridge and the bay below. We arrived at The Distillery, where Distill was held, to an amazing spread of breakfast treats and hand poured coffee.&lt;/p&gt;
+
+&lt;p&gt;We used the Twitter hashtag #distill13 to post about the adventures of the day. Real-time tweets were posted on the screen in the main room for everyone to see.&lt;/p&gt;
+
+&lt;h3 id="keynote-nolan-and-brent-bushnell"&gt;Keynote: Nolan and Brent Bushnell&lt;/h3&gt;
+&lt;p&gt;The keynote address was given by the founder of Atari and Chucky Cheese, Nolan Bushnell, and his son Brent Bushnell who runs Two Bit Circus in Los Angeles which is a group that helps children learn programming through the making of amusements. They were vibrant, inspiring speakers concentrating on pushing yourself to create and complete projects. Jen had the pleasure of meeting with them at lunch. She had previously met Brent Bushnell in Los Angeles at his amazing workspace in the Brewery.&lt;/p&gt;
+
+&lt;h3 id="realigning--refactoring-ui---jina-bolton"&gt;Realigning &amp;amp; Refactoring UI - Jina Bolton&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Product Designer at Do&lt;/strong&gt; // &lt;a href="http://de.slideshare.net/Codemotion/ui-realigning-refactoring-by-jina-bolton"&gt;Slides&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Jina talked about her favorite CSS tools to use in web development. She impressed upon the crowd to not refactor everything all at once, but "do refactor going forward." She had a light, friendly style of speaking that made her easy to listen to.&lt;/p&gt;
+
+&lt;h3 id="connascence-examined---jim-weirich"&gt;Connascence Examined - Jim Weirich&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Chief Scientist at @neo_innovation, Ruby Enthusiast, Clojure dabbler onestepback.org&lt;/strong&gt; // &lt;a href="http://youtu.be/HQXVKHoUQxY"&gt;Slides&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Jim defined connascence between relationships between different Name, Type, Meaning, Position, Timing, and Execution. In the second part, he talked about using Ruby to control Drones and showed video of it. Jen spoke with Jim Weirich and Ron Evans at lunch about drones, Kids Ruby, and music. Jim played a few songs on his ukulele.&lt;/p&gt;
+
+&lt;p&gt;Notes: &lt;a href="https://www.purdue.edu/apps/account/IAMO/I2A2/Reference/Purdue_I2A2_Luhn.jsp"&gt;luhn_check&lt;/a&gt;,
+&lt;a href="http://plato.stanford.edu/entries/supervenience/"&gt;supervenience&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id="lunch-and-lawn-games"&gt;Lunch and Lawn Games&lt;/h3&gt;
+
+&lt;p&gt;We had an amazing picnic lunch with the backdrop of San Francisco, Engine Yard's Panda mascot and lawn games.&lt;/p&gt;
+
+&lt;h3 id="keynote-james-whelton"&gt;Keynote: James Whelton&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Co-Founder of CoderDojo&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;He gave an inspiring talk about why he started CoderDojo. He wanted to start a program for kids that he wished existed when he started learning to program. His program started in Ireland and has spread to include Dojo's all over the world. Later in the day, James gave Joyce a pep talk to feel less nervous about the lightning talk.&lt;/p&gt;
+
+&lt;h3 id="history-of-women-in-programming---elise-worthy--jessica-lynn-suttles"&gt;History of Women in Programming - Elise Worthy &amp;amp; Jessica Lynn Suttles&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Elise Worthy - Founder of Brandworthy&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Jessica Suttles - Software Engineer of G5&lt;/strong&gt; // &lt;a href="https://speakerdeck.com/jlsuttles/women-and-computing-at-distill"&gt;Slides&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Jessica and Elise gave their last presentation of this talk. Since we saw it at the LA Ruby Monthly Meetup, they've added more information and slides and really had their talk down to a science. Everyone was intrigued by the importance of women's contribution to programming that they pointed out.&lt;/p&gt;
+
+&lt;h3 id="lightning-talks"&gt;Lightning Talks&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://speakerdeck.com/jendiamond/distill-rails-girls-summer-of-code-lightning-talk-by-jen-diamond-and-joyce-hsu"&gt;Slides&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;8 of us were selected for the lightning talk. The other lightning speakers were Brenton Cheng, Jon Hyman, Dave Cadwallader, Kevin Stevens, Denis Ivanov, and Kyle Henderson. Then, Jim Weirich played a great song on his ukulele about God writing in Lisp. Giving the lightning talk to about 200 people was a great milestone. We talked about what Rails Girls does and the transition to Summer of Code, what we have learned so far, our plans for the future, and where to follow our progress.&lt;/p&gt;
+
+&lt;h3 id="moonshine"&gt;Moonshine&lt;/h3&gt;
+&lt;p&gt;Moonshine was the kick-off party at the Old Mint in SF. We took fun pictures with costumes, socialized, and wandered around taking in the history of coin making and San Francisco. There was a candy room, vaults, projections, a DJ, and plenty of swag.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Week 4 Day 15 Friscoooo</title>
+    <link rel="alternate" href="/2013/08/08/week5-day17.html"/>
+    <id>/2013/08/08/week5-day17.html</id>
+    <published>2013-08-08T18:45:00Z</published>
+    <updated>2013-08-08T18:45:00Z</updated>
+    <author>
+      <name>RGSoCBundler</name>
+    </author>
+    <content type="html">&lt;h1 id="week-4-day-17"&gt;Week 4 Day 17&lt;/h1&gt;
+
+&lt;h2 id="how-i-love-ya-friscoooo"&gt;How I love ya, Friscoooo&lt;/h2&gt;
+
+&lt;p&gt;All 3 of us flew to &lt;a href="http://youtu.be/WnjufR8GDcw"&gt;San Francisco&lt;/a&gt; today.&lt;/p&gt;
+
+&lt;p&gt;While Jessica attended a speaker's dinner we went to &lt;a href="http://www.curryupnow.com/menus"&gt;Curry Up Now&lt;/a&gt; in the Mission then we saw the band &lt;a href="http://www.gauchojazz.com/about.html"&gt;Gaucho&lt;/a&gt; at &lt;a href="http://amnesiathebar.com/newp/"&gt;Amnesia&lt;/a&gt; Here's their myspace(https://myspace.com/gauchosf)  Culture and inspiration.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href="http://www3.hilton.com/en/hotels/california/hilton-san-francisco-union-square-SFOFHHH/index.html"&gt;hotel&lt;/a&gt; is beautiful and the rooms are so comfortable and posh. Thanks Distill, Engine Yard and Rails Girls Summer of Code! We are so ready for the conference tomorrow. There are so many interesting talks to attend.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Week 4 Day 16 Documentation</title>
+    <link rel="alternate" href="/2013/08/07/week4-day16.html"/>
+    <id>/2013/08/07/week4-day16.html</id>
+    <published>2013-08-08T00:03:00Z</published>
+    <updated>2013-08-08T00:03:00Z</updated>
+    <author>
+      <name>RGSoCBundler</name>
+    </author>
+    <content type="html">&lt;h1 id="week-4-day-16"&gt;Week 4 Day 16&lt;/h1&gt;
+
+&lt;h2 id="documentation"&gt;Documentation&lt;/h2&gt;
+
+&lt;p&gt;Today we started working on improving the documentation on the &lt;a href="http://bundler.io/"&gt;Bundler website.&lt;/a&gt; We all agree that the site needs better navigation.&lt;/p&gt;
+
+&lt;h3 id="jens-tuesday"&gt;Jen's Tuesday&lt;/h3&gt;
+
+&lt;p&gt;I went through every page of the Bundler site testing buttons, links and identifing problems with the structuring of the information. I found a 404 error buried in the site. &lt;a href="https://gist.github.com/jendiamond/6169493#file-gistfile1-md"&gt;My notes.&lt;/a&gt; I also fixed the slide presentation for our possible talk at Distill tomorrow. I really hope that happens.&lt;/p&gt;
+
+&lt;h3 id="joyce-tuesday"&gt;Joyce' Tuesday&lt;/h3&gt;
+
+&lt;p&gt;I went through the google analytics of the Bundler site and gave recommendations and suggestion based on my findings.
+Looks like the first button people click on is &lt;strong&gt;Learn More: Gemfile&lt;/strong&gt; I wonder if others did the same. I initially browsed right past &lt;strong&gt;Would you like to: Get started, Report a bug, See what's new, Read documentation.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id="distill"&gt;Distill&lt;/h3&gt;
+
+&lt;p&gt;We are both really excited for our first Ruby Conference in San Francisco tomorrow at &lt;a href="http://distill.engineyard.com/"&gt;Distill.&lt;/a&gt; We get to watch Jessic give her talk and a bunch of other really interesting speakers. We also get to meet our mentor Andre in person. Oh yeah, Andre is going to send us/ bring us? Bundler shirts!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Week 4 Day 15 Ruby Warrior</title>
+    <link rel="alternate" href="/2013/08/05/week4-day15.html"/>
+    <id>/2013/08/05/week4-day15.html</id>
+    <published>2013-08-06T00:45:00Z</published>
+    <updated>2013-08-06T00:45:00Z</updated>
+    <author>
+      <name>RGSoCBundler</name>
+    </author>
+    <content type="html">&lt;h2 id="week-4-day-15"&gt;Week 4 Day 15&lt;/h2&gt;
+
+&lt;h3 id="ruby-warrior"&gt;Ruby Warrior&lt;/h3&gt;
+&lt;center&gt;
+&lt;a href="https://www.bloc.io/ruby-warrior"&gt;&lt;img src="/images/rubywarriors-img.png" /&gt;&lt;/a&gt;
+&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;We played &lt;a href="https://www.bloc.io/ruby-warrior"&gt;Ruby Warrior&lt;/a&gt; to learn the Ruby language in a fun and interactive way.&lt;/p&gt;
+
+&lt;p&gt;Jen got her Rspec test to pass for her gem.&lt;/p&gt;
+
+&lt;p&gt;We practiced our lightning talk for the Distill Conference on Aug 8-9.&lt;/p&gt;
+
+</content>
+  </entry>
+  <entry>
+    <title>Week 3 Day 14 More Gem Production and Testing</title>
+    <link rel="alternate" href="/2013/08/02/week3-day14.html"/>
+    <id>/2013/08/02/week3-day14.html</id>
+    <published>2013-08-03T01:17:00Z</published>
+    <updated>2013-08-03T01:17:00Z</updated>
+    <author>
+      <name>RGSoCBundler</name>
+    </author>
+    <content type="html">&lt;h2 id="more-gem-production-and-testing"&gt;More Gem Production and Testing&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="http://d33y93cfm0wb4z.cloudfront.net/Lauren/Homepage_Images/Gems_and_birthmonth.jpg" alt="Alt gems" /&gt;&lt;/p&gt;
+
+&lt;p&gt;We were both reading about Rspec in the Pragmatic Programmer's &lt;strong&gt;The RSpec Book&lt;/strong&gt; (Behaviour-Driven Development with RSpec, Cucumber, and Friends) by David Chelimsky&lt;/p&gt;
+
+&lt;p&gt;We also were looking at Peepcode's Rspec Screencast.&lt;/p&gt;
+
+&lt;h3 id="jens-friday"&gt;Jen's Friday&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;I worked on my gem last night at the Ruby Study Group and I swear it was working. This morning I ran it and ERROR. I tried so many different things to fix it that I finally lost the thread. I decided to just go through our tutorial and create it again from scratch but there are definitely some missing parts we need to fill in.&lt;/p&gt;
+
+&lt;p&gt;I spent some more time in my .bashrc file. Apparently I have become obsessed with it. My problem was that it was hard to read my errors because my prompt was the same color as everything else so it all blurred together. I used a combination of this site: https://wiki.archlinux.org/index.php/Color_Bash_Prompt and this site: http://ubuntugenius.wordpress.com/2011/07/11/how-to-change-the-command-line-prompt-colour-in-the-ubuntulinux-terminal/ and the Terminal's Profile Preferences a. Hooray, it is finally readable.&lt;/p&gt;
+
+&lt;h3 id="joyces-friday"&gt;Joyce's Friday&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;I read the Rspec and bdd page on jumpstartlab’s website. I worked on a rspec test to pass for the Lorem gem with the help of Jessica Suttles and Andre Arko. I assumed I wrote the test wrong and didn’t really look at the error messages. With their help, going over the 2 failures that came up, I got a test to pass. Yay. I had glossed and skimmed the test, which led to reading on how to read error messages. :sweat_smile:&lt;/p&gt;
+
+&lt;h3 id="our-resources"&gt;Our Resources&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Rspec&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;http://tutorials.jumpstartlab.com/topics/internal_testing/rspec_and_bdd.html&lt;/p&gt;
+
+&lt;p&gt;http://it-ebooks.info/book/77/&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Understanding Error Messages&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;http://stackoverflow.com/questions/17749403/how-do-i-read-error-messages-in-ruby-and-ruby-on-rails&lt;/p&gt;
+
+&lt;p&gt;http://philcrissman.com/2010/11/08/how-to-read-error-messages-for-ruby-on-rails/&lt;/p&gt;
+
+&lt;p&gt;http://modernlegend.github.io/blog/2013/02/28/how-to-read-ruby-errors/&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Week 3 Day 13 Namespace n Rspec</title>
+    <link rel="alternate" href="/2013/08/02/week3-day13.html"/>
+    <id>/2013/08/02/week3-day13.html</id>
+    <published>2013-08-02T18:28:00Z</published>
+    <updated>2013-08-02T18:28:00Z</updated>
     <author>
       <name>RGSoCBundler</name>
     </author>
     <content type="html">&lt;h1 id="week-3-day-11"&gt;Week 3 Day 11&lt;/h1&gt;
 
-&lt;h2 id="its-hammertime"&gt;It's Hammertime&lt;/h2&gt;
-&lt;p&gt;We are talking about the Rubygem &lt;a href="http://whatisthor.com/"&gt;Thor&lt;/a&gt;, of course.&lt;/p&gt;
+&lt;h2 id="namespace-n-rspec"&gt;Namespace n Rspec&lt;/h2&gt;
 
 &lt;h3 id="what-we-did"&gt;What We Did&lt;/h3&gt;
-&lt;p&gt;Thor is a &lt;a href="http://rubygems.org/gems/thor"&gt;RubyGem&lt;/a&gt; that is used to replace rake, sake, and rubigen. However, that is not how Bundler uses it.&lt;/p&gt;
+&lt;p&gt;We fixed our gem to have namespace in the &lt;code&gt;lib/loremz/cli.rb&lt;/code&gt;. Namespace is where the class CLI is encapsulated by module Loremz. The syntax for namespacing is &lt;code&gt;Loremz::CLI&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;We focused on the Command Line Interface (CLI) aspect of Thor.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;module Loremz
+  class CLI &amp;lt; Thor
+    #your methods
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Yesterday, we created a new gem by following the now dated &lt;a href="http://railscasts.com/episodes/245-new-gem-with-bundler"&gt;RailsCast&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;That way our &lt;code&gt;lib/loremz/cli.rb&lt;/code&gt; file matches with the &lt;code&gt;lib/loremz.rb&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;Today, we added Thor to our gem to build a command-line interface by reading &lt;a href="http://whatisthor.com/"&gt;What is Thor&lt;/a&gt; and &lt;a href="http://blog.paracode.com/2012/05/17/building-your-tools-with-thor/"&gt;Building your tools with Thor&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Why do we want our &lt;code&gt;lib/loremz/cli.rb&lt;/code&gt; and &lt;code&gt;lib/loremz.rb&lt;/code&gt; file to match?&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;For example, we would be creating a command to run our gem like &lt;code&gt;rails new&lt;/code&gt; would create a Rails app or running &lt;code&gt;bundle install&lt;/code&gt; would install the rubygems you need to run your app.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;lib/loremz/cli.rb&lt;/code&gt; file is just for handling what comes in the command line. While the content would be stored in the &lt;code&gt;lib/loremz.rb&lt;/code&gt;&lt;/p&gt;
 
-&lt;h4 id="how-to-run-your-unpublished-gem"&gt;How to Run Your Unpublished Gem&lt;/h4&gt;
-&lt;p&gt;According to Andre Arko, there are 3 ways to run it.&lt;/p&gt;
+&lt;p&gt;We use &lt;code&gt;lib/loremz/cli.rb&lt;/code&gt; to call &lt;code&gt;lib/loremz.rb&lt;/code&gt;&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code&gt;ruby -I lib bin/gem_command_name&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code&gt;bundle exec bin/gem_command_name&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code&gt;bundle exec gem_command_name&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;Today we also worked on writing RSpec tests for the gem we created.&lt;/p&gt;
 
 &lt;h3 id="what-we-learned-from-our-boo-boos"&gt;What We Learned from our Boo Boo’s?&lt;/h3&gt;
-
-&lt;p&gt;Initially, Joyce couldn't get &lt;code&gt;bundle exec bin/gem_command_name&lt;/code&gt; to work because the &lt;code&gt;bin/gem_command_name&lt;/code&gt; file was missing the shebang &lt;code&gt;#!/usr/bin/env ruby&lt;/code&gt; at the very top of the file.&lt;/p&gt;
-
-&lt;p&gt;For the last command, we couldn't get &lt;code&gt;bundle excec gem_command_name&lt;/code&gt; to work and we don't know why.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Week3 Day10</title>
-    <link rel="alternate" href="/2013/07/29/week3-day10.html"/>
-    <id>/2013/07/29/week3-day10.html</id>
-    <published>2013-07-30T01:30:00Z</published>
-    <updated>2013-07-30T01:30:00Z</updated>
-    <author>
-      <name>RGSoCBundler</name>
-    </author>
-    <content type="html">&lt;h1 id="week-3-day-10"&gt;Week 3 Day 10&lt;/h1&gt;
-
-&lt;h2 id="unit-tests-vs-integrations-tests"&gt;Unit Tests vs. Integrations Tests&lt;/h2&gt;
-
-&lt;h3 id="unit-tests"&gt;Unit Tests&lt;/h3&gt;
-&lt;blockquote&gt;
-  &lt;blockquote&gt;
-    &lt;p&gt;A unit test is a test written by the programmer to verify that a relatively small piece of code is doing what it is intended to do. They are narrow in scope, they should be easy to write and execute, and their effectiveness depends on what the programmer considers to be useful. The tests are intended for the use of the programmer, they are not directly useful to anybody else, though, if they do their job, testers and users downstream should benefit from seeing less bugs. -&lt;a href="http://stackoverflow.com/questions/5357601/whats-the-difference-between-unit-tests-and-integration-tests"&gt;Nathan Hughes&lt;/a&gt;&lt;/p&gt;
-  &lt;/blockquote&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id="integration-tests"&gt;Integration Tests&lt;/h3&gt;
-&lt;blockquote&gt;
-  &lt;blockquote&gt;
-    &lt;p&gt;An integration test is done to demonstrate that different pieces of the system work together. Integration tests cover whole applications, and they require much more effort to put together. They usually require resources like database instances and hardware to be allocated for them. The integration tests do a more convincing job of demonstrating the system works (especially to non-programmers) than a set of unit tests can, at least to the extent the integration test environment resembles production.&lt;br /&gt;
-Actually "integration test" gets used for a wide variety of things, from full-on system tests against an environment made to resemble production to any test that uses a resource (like a database or queue) that isn't mocked out.&lt;/p&gt;
-  &lt;/blockquote&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;We created a Unit Test. &lt;code&gt;spec/bundler/friendly_errors_spec.rb&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;require "spec_helper"
-require "bundler/friendly_errors"
-
-describe "friendly error" do
-  it "rescues Argument Errors" do
-   expect { Bundler.with_friendly_errors{ raise ArgumentError } }.not_to raise_error()
-  end
-end
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id="diy-gem"&gt;DIY Gem&lt;/h2&gt;
-&lt;p&gt;We created our own Lorem Ipsum Generator Gem with the help of this RailsCast 
-&lt;a href="http://railscasts.com/episodes/245-new-gem-with-bundler"&gt;#245 New Gem with Bundler&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id="more-bash-aliaseshttpwwwtechrepubliccomblog10-thingscut-down-on-linux-command-line-typing-with-these-10-handy-bash-aliases"&gt;&lt;a href="http://www.techrepublic.com/blog/10-things/cut-down-on-linux-command-line-typing-with-these-10-handy-bash-aliases/"&gt;More Bash Aliases&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;Jen changed her .bashrc to have shortcuts to sign into the Bundler and Rails Girls files. Now she can use "rg" instead of "cd Desktop/railsgirls/rgsocbundler.github.io/" and "bu" instead of "cd /Desktop/railsgirls/bundler". Way shorter!&lt;/p&gt;
-
-</content>
-  </entry>
-  <entry>
-    <title>Week 2 Day 9 Testing Testing 1, 2, 3</title>
-    <link rel="alternate" href="/2013/07/26/week2-day9.html"/>
-    <id>/2013/07/26/week2-day9.html</id>
-    <published>2013-07-27T01:41:00Z</published>
-    <updated>2013-07-27T01:41:00Z</updated>
-    <author>
-      <name>RGSoCBundler</name>
-    </author>
-    <content type="html">&lt;h1 id="week-2-day-9"&gt;Week 2 Day 9&lt;/h1&gt;
-
-&lt;h2 id="testing-testing-1-2-3"&gt;Testing Testing 1, 2, 3&lt;/h2&gt;
-
-&lt;p&gt;To easily make comments on our progress, we sent pull requests to our coach’s Bundler repo on Github containing our new code and test spec.&lt;/p&gt;
-
-&lt;h3 id="pass-the-1st-test"&gt;Pass The 1st Test&lt;/h3&gt;
-&lt;p&gt;The goal was to get our first test to pass, which was to get an empty field when we run &lt;code&gt;dbundle i&lt;/code&gt; rather than a stacktrace.&lt;/p&gt;
-
-&lt;p&gt;We read articles on &lt;a href="http://rubylearning.com/satishtalim/ruby_exceptions.html"&gt;Ruby Exceptions&lt;/a&gt; and &lt;a href="http://www.mikeperham.com/2012/03/03/the-perils-of-rescue-exception/"&gt;The Perils of rescue Exception&lt;/a&gt;. We spent the day figuring out the importance of the Ruby exception hierarchy and that the order of the exception within the file also mattered.&lt;/p&gt;
-
-&lt;p&gt;The first step was to use the correct Exception class. Our stacktrace displayed the error as an ArgumentError, which is a descendent of Exception. We need to be more specific of what error we are capturing because if we use &lt;code&gt;rescue Exception&lt;/code&gt; or &lt;code&gt;rescue StandardError&lt;/code&gt;, it will potentially catch other errors.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="/images/bundler/ruby-exception-hierarchy.jpg" alt="Ruby exception hierarchy" /&gt;&lt;/p&gt;
-
-&lt;p&gt;If the rescue code gets added to the bottom of the file, the test will not pass. We have to add it above the other rescue's. The order/hierarchy matters.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="/images/bundler/First-Test-Friendly-Error.png" alt="First Test of Friendly Errors" /&gt;&lt;/p&gt;
-
-&lt;p&gt;To manually see that it works, we type in &lt;code&gt;dbundle i&lt;/code&gt; in our rgsocbundler directory and wahlah. Nothing gets displayed. Before, when we ran &lt;code&gt;dbundle i&lt;/code&gt;, we got a stacktrace.&lt;/p&gt;
-
-&lt;h3 id="pass-the-second-test"&gt;Pass the Second Test&lt;/h3&gt;
-&lt;p&gt;The next step, we created our second test to print out a message. When we type &lt;code&gt;dbundle i&lt;/code&gt;, we want it to print out a message.&lt;/p&gt;
-
-&lt;p&gt;We used &lt;a href="https://github.com/bundler/bundler/blob/master/spec/update/gems_spec.rb#L147-L152"&gt;this file&lt;/a&gt; for reference on the variables used for the error and output and rspec syntax (the correct term is &lt;a href="https://www.relishapp.com/rspec/rspec-expectations/v/2-14/docs/built-in-matchers"&gt;matcher&lt;/a&gt;).&lt;/p&gt;
-
-&lt;h3 id="more-learning"&gt;More Learning&lt;/h3&gt;
-&lt;p&gt;We just wrote some Integration Tests. Now we started reading what are Integration Tests and Unit Tests and what is the difference between the two of them?&lt;/p&gt;
-
-</content>
-  </entry>
-  <entry>
-    <title>Week 2 Day 8 Bash</title>
-    <link rel="alternate" href="/2013/07/25/week2-day8.html"/>
-    <id>/2013/07/25/week2-day8.html</id>
-    <published>2013-07-26T00:23:00Z</published>
-    <updated>2013-07-26T00:23:00Z</updated>
-    <author>
-      <name>RGSoCBundler</name>
-    </author>
-    <content type="html">&lt;h1 id="week-2-day-8"&gt;Week 2 Day 8&lt;/h1&gt;
-
-&lt;h2 id="bash"&gt;Bash&lt;/h2&gt;
-
-&lt;h3 id="reproduce-the-bundle-i-error-for-the-bundler-repo"&gt;Reproduce the &lt;strong&gt;bundle i&lt;/strong&gt; error for the Bundler Repo&lt;/h3&gt;
-
-&lt;h4 id="our-quandary"&gt;Our Quandary&lt;/h4&gt;
-
-&lt;p&gt;How are we to reproduce the &lt;code&gt;bundle i&lt;/code&gt; error for the Bundler repo we cloned.&lt;/p&gt;
-
-&lt;p&gt;How would we be able to see if it fixed the error (instead of stacktrace, it displays a friendly error message) when we type bundle i?&lt;/p&gt;
-
-&lt;p&gt;For other rubygems, we would use bundler and specify in the gemfile. Then run, bundle install or bundle install gemname.&lt;/p&gt;
-
-&lt;h4 id="our-solution"&gt;Our Solution&lt;/h4&gt;
-
-&lt;p&gt;To use our cloned bundler on the commandline, our mentor, Andre Arko, said “back in the dark pre-bundler ages you always had to do this: ruby -I/path/to/gem/lib -S /path/to/gem/bin/foo.”&lt;br /&gt;
-The &lt;code&gt;-I&lt;/code&gt; tells Ruby where to load the library scripts. (Looked up -I in &lt;code&gt;man ruby&lt;/code&gt;)&lt;br /&gt;
-We created an alias named dbundle in our bash profile. (.bashrc or .bash_profile). It is a hidden file in your home directory. Sooo, you have to run &lt;code&gt;ls -a&lt;/code&gt; to see it.&lt;br /&gt;
-alias dbundle='ruby -I ~/sw/gems/bundler/lib ~/sw/gems/bundler/bin/bundle'
-This way we only have to type in dbundle rather than that long line every single time.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Put this into you .bashrc file (Make sure you have the right path to your file.)&lt;/p&gt;
-
-    &lt;pre&gt;&lt;code&gt; alias dbundle='ruby -I ~/Desktop/railsgirls/bundler/lib ~/Desktop/railsgirls/bundler/bin/bundle'
-&lt;/code&gt;&lt;/pre&gt;
-
-    &lt;p&gt;You can locate the .bashrc file by running:&lt;/p&gt;
-
-    &lt;pre&gt;&lt;code&gt; $ ls -a
-&lt;/code&gt;&lt;/pre&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Now you can run this command in any directory with a Gemfile&lt;/p&gt;
-
-    &lt;pre&gt;&lt;code&gt; $ dbundle i
-&lt;/code&gt;&lt;/pre&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id="our-struggles"&gt;Our Struggles&lt;/h3&gt;
-
-&lt;p&gt;Setting up the alias we got Bundler::GemfileNotFound
-In order for our alias to work, we have to run dbundle inside a directory that has a Gemfile. For example, our rgsocbundler.git.io blog has a Gemfile. We can run dbundle inside that directory. Now run &lt;code&gt;dbundle&lt;/code&gt; inside our rgsocbundler directory and wahlah! It works. And if run &lt;code&gt;dbundle i&lt;/code&gt;, it reproduces the error (stacktrace).&lt;/p&gt;
-
-&lt;h3 id="notes"&gt;Notes:&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;source ~/.bashrc&lt;/strong&gt; - reloads the bash file&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;-I directory&lt;/strong&gt; Used to tell Ruby where to load the library scripts.
-    Directory path will be added to the load-path variable
-    ($:).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;-S&lt;/strong&gt; Makes Ruby use the PATH environment variable to search for script,unless if its name begins with a slash.  This is used to emulate #! on machines that don't support it, in the following manner:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;#! /usr/local/bin/ruby
-# This line makes the next one a comment in Ruby \
-exec /usr/local/bin/ruby -S $0 $*
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;git remote -v&lt;/strong&gt; will display your remote and origin paths&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id="other-stuff-we-did"&gt;Other Stuff We Did&lt;/h2&gt;
-
-&lt;p&gt;Based on the comments, we made changes and fixes to our pull requests that were submitted.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Week 2 Day 7 RSpec</title>
-    <link rel="alternate" href="/2013/07/24/week2-day7.html"/>
-    <id>/2013/07/24/week2-day7.html</id>
-    <published>2013-07-25T00:23:00Z</published>
-    <updated>2013-07-25T00:23:00Z</updated>
-    <author>
-      <name>RGSoCBundler</name>
-    </author>
-    <content type="html">&lt;h1 id="week-2-day-7"&gt;Week 2 Day 7&lt;/h1&gt;
-
-&lt;h2 id="rspec"&gt;RSpec&lt;/h2&gt;
-
-&lt;h3 id="what-we-did-and-learned"&gt;What We Did and Learned&lt;/h3&gt;
-&lt;p&gt;We continued by reading the &lt;a href="https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers/raise-error-matcher"&gt;RSpec Expectations&lt;/a&gt; for syntax and writing a test to fail when typing &lt;code&gt;bundle i&lt;/code&gt; it should not raise an error. However, neither of us could get our test to fail, which is what we want.&lt;/p&gt;
-
-&lt;p&gt;We also did not know what and where &lt;code&gt;Bundler.ui.error&lt;/code&gt; does. We learned how to quickly search for code in files by either using the tool ack or using the commandline &lt;a href="http://www.cyberciti.biz/faq/howto-use-grep-command-in-linux-unix/"&gt;grep&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;grep -r "def ui" .&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;-r is short for recursive. This searches within the current directory and all directories within it with the words "def ui."&lt;/p&gt;
-
-&lt;p&gt;Jessica explained recursion. It is called recursion because it calls itself. One calls one and the return is the basecase.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;def one(any_int)
-  return any_int if any_int == 1
-  one(any_int - 1)
-end
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;We also learned that in Ruby convention, the name of the Class is the filename. Classes are &lt;code&gt;CamelCaps&lt;/code&gt; and files are &lt;code&gt;snake_case&lt;/code&gt;. Example: Class UI would have a file called ui.rb&lt;/p&gt;
-
-&lt;p&gt;Our coach, Jessica, poked around the specs in Bundler and found the Bundler test is handled differently. She directed us to how our test should look like. After implementing the correct test, we got our test to fail and we are working on getting it to pass.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;require 'spec_helper'
-
-describe "Argument Error when typing bundle i" do
-  it "should not raise error" do
-    bundle "i"
-    expect(err).to be_empty
-  end
-end
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Failures:
-
-1) Argument Error when typing bundle i should not raise error
-  Failure/Error: expect(err).to be_empty
-   expected empty? to return true, got false
- # ./spec/bundle_i_spec.rb:6:in `block (2 levels) in &amp;lt;top (required)&amp;gt;'
-
-Finished in 2.02 seconds
-1 example, 1 failure
-
-Failed examples:
-
-rspec ./spec/bundle_i_spec.rb:4 # Argument Error when typing bundle i should not raise error
-&lt;/code&gt;&lt;/pre&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Week 2 Day 6 Exceptions &amp; Error</title>
-    <link rel="alternate" href="/2013/07/23/week2-day6.html"/>
-    <id>/2013/07/23/week2-day6.html</id>
-    <published>2013-07-24T00:49:00Z</published>
-    <updated>2013-07-24T00:49:00Z</updated>
-    <author>
-      <name>RGSoCBundler</name>
-    </author>
-    <content type="html">&lt;h1 id="week-2-day-6"&gt;Week 2 Day 6&lt;/h1&gt;
-
-&lt;h2 id="bundler-issue--1---bundle-i"&gt;Bundler Issue # 1 - &lt;em&gt;bundle i&lt;/em&gt;&lt;/h2&gt;
-
-&lt;h3 id="what-we-did"&gt;What We Did&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;We are still trying to get out first Bundler pull request merged.&lt;/strong&gt;
-We stripped down the "Bundler for Development" section on the Bundler Contribute Page. We added the entirety of it on our Team Bundler Website in the Cheatsheet section and on the Rails Girls Guides&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Struggled with unwanted white space. Joyce used travis-ci.org and I modified my .gvimrc&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Read about exceptions in the Pragmatic Programmers' Guide / Pickaxe.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;We started to work on our first issue in Bundler.&lt;/strong&gt; We are trying to figure out the errors caused when you try to do the bundle i command. Which gives you a stack trace instead of an error. We realized the the class is ArgumentError and that it doesn't understand whether you want to  bundle init bundle inject or bundle install. We worked in the friendly_errors file and tried to figure out how to raise the right exception. We also created an rspec test for it. We will be continuing to work on this tomorrow.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id="what-we-learned-from-our-boo-boos"&gt;What we Learned from our Boo Boo’s?&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Amending Commit Messages Caused Push Rejection
-Joyce pushed a commit and then wanted to change the commit message &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This caused a push rejection.&lt;/p&gt;
-
-&lt;pre&gt; To https://github.com/joyicecloud/rgsocbundler.github.io.git
-    ! [rejected]        blog-log -&amp;gt; blog-log (non-fast-forward)
-    error: failed to push some refs to 'https://github.com/joyicecloud/rgsocbundler.github.io.git&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;Amending a commit that you already pushed creates a new commit. If you check the commit SHA, the numbers are different.That means you will need to force push because it rewrites the commit history.
-
-It is best to avoid amending commits that you ha
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Before buying broth read the package to see if it is chicken broth or vegetable broth. The packages are practically identical. :)&lt;/li&gt;
-&lt;/ul&gt;
-
+&lt;p&gt;Joyce's ipsum command didn't work because the &lt;code&gt;require "loremz"&lt;/code&gt; in &lt;code&gt;lib/loremz/cli.rb&lt;/code&gt; was left out. We need to include it to load the file &lt;code&gt;lib/loremz.rb&lt;/code&gt;&lt;/p&gt;
 </content>
   </entry>
 </feed>

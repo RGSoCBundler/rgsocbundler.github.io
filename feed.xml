@@ -131,11 +131,31 @@
 </content>
   </entry>
   <entry>
+    <title>Week 4 Day 17 Friscoooo</title>
+    <link rel="alternate" href="/2013/08/07/week4-day17.html"/>
+    <id>/2013/08/07/week4-day17.html</id>
+    <published>2013-08-07T18:45:00Z</published>
+    <updated>2013-08-07T18:45:00Z</updated>
+    <author>
+      <name>RGSoCBundler</name>
+    </author>
+    <content type="html">&lt;h1 id="week-4-day-17"&gt;Week 4 Day 17&lt;/h1&gt;
+
+&lt;h2 id="how-i-love-ya-friscoooo"&gt;How I love ya, Friscoooo&lt;/h2&gt;
+
+&lt;p&gt;All 3 of us flew to &lt;a href="http://youtu.be/WnjufR8GDcw"&gt;San Francisco&lt;/a&gt; today.&lt;/p&gt;
+
+&lt;p&gt;While Jessica attended a speaker's dinner we went to &lt;a href="http://www.curryupnow.com/menus"&gt;Curry Up Now&lt;/a&gt; in the Mission then we saw the band &lt;a href="http://www.gauchojazz.com/about.html"&gt;Gaucho&lt;/a&gt; at &lt;a href="http://amnesiathebar.com/newp/"&gt;Amnesia&lt;/a&gt; Here's their &lt;a href="https://myspace.com/gauchosf"&gt;myspace&lt;/a&gt; Their sax player plays with Tom Waits. We soaked up culture and inspiration San Francisco style.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://www3.hilton.com/en/hotels/california/hilton-san-francisco-union-square-SFOFHHH/index.html"&gt;The Hilton&lt;/a&gt; where we are staying is beautiful and the rooms are so comfortable and posh. Thanks Distill, Engine Yard and Rails Girls Summer of Code! We are so ready for the conference tomorrow. There are so many interesting talks to attend.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>Week 4 Day 16 Documentation</title>
-    <link rel="alternate" href="/2013/08/07/week4-day16.html"/>
-    <id>/2013/08/07/week4-day16.html</id>
-    <published>2013-08-08T00:03:00Z</published>
-    <updated>2013-08-08T00:03:00Z</updated>
+    <link rel="alternate" href="/2013/08/06/week4-day16.html"/>
+    <id>/2013/08/06/week4-day16.html</id>
+    <published>2013-08-07T00:03:00Z</published>
+    <updated>2013-08-07T00:03:00Z</updated>
     <author>
       <name>RGSoCBundler</name>
     </author>
@@ -226,43 +246,6 @@ Looks like the first button people click on is &lt;strong&gt;Learn More: Gemfile
 &lt;p&gt;http://philcrissman.com/2010/11/08/how-to-read-error-messages-for-ruby-on-rails/&lt;/p&gt;
 
 &lt;p&gt;http://modernlegend.github.io/blog/2013/02/28/how-to-read-ruby-errors/&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Week 3 Day 13 Namespace n Rspec</title>
-    <link rel="alternate" href="/2013/08/02/week3-day13.html"/>
-    <id>/2013/08/02/week3-day13.html</id>
-    <published>2013-08-02T18:28:00Z</published>
-    <updated>2013-08-02T18:28:00Z</updated>
-    <author>
-      <name>RGSoCBundler</name>
-    </author>
-    <content type="html">&lt;h1 id="week-3-day-11"&gt;Week 3 Day 11&lt;/h1&gt;
-
-&lt;h2 id="namespace-n-rspec"&gt;Namespace n Rspec&lt;/h2&gt;
-
-&lt;h3 id="what-we-did"&gt;What We Did&lt;/h3&gt;
-&lt;p&gt;We fixed our gem to have namespace in the &lt;code&gt;lib/loremz/cli.rb&lt;/code&gt;. Namespace is where the class CLI is encapsulated by module Loremz. The syntax for namespacing is &lt;code&gt;Loremz::CLI&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;module Loremz
-  class CLI &amp;lt; Thor
-    #your methods
-  end
-end
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;That way our &lt;code&gt;lib/loremz/cli.rb&lt;/code&gt; file matches with the &lt;code&gt;lib/loremz.rb&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Why do we want our &lt;code&gt;lib/loremz/cli.rb&lt;/code&gt; and &lt;code&gt;lib/loremz.rb&lt;/code&gt; file to match?&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;The &lt;code&gt;lib/loremz/cli.rb&lt;/code&gt; file is just for handling what comes in the command line. While the content would be stored in the &lt;code&gt;lib/loremz.rb&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;We use &lt;code&gt;lib/loremz/cli.rb&lt;/code&gt; to call &lt;code&gt;lib/loremz.rb&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Today we also worked on writing RSpec tests for the gem we created.&lt;/p&gt;
-
-&lt;h3 id="what-we-learned-from-our-boo-boos"&gt;What We Learned from our Boo Boo’s?&lt;/h3&gt;
-&lt;p&gt;Joyce's ipsum command didn't work because the &lt;code&gt;require "loremz"&lt;/code&gt; in &lt;code&gt;lib/loremz/cli.rb&lt;/code&gt; was left out. We need to include it to load the file &lt;code&gt;lib/loremz.rb&lt;/code&gt;&lt;/p&gt;
 </content>
   </entry>
 </feed>

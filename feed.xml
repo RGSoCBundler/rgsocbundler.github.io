@@ -5,7 +5,7 @@
   <id>http://rgsocbundler.github.io/</id>
   <link href="http://rgsocbundler.github.io/"/>
   <link href="http://rgsocbundler.github.io/feed.xml" rel="self"/>
-  <updated>2013-08-09T19:15:00Z</updated>
+  <updated>2013-08-13T18:32:00Z</updated>
   <author>
     <name>Jen Diamond</name>
   </author>
@@ -15,6 +15,35 @@
   <author>
     <name>Jessica Suttles</name>
   </author>
+  <entry>
+    <title>Week 5 Day 21 Bundler Site</title>
+    <link rel="alternate" href="/2013/08/13/week5-day21.html"/>
+    <id>/2013/08/13/week5-day21.html</id>
+    <published>2013-08-13T18:32:00Z</published>
+    <updated>2013-08-13T18:32:00Z</updated>
+    <author>
+      <name>RGSoCBundler</name>
+    </author>
+    <content type="html">&lt;h1 id="week-5-day-21"&gt;Week 5 Day 21&lt;/h1&gt;
+
+&lt;h2 id="bundler-site"&gt;Bundler Site&lt;/h2&gt;
+
+&lt;h3 id="the-hub"&gt;The Hub&lt;/h3&gt;
+&lt;p&gt;Today Team Bundler worked in Downtown L.A. at the &lt;a href="http://www.thehubla.com/"&gt;Hub&lt;/a&gt; with the whole G5 crew including Jessicard who is visiting from San Francisco. We worked on the documentation for the &lt;a href="http://bundler.io/"&gt;Bundler&lt;/a&gt; website.&lt;/p&gt;
+
+&lt;h3 id="bundler-site-1"&gt;Bundler Site&lt;/h3&gt;
+&lt;p&gt;Jen worked on organizing the content and all the links for the new side bar. We are ready to get rolling and start making changes. Soon we hope it will be much better. There is so much information already there it just needs some organizing.&lt;/p&gt;
+
+&lt;p&gt;Each section will have its own page, Jen found some great information that was buried. The side bar alone will really help make it easier to get around.&lt;/p&gt;
+
+&lt;p&gt;We looked to improve the documentation for Bundler. Before our trip to the Distill Conference, we had analyzed the website to see what can be better organized and be more user friendly. We browsed through the issues created for the bunder site. The first issue we focused on was making a sidebar for the website. It got confusing between all the syntax; Markdown, Haml, SASS, CSS, and ERB. We got a skeleton of a navigation sidebar on the right side of the page locally and started a pull request for the first piece in creating the sidebar!&lt;/p&gt;
+
+&lt;h3 id="no-jobshttpwwwimdbcomtitlett2357129-"&gt;No &lt;a href="http://www.imdb.com/title/tt2357129/"&gt;jOBs&lt;/a&gt; :(&lt;/h3&gt;
+&lt;p&gt;After working we all went to try to see the premier of the Steve Jobs movie. We all had printed out our tickets and signed up on the website. We thought all we had to do was stand in line and we'd see it. Little did we know that there was a good chance we wouldn't get in. We stood on the sidewalk collecting friends, Ashley, Anna, Chris, Jessica Suttles, Jessicard, and Shane Becker. After 2 hour of the line slowly surge towards the red carpet we realized that we were 20 people away from getting in. Boo.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/images/bundler-site/bundler.io-screenshot-Aug14-2013.png" alt="Bundler Screenshot" title="Bundler Website Screenshot" /&gt;&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Week 4 Day 19 Distill Day 2</title>
     <link rel="alternate" href="/2013/08/09/week4-day19.html"/>
@@ -202,50 +231,6 @@ Looks like the first button people click on is &lt;strong&gt;Learn More: Gemfile
 
 &lt;p&gt;We practiced our lightning talk for the Distill Conference on Aug 8-9.&lt;/p&gt;
 
-</content>
-  </entry>
-  <entry>
-    <title>Week 3 Day 14 More Gem Production and Testing</title>
-    <link rel="alternate" href="/2013/08/02/week3-day14.html"/>
-    <id>/2013/08/02/week3-day14.html</id>
-    <published>2013-08-03T01:17:00Z</published>
-    <updated>2013-08-03T01:17:00Z</updated>
-    <author>
-      <name>RGSoCBundler</name>
-    </author>
-    <content type="html">&lt;h2 id="more-gem-production-and-testing"&gt;More Gem Production and Testing&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src="http://d33y93cfm0wb4z.cloudfront.net/Lauren/Homepage_Images/Gems_and_birthmonth.jpg" alt="Alt gems" /&gt;&lt;/p&gt;
-
-&lt;p&gt;We were both reading about Rspec in the Pragmatic Programmer's &lt;strong&gt;The RSpec Book&lt;/strong&gt; (Behaviour-Driven Development with RSpec, Cucumber, and Friends) by David Chelimsky&lt;/p&gt;
-
-&lt;p&gt;We also were looking at Peepcode's Rspec Screencast.&lt;/p&gt;
-
-&lt;h3 id="jens-friday"&gt;Jen's Friday&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;p&gt;I worked on my gem last night at the Ruby Study Group and I swear it was working. This morning I ran it and ERROR. I tried so many different things to fix it that I finally lost the thread. I decided to just go through our tutorial and create it again from scratch but there are definitely some missing parts we need to fill in.&lt;/p&gt;
-
-&lt;p&gt;I spent some more time in my .bashrc file. Apparently I have become obsessed with it. My problem was that it was hard to read my errors because my prompt was the same color as everything else so it all blurred together. I used a combination of this site: https://wiki.archlinux.org/index.php/Color_Bash_Prompt and this site: http://ubuntugenius.wordpress.com/2011/07/11/how-to-change-the-command-line-prompt-colour-in-the-ubuntulinux-terminal/ and the Terminal's Profile Preferences a. Hooray, it is finally readable.&lt;/p&gt;
-
-&lt;h3 id="joyces-friday"&gt;Joyce's Friday&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;p&gt;I read the Rspec and bdd page on jumpstartlab’s website. I worked on a rspec test to pass for the Lorem gem with the help of Jessica Suttles and Andre Arko. I assumed I wrote the test wrong and didn’t really look at the error messages. With their help, going over the 2 failures that came up, I got a test to pass. Yay. I had glossed and skimmed the test, which led to reading on how to read error messages. :sweat_smile:&lt;/p&gt;
-
-&lt;h3 id="our-resources"&gt;Our Resources&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;Rspec&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;http://tutorials.jumpstartlab.com/topics/internal_testing/rspec_and_bdd.html&lt;/p&gt;
-
-&lt;p&gt;http://it-ebooks.info/book/77/&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Understanding Error Messages&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;http://stackoverflow.com/questions/17749403/how-do-i-read-error-messages-in-ruby-and-ruby-on-rails&lt;/p&gt;
-
-&lt;p&gt;http://philcrissman.com/2010/11/08/how-to-read-error-messages-for-ruby-on-rails/&lt;/p&gt;
-
-&lt;p&gt;http://modernlegend.github.io/blog/2013/02/28/how-to-read-ruby-errors/&lt;/p&gt;
 </content>
   </entry>
 </feed>

@@ -5,7 +5,7 @@
   <id>http://rgsocbundler.github.io/</id>
   <link href="http://rgsocbundler.github.io/"/>
   <link href="http://rgsocbundler.github.io/feed.xml" rel="self"/>
-  <updated>2013-08-13T18:32:00Z</updated>
+  <updated>2013-08-16T00:53:00Z</updated>
   <author>
     <name>Jen Diamond</name>
   </author>
@@ -15,6 +15,91 @@
   <author>
     <name>Jessica Suttles</name>
   </author>
+  <entry>
+    <title>Week 5 Day 23 What's New &amp; Bug Report</title>
+    <link rel="alternate" href="/2013/08/15/week5-day23.html"/>
+    <id>/2013/08/15/week5-day23.html</id>
+    <published>2013-08-16T00:53:00Z</published>
+    <updated>2013-08-16T00:53:00Z</updated>
+    <author>
+      <name>RGSoCBundler</name>
+    </author>
+    <content type="html">&lt;h1 id="week-5-day-23"&gt;Week 5 Day 23&lt;/h1&gt;
+
+&lt;h2 id="whats-new--bug-report"&gt;What's New &amp;amp; Bug Report&lt;/h2&gt;
+
+&lt;p&gt;Jessica was Doing Team Building with her G5 team today so Joyce and I worked remotely today.&lt;/p&gt;
+
+&lt;h3 id="jens-thursday"&gt;Jen's Thursday&lt;/h3&gt;
+
+&lt;p&gt;I worked out of the Starbucks in Atwater Village today. I saw several kids practicing their dance moves outside while waiting for a bus. &lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;I started by creating some issues for some changes I want to make to the Bundler site. Like a create an FAQ page, create a footer and create a Report a Bug page. Then Jessica pointed out that Andre already had posted a Create a Report a Bug issuesn so I decided to work on that first.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;I had pulled Joyce's remote to my master branch yesterday so I could view her new sidebar. I was creating my branches with the side bar included until I realized that it was a bad idea so I rolled back and re-created all my branches.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;I created a "Report a Bug" page based on the &lt;a href="https://github.com/bundler/bundler/blob/master/ISSUES.md"&gt;ISSUES.md page&lt;/a&gt; I am still getting used to using HAML. White space delimiters are tricky. I sent a pull request for this page so I can get comments on it.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;I made some comments on the Sidebar pull request Joyce made. I suggested aligning the text left instead of right.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;I noticed a link to the bundler-features repo on the issues page. I found the directions to be really unclear in the README. I suggested to Andre that we change it. So he re-wrote it and then I made some more changes to the &lt;a href="https://github.com/bundler/bundler-features"&gt;README file.&lt;/a&gt; I am excited to see that commit merged.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="joyces-thursday"&gt;Joyce's Thursday&lt;/h3&gt;
+
+&lt;p&gt;I had a pull request merged because I didn’t push all my commits right away. Next time I should commit everything before opening a pull request. Or should I?! Since, this turned out to be a nice side effect to a mistake. Hooray!&lt;/p&gt;
+
+&lt;p&gt;The above merged pull request was actually part of this one to fix open issue 53. I created a new pull request where I added the current What’s New page with buttons and links to new pages for the other Bundler version releases and also linked to the changelog.&lt;/p&gt;
+
+&lt;p&gt;The sidebar was looking uneven and not congruent with the entire page so I made changes to the sass file to make it look nicer and cleaner. I made adjustments to the stylesheet so the whitespace between the left and right side of the page where even, the space between the content and the sidebar where even, the top of the sidebar and the first header was also lined up. Also removed the underline from the sidebar header, made the sidebar header size smaller, and aligned it to the right. The sidebar has turned out looking great!&lt;/p&gt;
+
+</content>
+  </entry>
+  <entry>
+    <title>Week 5 Day 22 Haml Haml</title>
+    <link rel="alternate" href="/2013/08/14/week5-day22.html"/>
+    <id>/2013/08/14/week5-day22.html</id>
+    <published>2013-08-15T00:10:00Z</published>
+    <updated>2013-08-15T00:10:00Z</updated>
+    <author>
+      <name>RGSoCBundler</name>
+    </author>
+    <content type="html">&lt;h1 id="week-5-day-22"&gt;Week 5 Day 22&lt;/h1&gt;
+
+&lt;h2 id="haml-haml"&gt;Haml Haml&lt;/h2&gt;
+
+&lt;h3 id="haml"&gt;Haml&lt;/h3&gt;
+&lt;p&gt;We learned about &lt;a href="http://haml.info/tutorial.html"&gt;Haml&lt;/a&gt; because the Bundler website uses Haml. It can be used instead of ERB and can be converted from an ERB template to Haml. With less syntax, Haml is easier to read and looks clean, some people say it reads like a Haiku.&lt;/p&gt;
+
+&lt;p&gt;The sidebar was organized and filled with links, which hopefully, makes the website easier to navigate and find what you are looking for. The styling of the sidebar was made to match the current look of the website.&lt;/p&gt;
+
+&lt;p&gt;We had a lot of ideas about changes to the Bundler website to make it better. So, we started with making some changes to the homepage and created a Get Started page.&lt;/p&gt;
+
+&lt;p&gt;We added each other's remote repo to our local repo. That way we can better preview the changes each of us made. (For beginners, don't include the angled brackets)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git remote add &amp;lt;your_nickname&amp;gt; &amp;lt;the_remote_url_link&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To pull down the remote repo to our local repo. We used the same command, but with the &lt;code&gt;nickname&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git fetch &amp;lt;your_nickname&amp;gt;
+
+git merge &amp;lt;your_nickname/the_branch_name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Accidentally added the remote to the wrong repo. To remove a remote repo,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git remote rm &amp;lt;your_nickname&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+  </entry>
   <entry>
     <title>Week 5 Day 21 Bundler Site</title>
     <link rel="alternate" href="/2013/08/13/week5-day21.html"/>
@@ -180,60 +265,6 @@ Jen Diamond and Joyce Hsu giving their Ligthning talk about Rails Girls Summer o
 &lt;p&gt;While Jessica attended a speaker's dinner we went to &lt;a href="http://www.curryupnow.com/menus"&gt;Curry Up Now&lt;/a&gt; in the Mission then we saw the band &lt;a href="http://www.gauchojazz.com/about.html"&gt;Gaucho&lt;/a&gt; at &lt;a href="http://amnesiathebar.com/newp/"&gt;Amnesia&lt;/a&gt; Here's their &lt;a href="https://myspace.com/gauchosf"&gt;myspace&lt;/a&gt; Their sax player plays with Tom Waits. We soaked up culture and inspiration San Francisco style.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href="http://www3.hilton.com/en/hotels/california/hilton-san-francisco-union-square-SFOFHHH/index.html"&gt;The Hilton&lt;/a&gt; where we are staying is beautiful and the rooms are so comfortable and posh. Thanks Distill, Engine Yard and Rails Girls Summer of Code! We are so ready for the conference tomorrow. There are so many interesting talks to attend.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Week 4 Day 16 Documentation</title>
-    <link rel="alternate" href="/2013/08/06/week4-day16.html"/>
-    <id>/2013/08/06/week4-day16.html</id>
-    <published>2013-08-07T00:03:00Z</published>
-    <updated>2013-08-07T00:03:00Z</updated>
-    <author>
-      <name>RGSoCBundler</name>
-    </author>
-    <content type="html">&lt;h1 id="week-4-day-16"&gt;Week 4 Day 16&lt;/h1&gt;
-
-&lt;h2 id="documentation"&gt;Documentation&lt;/h2&gt;
-
-&lt;p&gt;Today we started working on improving the documentation on the &lt;a href="http://bundler.io/"&gt;Bundler website.&lt;/a&gt; We all agree that the site needs better navigation.&lt;/p&gt;
-
-&lt;h3 id="jens-tuesday"&gt;Jen's Tuesday&lt;/h3&gt;
-
-&lt;p&gt;I went through every page of the Bundler site testing buttons, links and identifing problems with the structuring of the information. I found a 404 error buried in the site. &lt;a href="https://gist.github.com/jendiamond/6169493#file-gistfile1-md"&gt;My notes.&lt;/a&gt; I also fixed the slide presentation for our possible talk at Distill tomorrow. I really hope that happens.&lt;/p&gt;
-
-&lt;h3 id="joyce-tuesday"&gt;Joyce' Tuesday&lt;/h3&gt;
-
-&lt;p&gt;I went through the google analytics of the Bundler site and gave recommendations and suggestion based on my findings.
-Looks like the first button people click on is &lt;strong&gt;Learn More: Gemfile&lt;/strong&gt; I wonder if others did the same. I initially browsed right past &lt;strong&gt;Would you like to: Get started, Report a bug, See what's new, Read documentation.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h3 id="distill"&gt;Distill&lt;/h3&gt;
-
-&lt;p&gt;We are both really excited for our first Ruby Conference in San Francisco tomorrow at &lt;a href="http://distill.engineyard.com/"&gt;Distill.&lt;/a&gt; We get to watch Jessic give her talk and a bunch of other really interesting speakers. We also get to meet our mentor Andre in person. Oh yeah, Andre is going to send us/ bring us? Bundler shirts!&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Week 4 Day 15 Ruby Warrior</title>
-    <link rel="alternate" href="/2013/08/05/week4-day15.html"/>
-    <id>/2013/08/05/week4-day15.html</id>
-    <published>2013-08-06T00:45:00Z</published>
-    <updated>2013-08-06T00:45:00Z</updated>
-    <author>
-      <name>RGSoCBundler</name>
-    </author>
-    <content type="html">&lt;h2 id="week-4-day-15"&gt;Week 4 Day 15&lt;/h2&gt;
-
-&lt;h3 id="ruby-warrior"&gt;Ruby Warrior&lt;/h3&gt;
-&lt;center&gt;
-&lt;a href="https://www.bloc.io/ruby-warrior"&gt;&lt;img src="/images/rubywarriors-img.png" /&gt;&lt;/a&gt;
-&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;We played &lt;a href="https://www.bloc.io/ruby-warrior"&gt;Ruby Warrior&lt;/a&gt; to learn the Ruby language in a fun and interactive way.&lt;/p&gt;
-
-&lt;p&gt;Jen got her Rspec test to pass for her gem.&lt;/p&gt;
-
-&lt;p&gt;We practiced our lightning talk for the Distill Conference on Aug 8-9.&lt;/p&gt;
-
 </content>
   </entry>
 </feed>

@@ -59,19 +59,35 @@
         <div class="span9">
           <div class="row-fluid">
             <div id="main" role="main" class="well">
-              <h1>Archive for
-  
-    Aug 14 2013
-  
-</h1>
+              <h1 id="week-5-day-24">Week 5 Day 24</h1>
 
+<h2 id="whats-up-doc">What's Up Doc?</h2>
 
-<ul>
-  
-    <li><a href="/2013/08/14/week5-day22.html">Week 5 Day 22 Haml Haml</a> <span>Aug 14</span></li>
-  
-</ul>
+<h3 id="jens-friday">Jen's Friday</h3>
+<p>I worked on breaking apart the Rationale Page to create a FAQ page. I created a new Get Started page and I created a new Bug report page.</p>
 
+<h3 id="joyces-friday">Joyce's Friday</h3>
+
+<p>Today I compared what commands are in the man pages and on the website’s command line reference page. The Bundler commands not listed on the website are <code>bundle help</code> and <code>bundle list</code>. <code>bundle list</code> does the same thing as <code>bundle show</code>. I added <code>bundle help</code> to the command line reference page.</p>
+
+<p>I noticed the alignment for the button in the sidebar was off so I made it have even whitespace between the left and right side.</p>
+
+<p>For the What’s New page, the 1.0 and 1.1 point release buttons link directly to the 1.0 and 1.1 versions of the changelog.</p>
+
+<h4 id="man-pages-and-rake">Man Pages and Rake</h4>
+
+<p>I learned that the <a href="http://bundler.io/v1.3/man/bundle.1.html">Bundler html man pages</a> were generated with a Rubygem called <a href="http://rubygems.org/gems/ronn">Ronn</a>. The html man pages get generated with this command in the bundler repo:</p>
+
+<pre><code>ronn --html man/bundle.ronn
+</code></pre>
+
+<p>However, a rakefile was created so if we run <code>rake man</code>, it goes and runs the above command and moves the generated html man pages in the bunder repo into the man directory in our bundler-site repo.</p>
+
+<p>I noticed that the bundler-site repo doesn't have a man directory and wondered where the Bundler html man pages were being pulled from. I initially thought the Bundler website was being generated from the bundler-site repo, but with Andre's explanation, it actually is on the gh-pages branch in the bundler repo. We are actually making edits/changes on the bunder-site repo, which then goes to bundler repo on the gh-pages branch where the website is served from. The above steps and creation of the man pages are accomplished with code in the <a href="https://github.com/bundler/bundler-site/blob/master/Rakefile">Rakefile</a> where if we run <code>rake release</code> on the command line, it means the release task will run update_vendor, then build, then man, then release.</p>
+
+<p>It is similar to how our <a href="http://rgsocbundler.github.io">rgsocbundler.github.io</a> website is setup, except it is only on one repo. The website gets edited on the source branch and then <code>rake publish</code> to go live on the master branch.</p>
+
+<p><a href="https://help.github.com/articles/user-organization-and-project-pages">How we are allowed to host a website on github.</a></p>
 
             </div>
           </div>

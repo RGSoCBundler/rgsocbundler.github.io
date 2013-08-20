@@ -5,7 +5,7 @@
   <id>http://rgsocbundler.github.io/</id>
   <link href="http://rgsocbundler.github.io/"/>
   <link href="http://rgsocbundler.github.io/feed.xml" rel="self"/>
-  <updated>2013-08-17T01:52:00Z</updated>
+  <updated>2013-08-20T01:43:00Z</updated>
   <author>
     <name>Jen Diamond</name>
   </author>
@@ -15,6 +15,75 @@
   <author>
     <name>Jessica Suttles</name>
   </author>
+  <entry>
+    <title>Week 6 Day 25 Monday Merge</title>
+    <link rel="alternate" href="/2013/08/19/week6-day25.html"/>
+    <id>/2013/08/19/week6-day25.html</id>
+    <published>2013-08-20T01:43:00Z</published>
+    <updated>2013-08-20T01:43:00Z</updated>
+    <author>
+      <name>RGSoCBundler</name>
+    </author>
+    <content type="html">&lt;h1 id="week-6-day-25"&gt;Week 6 Day 25&lt;/h1&gt;
+
+&lt;h2 id="monday-merge"&gt;Monday Merge&lt;/h2&gt;
+
+&lt;h3 id="jens-monday"&gt;Jen's Monday&lt;/h3&gt;
+
+&lt;h4 id="get-started-page"&gt;Get Started Page&lt;/h4&gt;
+
+&lt;p&gt;Today I consolidated the instructions in the http://bundler.io/v1.3/rationale.html, the "Get started-installing Bundler" directions and the "Simple work Flow" directions. They all repeated but with a few extra tidbits of info. Andre gave me the go ahead to do this on Friday.
+I also added the link to the sidebar and added a bit of css styling.
+I shortened the index page and added links to the Get Started page.&lt;/p&gt;
+
+&lt;p&gt;I was having problems doing a git push origin master I kept getting the error:
+error: failed to push some refs to 'https://github.com/jendiamond/bundler-site.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Merge the remote changes (e.g. 'git pull')
+hint: before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push –help' for details.&lt;/p&gt;
+
+&lt;p&gt;So I checked out git push –help
+NOTE ABOUT FAST-FORWARDS
+       When an update changes a branch (or more in general, a ref) that used
+       to point at commit A to point at another commit B, it is called a
+       fast-forward update if and only if B is a descendant of A.&lt;/p&gt;
+
+&lt;p&gt;Even though I re-created my branch from the master branch where I had pulled down the new sidebar updates git was not liking the differences between my last commit on the getstarted branch. &lt;/p&gt;
+
+&lt;p&gt;I did a git fetch –all then git push -f origin  This updated all my files correctly.&lt;/p&gt;
+
+&lt;h4 id="faq-page"&gt;FAQ Page&lt;/h4&gt;
+
+&lt;p&gt;I re-styled the FAQ page and added a link to the side bar. It is ready to be merged.&lt;/p&gt;
+
+&lt;h3 id="joyces-monday"&gt;Joyce's Monday&lt;/h3&gt;
+
+&lt;p&gt;Yay! The sidebar got merged and deployed on the bundler.io website!&lt;/p&gt;
+
+&lt;p&gt;Before the sidebar was merged, minor finishing touches were made. I removed extra whitespace and it was also easier to remove the aside html tag because it was not really necessary and we would have to add a shim to implement html5 for older browsers that don’t support it. All that wasn’t worth it for one tag. But, it can be added in the future. The sidebar is a great starting point ready for use and for additional improvements now.&lt;/p&gt;
+
+&lt;p&gt;After deployment though, I realized the sidebar shows up for all versions of the bundler documentation website. That isn’t ideal when the sidebar contains links to version 1.3 of bundler and if you are browsing about version 1.2 of bundler. I made the sidebar only display for version 1.3 of bundler.&lt;/p&gt;
+
+&lt;p&gt;The update for having the sidebar only for v1.3 was merged!&lt;/p&gt;
+
+&lt;p&gt;Because the What’s New page header links has duplicate code, I changed it to use partials.&lt;/p&gt;
+
+&lt;p&gt;Also learned we can automatically close an issue, if we type “Fixes #57” in the PR(Pull Request) comments. https://github.com/blog/1506-closing-issues-via-pull-requests&lt;/p&gt;
+
+&lt;p&gt;Learned about git squashing, where if you have a bunch of little commit messages to get rid of all that clutter. Combine it into 1 or fewer commits. &lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href="http://blog.steveklabnik.com/posts/2012-11-08-how-to-squash-commits-in-a-github-pull-request"&gt;http://blog.steveklabnik.com/posts/2012-11-08-how-to-squash-commits-in-a-github-pull-request&lt;/a&gt; &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href="http://git-scm.com/book/en/Git-Tools-Rewriting-History"&gt;http://git-scm.com/book/en/Git-Tools-Rewriting-History&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+  </entry>
   <entry>
     <title>Week 5 Day 24 What's Up Doc?</title>
     <link rel="alternate" href="/2013/08/16/week5-day24.html"/>
@@ -215,76 +284,6 @@ git merge &amp;lt;your_nickname/the_branch_name&amp;gt;
 &lt;p&gt;&lt;a href="http://www.youtube.com/watch?v=fKiuHJ-MUzg"&gt;Slides&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Ana Nelson is the creator of Dexy, a Python-based tool for documentation. Documentation is incredibly important as part of best practice to get the most value out of your code. Ana talked about the tools for integrating code and prose.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Week 4 Day 18 Distill Day 1</title>
-    <link rel="alternate" href="/2013/08/08/week4-day18.html"/>
-    <id>/2013/08/08/week4-day18.html</id>
-    <published>2013-08-08T19:15:00Z</published>
-    <updated>2013-08-08T19:15:00Z</updated>
-    <author>
-      <name>RGSoCBundler</name>
-    </author>
-    <content type="html">&lt;h1 id="week-4-day-18"&gt;Week 4 Day 18&lt;/h1&gt;
-
-&lt;h2 id="distill-day-1"&gt;Distill Day 1&lt;/h2&gt;
-
-&lt;p&gt;We left the beautiful Hilton hotel on a bus bound for Treasure Island which is just off the Bay Bridge. We had a great view from the bus of the Golden Gate bridge and the bay below. We arrived at The Winery, where Distill was held, to an amazing spread of breakfast treats and hand poured coffee.&lt;/p&gt;
-
-&lt;p&gt;We finally met our mentor Andre Arko and he came bearing gifts in the form of bright blue Bundler t-shirts!&lt;/p&gt;
-
-&lt;p&gt;We used the Twitter hashtag #distill13 to post about the adventures of the day. Real-time tweets were posted on the screen in the main room for everyone to see.&lt;/p&gt;
-
-&lt;h3 id="keynote-nolan-and-brent-bushnell"&gt;Keynote: Nolan and Brent Bushnell&lt;/h3&gt;
-&lt;p&gt;The keynote address was given by the founder of Atari and Chucky Cheese, Nolan Bushnell, and his son Brent Bushnell who runs Two Bit Circus in Los Angeles which is a group that helps children learn programming through the making of amusements. They were vibrant, inspiring speakers concentrating on pushing yourself to create and complete projects. Jen had the pleasure of meeting with them at lunch. She had previously met Brent Bushnell in Los Angeles at his amazing workspace in the Brewery.&lt;/p&gt;
-
-&lt;div style="float: left; border:10px solid white"&gt;&lt;img src="/images/distill/jinas_talk.jpg" /&gt;&lt;div class="caption"&gt;Jina Bolton speaking at the Distill Conference&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id="realigning--refactoring-ui---jina-bolton"&gt;Realigning &amp;amp; Refactoring UI - Jina Bolton&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Product Designer at Do&lt;/strong&gt; // &lt;a href="http://de.slideshare.net/Codemotion/ui-realigning-refactoring-by-jina-bolton"&gt;Slides&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Jina talked about her favorite CSS tools to use in web development. She impressed upon the crowd to not refactor everything all at once, but "do refactor going forward." She had a light, friendly style of speaking that made her easy to listen to.&lt;/p&gt;
-
-&lt;h3 id="connascence-examined---jim-weirich"&gt;Connascence Examined - Jim Weirich&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Chief Scientist at @neo_innovation, Ruby Enthusiast, Clojure dabbler onestepback.org&lt;/strong&gt; // &lt;a href="http://youtu.be/HQXVKHoUQxY"&gt;Slides&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Jim defined connascence between relationships between different Name, Type, Meaning, Position, Timing, and Execution. In the second part, he talked about using Ruby to control Drones and showed video of it. Jen spoke with Jim Weirich and Ron Evans at lunch about drones, Kids Ruby, and music. Jim played a few songs on his ukulele.&lt;/p&gt;
-
-&lt;p&gt;Notes: &lt;a href="https://www.purdue.edu/apps/account/IAMO/I2A2/Reference/Purdue_I2A2_Luhn.jsp"&gt;luhn_check&lt;/a&gt;,
-&lt;a href="http://plato.stanford.edu/entries/supervenience/"&gt;supervenience&lt;/a&gt;&lt;/p&gt;
-
-&lt;div style="float: right; border:10px solid white"&gt;&lt;img src="/images/distill/JimWeirich_Ukulele.jpg" /&gt;&lt;div class="caption"&gt;Jim Weirich playing his Ukulele at Lunch&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id="lunch-and-lawn-games"&gt;Lunch and Lawn Games&lt;/h3&gt;
-
-&lt;p&gt;We had an amazing picnic lunch with the backdrop of San Francisco, Engine Yard's Panda mascot and lawn games.&lt;/p&gt;
-
-&lt;h3 id="keynote-james-whelton"&gt;Keynote: James Whelton&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Co-Founder of CoderDojo&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;He gave an inspiring talk about why he started CoderDojo. He wanted to start a program for kids that he wished existed when he started learning to program. His program started in Ireland and has spread to include Dojo's all over the world. Later in the day, James gave Joyce a pep talk to feel less nervous about the lightning talk.&lt;/p&gt;
-
-&lt;h3 id="history-of-women-in-programming---elise-worthy--jessica-lynn-suttles"&gt;History of Women in Programming - Elise Worthy &amp;amp; Jessica Lynn Suttles&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Elise Worthy - Founder of Brandworthy&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Jessica Suttles - Software Engineer of G5&lt;/strong&gt; // &lt;a href="https://speakerdeck.com/jlsuttles/women-and-computing-at-distill"&gt;Slides&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Jessica and Elise gave their last presentation of this talk. Since we saw it at the LA Ruby Monthly Meetup, they've added more information and slides and really had their talk down to a science. Everyone was intrigued by the importance of women's contribution to programming that they pointed out.&lt;/p&gt;
-
-&lt;h3 id="lightning-talks"&gt;Lightning Talks&lt;/h3&gt;
-&lt;p&gt;&lt;a href="https://speakerdeck.com/jendiamond/distill-rails-girls-summer-of-code-lightning-talk-by-jen-diamond-and-joyce-hsu"&gt;Slides&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;8 of us were selected for the lightning talk. The other lightning speakers were Brenton Cheng, Jon Hyman, Dave Cadwallader, Kevin Stevens, Denis Ivanov, and Kyle Henderson. Then, Jim Weirich played a great song on his ukulele about God writing in Lisp. Giving the lightning talk to about 200 people was a great milestone. We talked about what Rails Girls does and the transition to Summer of Code, what we have learned so far, our plans for the future, and where to follow our progress.&lt;/p&gt;
-
-&lt;h3 id="pre-moonshine"&gt;Pre-Moonshine&lt;/h3&gt;
-&lt;p&gt;We had dinner with everyone from Team Bundler and friends.&lt;/p&gt;
-
-&lt;h3 id="moonshine"&gt;Moonshine&lt;/h3&gt;
-&lt;p&gt;Moonshine was the kick-off party at the Old Mint in SF. We took fun pictures with costumes, socialized, and wandered around taking in the history of coin making and San Francisco. There was a candy room, vaults, projections, a DJ, and plenty of swag.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="/images/distill/jen_diamond-joyce_distill.jpg" alt="Jen Diamond and Joyce Hsu giving their Ligthning talk about Rails Girls Summer of Code at the Distill Conference in San Francisco" title="Jen Diamond and Joyce Hsu giving their Ligthning talk about Rails Girls Summer of Code at the Distill Conference in San Francisco" /&gt;
-Jen Diamond and Joyce Hsu giving their Ligthning talk about Rails Girls Summer of Code at the Distill Conference in San Francisco.&lt;/p&gt;
 </content>
   </entry>
 </feed>

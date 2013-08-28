@@ -59,32 +59,41 @@
         <div class="span9">
           <div class="row-fluid">
             <div id="main" role="main" class="well">
-              <h1 id="week-3-day-11">Week 3 Day 11</h1>
+              <h1 id="week-6-day-29">Week 6 Day 29</h1>
 
-<h2 id="namespace-n-rspec">Namespace n Rspec</h2>
+<h4 id="friday-august-23-2013">Friday, August 23, 2013</h4>
 
-<h3 id="what-we-did">What We Did</h3>
-<p>We fixed our gem to have namespace in the <code>lib/loremz/cli.rb</code>. Namespace is where the class CLI is encapsulated by module Loremz. The syntax for namespacing is <code>Loremz::CLI</code></p>
+<h2 id="partially-squish-squashed">Partially Squish Squashed</h2>
 
-<pre><code>module Loremz
-  class CLI &lt; Thor
-    #your methods
-  end
-end
+<h3 id="jen-friday">Jen' Friday</h3>
+
+<p>I read about Rspec and spent the rest of day wrapping up the FAQ page. I worked on doing my first commit squash and I ran into problem after problem with git which Andre walked me through.</p>
+
+<p>These are the basic commands:</p>
+
+<pre><code>$ git checkout master 
+
+$ git pull upstream master 
+
+$ git checkout faqpage 
+
+$ git rebase -i master
 </code></pre>
 
-<p>That way our <code>lib/loremz/cli.rb</code> file matches with the <code>lib/loremz.rb</code></p>
+<p>Successfully rebased and updated refs/heads/master.  </p>
 
-<p><strong>Why do we want our <code>lib/loremz/cli.rb</code> and <code>lib/loremz.rb</code> file to match?</strong></p>
+<p><strong>Change the word "pick" to "s"</strong> Then run:</p>
 
-<p>The <code>lib/loremz/cli.rb</code> file is just for handling what comes in the command line. While the content would be stored in the <code>lib/loremz.rb</code></p>
+<pre><code>$ git push -f origin faqpage
+</code></pre>
 
-<p>We use <code>lib/loremz/cli.rb</code> to call <code>lib/loremz.rb</code></p>
+<p><a href="https://gist.github.com/jendiamond/6325286#file-gistfile1-md">and here's a link to the rest of the directions.</a></p>
 
-<p>Today we also worked on writing RSpec tests for the gem we created.</p>
+<h3 id="joyces-friday">Joyce's Friday</h3>
 
-<h3 id="what-we-learned-from-our-boo-boos">What We Learned from our Boo Boos?</h3>
-<p>Joyce's ipsum command didn't work because the <code>require "loremz"</code> in <code>lib/loremz/cli.rb</code> was left out. We need to include it to load the file <code>lib/loremz.rb</code></p>
+<p>Received suggestions on how to improve the Rake task to build the issues page and made changes to it. There was a 4 to the right of the Bundler logo, which makes the the logo unclickable. I don’t know where it is coming from. I created a partial to embed it to another page and the 4 disappeared. shrugs. The page looks pretty good, except for the code block. :-/ Fixed it in the CSS. Then, updated the “Report a bug” link on the sidebar to this page and moved the partial to the correct directory. Got the code block and inline code style to match with the rest of website.</p>
+
+<p>Squashed the sidebar button fix for Firefox and submitted PR to bundler site. <strong>The fix has been merged. Yay!</strong></p>
 
             </div>
           </div>

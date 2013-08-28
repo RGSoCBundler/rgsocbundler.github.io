@@ -5,7 +5,7 @@
   <id>http://rgsocbundler.github.io/</id>
   <link href="http://rgsocbundler.github.io/"/>
   <link href="http://rgsocbundler.github.io/feed.xml" rel="self"/>
-  <updated>2013-08-21T00:17:00Z</updated>
+  <updated>2013-08-27T00:10:00Z</updated>
   <author>
     <name>Jen Diamond</name>
   </author>
@@ -15,6 +15,161 @@
   <author>
     <name>Jessica Suttles</name>
   </author>
+  <entry>
+    <title>Week 7 Day 30 Not Rationale Bug n' Rake</title>
+    <link rel="alternate" href="/2013/08/26/week7-day30.html"/>
+    <id>/2013/08/26/week7-day30.html</id>
+    <published>2013-08-27T00:10:00Z</published>
+    <updated>2013-08-27T00:10:00Z</updated>
+    <author>
+      <name>RGSoCBundler</name>
+    </author>
+    <content type="html">&lt;h1 id="week-7-day-30"&gt;Week 7 Day 30&lt;/h1&gt;
+
+&lt;h2 id="not-rationale-bug-n-rake"&gt;Not Rationale Bug n' Rake&lt;/h2&gt;
+
+&lt;h3 id="jens-monday"&gt;Jen's Monday&lt;/h3&gt;
+&lt;p&gt;I broke up parts of the rationale page and combined them into other pages instead of adding them on the get started page&lt;/p&gt;
+
+&lt;p&gt;per Andre's requests:
+Grouping - The section about "groups" should be merged with the page that is linked as "Grouping" in the sidebar.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Set Up&lt;/strong&gt; - The section about "set up your application to use bundler" should be merged with the Bundler.setup page.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Sharing&lt;/strong&gt; - The "check your code into version control" and "share your application with other developers" should be put into a new page named "Sharing" and linked in the sidebar Usage section.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Updating Gem&lt;/strong&gt; - The "updating a dependency" and "updating a gem without modifying the gemfile" sections should be put into a new page named "Updating gems" and linked in the sidebar in the Usage section.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Deploying&lt;/strong&gt; - The "deploying your application" section should be merged with the existing "deploying" page that is linked in the sidebar.&lt;/p&gt;
+
+&lt;h3 id="joyces-monday"&gt;Joyce's Monday&lt;/h3&gt;
+&lt;p&gt;The Report a bug page is generated from the issues.md file placed in the source directory. The bug is the markdown file does not render to html correctly. The number &lt;code&gt;4&lt;/code&gt; shows up to the right of the Bundler logo and makes the logo link not clickable. This is weird. We spent time trying to fix the &lt;code&gt;4&lt;/code&gt;. Andre realized that &lt;code&gt;4&lt;/code&gt; is the id of nil and then found that the markdown file can’t render &lt;code&gt;link_to&lt;/code&gt; with blocks. He fixed it in the layout.haml. Now I don’t need to put the issues.md in a partial to have the page render correctly.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;:issues&lt;/code&gt; task was included before the &lt;code&gt;:build&lt;/code&gt; task that way it gets a copy of the latest issues.md file before deploying. Also, the source/issues.md was added to &lt;code&gt;.gitignore&lt;/code&gt; so that the build artifacts from the bundler repo is not in the bundler-site repo.&lt;/p&gt;
+
+&lt;p&gt;The report a bug page generated from the ISSUES.md of the bundler repo was squashed and submitted the PR to bundler repo.&lt;/p&gt;
+
+&lt;p&gt;Started reading about some more &lt;a href="http://git-scm.com/2011/07/11/reset.html"&gt;git commands&lt;/a&gt;: git clean, git reset&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Week 6 Day 29 Partially Squish Squashed</title>
+    <link rel="alternate" href="/2013/08/23/week6-day29.html"/>
+    <id>/2013/08/23/week6-day29.html</id>
+    <published>2013-08-24T01:43:00Z</published>
+    <updated>2013-08-24T01:43:00Z</updated>
+    <author>
+      <name>RGSoCBundler</name>
+    </author>
+    <content type="html">&lt;h1 id="week-6-day-29"&gt;Week 6 Day 29&lt;/h1&gt;
+
+&lt;h4 id="friday-august-23-2013"&gt;Friday, August 23, 2013&lt;/h4&gt;
+
+&lt;h2 id="partially-squish-squashed"&gt;Partially Squish Squashed&lt;/h2&gt;
+
+&lt;h3 id="jen-friday"&gt;Jen' Friday&lt;/h3&gt;
+
+&lt;p&gt;I read about Rspec and spent the rest of day wrapping up the FAQ page. I worked on doing my first commit squash and I ran into problem after problem with git which Andre walked me through.&lt;/p&gt;
+
+&lt;p&gt;These are the basic commands:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git checkout master 
+
+$ git pull upstream master 
+
+$ git checkout faqpage 
+
+$ git rebase -i master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Successfully rebased and updated refs/heads/master.  &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Change the word "pick" to "s"&lt;/strong&gt; Then run:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git push -f origin faqpage
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href="https://gist.github.com/jendiamond/6325286#file-gistfile1-md"&gt;and here's a link to the rest of the directions.&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id="joyces-friday"&gt;Joyce's Friday&lt;/h3&gt;
+
+&lt;p&gt;Received suggestions on how to improve the Rake task to build the issues page and made changes to it. There was a 4 to the right of the Bundler logo, which makes the the logo unclickable. I don’t know where it is coming from. I created a partial to embed it to another page and the 4 disappeared. shrugs. The page looks pretty good, except for the code block. :-/ Fixed it in the CSS. Then, updated the “Report a bug” link on the sidebar to this page and moved the partial to the correct directory. Got the code block and inline code style to match with the rest of website.&lt;/p&gt;
+
+&lt;p&gt;Squashed the sidebar button fix for Firefox and submitted PR to bundler site. &lt;strong&gt;The fix has been merged. Yay!&lt;/strong&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Week 6 Day 28 Improving Doc &amp; Gem Presentation</title>
+    <link rel="alternate" href="/2013/08/22/week6-day28.html"/>
+    <id>/2013/08/22/week6-day28.html</id>
+    <published>2013-08-23T01:52:00Z</published>
+    <updated>2013-08-23T01:52:00Z</updated>
+    <author>
+      <name>RGSoCBundler</name>
+    </author>
+    <content type="html">&lt;h1 id="week-6-day-28"&gt;Week 6 Day 28&lt;/h1&gt;
+
+&lt;h2 id="improving-doc--gem-presentation"&gt;Improving Doc &amp;amp; Gem Presentation&lt;/h2&gt;
+
+&lt;h3 id="jens-thursday"&gt;Jen's Thursday&lt;/h3&gt;
+
+&lt;h4 id="eastsidewestside-monthly-bash-august"&gt;Eastside/Westside Monthly Bash August&lt;/h4&gt;
+
+&lt;p&gt;I read about Rspec and watched some of the Rspec Peepcode video but mostly I spent my day refining my code and slides for my presentation at the Monthly L.A. Eastside/Westside Ruby Meetup. Our group is a combination of General Assembly students, Rails Girls Summer of Code teams, CS students and their friends. Most of the people attended either a Railsbridge or a Rails Girls event as their launching point into Ruby. This evening's talks were about gems and gem structure.&lt;/p&gt;
+
+&lt;h4 id="hands-on-presentation---creating-a-gem"&gt;Hands-on Presentation - Creating a Gem&lt;/h4&gt;
+
+&lt;p&gt;Ross, from Pivitol, gave a talk about Pivotal Labs and how they work pair programming. The first gem talk by Anna Mendoza explained the structure of gems and how to find good ones to use. My hands-on workshop presentation was based on the gem Joyce and I created several weeks ago. I got all 25 people in the room to create the gem, add Thor and test it successfully. The most satisfying part was going around to each person and helping them to get their gem to work. We have a very well written tutorial now. I might make some more improvements to it for ultra-clarity but everyone tonight followed along very well.&lt;/p&gt;
+
+&lt;h3 id="joyces-thursday"&gt;Joyce's Thursday&lt;/h3&gt;
+&lt;p&gt;Made mini minor changes to the PRs I have open. The two PRs are to make the sidebar button when viewed in Firefox look the same as in Chrome and adding &lt;code&gt;bundle help&lt;/code&gt; to command line reference page and also its own page. Then, submitted the &lt;code&gt;bundler help&lt;/code&gt; commands PR to bundler-site repo. The &lt;code&gt;bundler help&lt;/code&gt; PR was merged in! yay!&lt;/p&gt;
+
+&lt;p&gt;Finished watching tutorial on Chrome Dev tools&lt;/p&gt;
+
+&lt;p&gt;Made a “reporting a bug” page from ISSUES.md in the master branch of bundler repo based on the understanding of Rake learned few days ago.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Week 6 Day 27 Rspec</title>
+    <link rel="alternate" href="/2013/08/21/week6-day27.html"/>
+    <id>/2013/08/21/week6-day27.html</id>
+    <published>2013-08-21T22:17:00Z</published>
+    <updated>2013-08-21T22:17:00Z</updated>
+    <author>
+      <name>RGSoCBundler</name>
+    </author>
+    <content type="html">&lt;h1 id="week-6-day-27"&gt;Week 6 Day 27&lt;/h1&gt;
+
+&lt;h2 id="rspec"&gt;Rspec&lt;/h2&gt;
+
+&lt;h3 id="joyces-wednesday"&gt;Joyce's Wednesday&lt;/h3&gt;
+
+&lt;p&gt;The What’s New in each Release header links was merged to the bundler repo. Yay!&lt;/p&gt;
+
+&lt;p&gt;Received suggestions on how to improve the link for the bundle help page. Made changes so that all of the text link was in the green button.&lt;/p&gt;
+
+&lt;p&gt;While I was previewing the above, I noticed the "View All Commands" button in the sidebar did not have left or right padding when viewed in Firefox. :( Chrome and Firefox doesn’t really display the same things. I added padding to at least even out the button. Then, wanted to center the Firefox button. That’s when I realized Firefox doesn’t automatically add the width size while Chrome does! I only had to add a width size and they both look the same now. No padding was necessary.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://rakeroutes.com/blog/deliberate-git/"&gt;Read about writing better git commits&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Two Key Points:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;write in present tense and as a command&lt;/li&gt;
+  &lt;li&gt;explain what the code change does and why the change is necessary&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Finished watching last bit of Rspec video&lt;/p&gt;
+
+&lt;p&gt;Started watching tutorial on Chrome Dev tools.&lt;/p&gt;
+
+&lt;h3 id="jens-wednesday"&gt;Jen's Wednesday&lt;/h3&gt;
+
+&lt;p&gt;Watched the Peepcode video about Rspec and worked on the Get Started and FAQ pages of the Bundler site. There are problems viewing the pull requests because the text isn't wrapping. &lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://slid.es/jendiamond/createa_gem"&gt;Worked on my slides and code for my presentation a bit.&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Week 6 Day 26 More</title>
     <link rel="alternate" href="/2013/08/20/week6-day26.html"/>
@@ -113,160 +268,6 @@ NOTE ABOUT FAST-FORWARDS
   &lt;/li&gt;
 &lt;/ul&gt;
 
-</content>
-  </entry>
-  <entry>
-    <title>Week 5 Day 24 What's Up Doc?</title>
-    <link rel="alternate" href="/2013/08/16/week5-day24.html"/>
-    <id>/2013/08/16/week5-day24.html</id>
-    <published>2013-08-17T01:52:00Z</published>
-    <updated>2013-08-17T01:52:00Z</updated>
-    <author>
-      <name>RGSoCBundler</name>
-    </author>
-    <content type="html">&lt;h1 id="week-5-day-24"&gt;Week 5 Day 24&lt;/h1&gt;
-
-&lt;h2 id="whats-up-doc"&gt;What's Up Doc?&lt;/h2&gt;
-
-&lt;h3 id="jens-friday"&gt;Jen's Friday&lt;/h3&gt;
-&lt;p&gt;I worked on breaking apart the Rationale Page to create a FAQ page. I created a new Get Started page and I created a new Bug report page.&lt;/p&gt;
-
-&lt;h3 id="joyces-friday"&gt;Joyce's Friday&lt;/h3&gt;
-
-&lt;p&gt;Today I compared what commands are in the man pages and on the website’s command line reference page. The Bundler commands not listed on the website are &lt;code&gt;bundle help&lt;/code&gt; and &lt;code&gt;bundle list&lt;/code&gt;. &lt;code&gt;bundle list&lt;/code&gt; does the same thing as &lt;code&gt;bundle show&lt;/code&gt;. I added &lt;code&gt;bundle help&lt;/code&gt; to the command line reference page.&lt;/p&gt;
-
-&lt;p&gt;I noticed the alignment for the button in the sidebar was off so I made it have even whitespace between the left and right side.&lt;/p&gt;
-
-&lt;p&gt;For the What’s New page, the 1.0 and 1.1 point release buttons link directly to the 1.0 and 1.1 versions of the changelog.&lt;/p&gt;
-
-&lt;h4 id="man-pages-and-rake"&gt;Man Pages and Rake&lt;/h4&gt;
-
-&lt;p&gt;I learned that the &lt;a href="http://bundler.io/v1.3/man/bundle.1.html"&gt;Bundler html man pages&lt;/a&gt; were generated with a Rubygem called &lt;a href="http://rubygems.org/gems/ronn"&gt;Ronn&lt;/a&gt;. The html man pages get generated with this command in the bundler repo:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ronn --html man/bundle.ronn
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;However, a rakefile was created so if we run &lt;code&gt;rake man&lt;/code&gt;, it goes and runs the above command. Then, moves the generated html man pages in the bundler repo into the man directory in our bundler-site repo.&lt;/p&gt;
-
-&lt;p&gt;I noticed that the bundler-site repo doesn't have a man directory and wondered where the Bundler html man pages were being pulled from. I initially thought the Bundler website was being generated from the bundler-site repo, but with Andre's explanation, it actually is on the gh-pages branch in the bundler repo. We are actually making edits/changes on the bunder-site repo, which then goes to bundler repo on the gh-pages branch where the website is served from. The above steps and creation of the man pages are accomplished with code in the &lt;a href="https://github.com/bundler/bundler-site/blob/master/Rakefile"&gt;Rakefile&lt;/a&gt; where if we run &lt;code&gt;rake release&lt;/code&gt; on the command line, it means the release task will run update_vendor, then build, then man, then release.&lt;/p&gt;
-
-&lt;p&gt;It is similar to how our &lt;a href="http://rgsocbundler.github.io"&gt;rgsocbundler.github.io&lt;/a&gt; website is setup, except it is only on one repo. The website gets edited on the source branch and then &lt;code&gt;rake publish&lt;/code&gt; to go live on the master branch.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="https://help.github.com/articles/user-organization-and-project-pages"&gt;How we are allowed to host a website on github.&lt;/a&gt;&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Week 5 Day 23 What's New &amp; Bug Report</title>
-    <link rel="alternate" href="/2013/08/15/week5-day23.html"/>
-    <id>/2013/08/15/week5-day23.html</id>
-    <published>2013-08-16T00:53:00Z</published>
-    <updated>2013-08-16T00:53:00Z</updated>
-    <author>
-      <name>RGSoCBundler</name>
-    </author>
-    <content type="html">&lt;h1 id="week-5-day-23"&gt;Week 5 Day 23&lt;/h1&gt;
-
-&lt;h2 id="whats-new--bug-report"&gt;What's New &amp;amp; Bug Report&lt;/h2&gt;
-
-&lt;p&gt;Jessica was Doing Team Building with her G5 team today so Joyce and I worked remotely today.&lt;/p&gt;
-
-&lt;h3 id="jens-thursday"&gt;Jen's Thursday&lt;/h3&gt;
-
-&lt;p&gt;I worked out of the Starbucks in Atwater Village today. I saw several kids practicing their dance moves outside while waiting for a bus. &lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;I started by creating some issues for some changes I want to make to the Bundler site. Like a create an FAQ page, create a footer and create a Report a Bug page. Then Jessica pointed out that Andre already had posted a Create a Report a Bug issuesn so I decided to work on that first.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;I had pulled Joyce's remote to my master branch yesterday so I could view her new sidebar. I was creating my branches with the side bar included until I realized that it was a bad idea so I rolled back and re-created all my branches.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;I created a "Report a Bug" page based on the &lt;a href="https://github.com/bundler/bundler/blob/master/ISSUES.md"&gt;ISSUES.md page&lt;/a&gt; I am still getting used to using HAML. White space delimiters are tricky. I sent a pull request for this page so I can get comments on it.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;I made some comments on the Sidebar pull request Joyce made. I suggested aligning the text left instead of right.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;I noticed a link to the bundler-features repo on the issues page. I found the directions to be really unclear in the README. I suggested to Andre that we change it. So he re-wrote it and then I made some more changes to the &lt;a href="https://github.com/bundler/bundler-features"&gt;README file.&lt;/a&gt; I am excited to see that commit merged.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id="joyces-thursday"&gt;Joyce's Thursday&lt;/h3&gt;
-
-&lt;p&gt;I had a pull request merged because I didn’t push all my commits right away. Next time I should commit everything before opening a pull request. Or should I?! Since, this turned out to be a nice side effect to a mistake. Hooray!&lt;/p&gt;
-
-&lt;p&gt;The above merged pull request was actually part of this one to fix open issue 53. I created a new pull request where I added the current What’s New page with buttons and links to new pages for the other Bundler version releases and also linked to the changelog.&lt;/p&gt;
-
-&lt;p&gt;The sidebar was looking uneven and not congruent with the entire page so I made changes to the sass file to make it look nicer and cleaner. I made adjustments to the stylesheet so the whitespace between the left and right side of the page where even, the space between the content and the sidebar where even, the top of the sidebar and the first header was also lined up. Also removed the underline from the sidebar header, made the sidebar header size smaller, and aligned it to the right. The sidebar has turned out looking great!&lt;/p&gt;
-
-</content>
-  </entry>
-  <entry>
-    <title>Week 5 Day 22 Haml Haml</title>
-    <link rel="alternate" href="/2013/08/14/week5-day22.html"/>
-    <id>/2013/08/14/week5-day22.html</id>
-    <published>2013-08-15T00:10:00Z</published>
-    <updated>2013-08-15T00:10:00Z</updated>
-    <author>
-      <name>RGSoCBundler</name>
-    </author>
-    <content type="html">&lt;h1 id="week-5-day-22"&gt;Week 5 Day 22&lt;/h1&gt;
-
-&lt;h2 id="haml-haml"&gt;Haml Haml&lt;/h2&gt;
-
-&lt;h3 id="haml"&gt;Haml&lt;/h3&gt;
-&lt;p&gt;We learned about &lt;a href="http://haml.info/tutorial.html"&gt;Haml&lt;/a&gt; because the Bundler website uses Haml. It can be used instead of ERB and can be converted from an ERB template to Haml. With less syntax, Haml is easier to read and looks clean, some people say it reads like a Haiku.&lt;/p&gt;
-
-&lt;p&gt;The sidebar was organized and filled with links, which hopefully, makes the website easier to navigate and find what you are looking for. The styling of the sidebar was made to match the current look of the website.&lt;/p&gt;
-
-&lt;p&gt;We had a lot of ideas about changes to the Bundler website to make it better. So, we started with making some changes to the homepage and created a Get Started page.&lt;/p&gt;
-
-&lt;p&gt;We added each other's remote repo to our local repo. That way we can better preview the changes each of us made. (For beginners, don't include the angled brackets)&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;git remote add &amp;lt;your_nickname&amp;gt; &amp;lt;the_remote_url_link&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;To pull down the remote repo to our local repo. We used the same command, but with the &lt;code&gt;nickname&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;git fetch &amp;lt;your_nickname&amp;gt;
-
-git merge &amp;lt;your_nickname/the_branch_name&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Accidentally added the remote to the wrong repo. To remove a remote repo,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;git remote rm &amp;lt;your_nickname&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Week 5 Day 21 Bundler Site</title>
-    <link rel="alternate" href="/2013/08/13/week5-day21.html"/>
-    <id>/2013/08/13/week5-day21.html</id>
-    <published>2013-08-13T18:32:00Z</published>
-    <updated>2013-08-13T18:32:00Z</updated>
-    <author>
-      <name>RGSoCBundler</name>
-    </author>
-    <content type="html">&lt;h1 id="week-5-day-21"&gt;Week 5 Day 21&lt;/h1&gt;
-
-&lt;h2 id="bundler-site"&gt;Bundler Site&lt;/h2&gt;
-
-&lt;h3 id="the-hub"&gt;The Hub&lt;/h3&gt;
-&lt;p&gt;Today Team Bundler worked in Downtown L.A. at the &lt;a href="http://www.thehubla.com/"&gt;Hub&lt;/a&gt; with the whole G5 crew including Jessicard who is visiting from San Francisco. We worked on the documentation for the &lt;a href="http://bundler.io/"&gt;Bundler&lt;/a&gt; website.&lt;/p&gt;
-
-&lt;h3 id="bundler-site-1"&gt;Bundler Site&lt;/h3&gt;
-&lt;p&gt;Jen worked on organizing the content and all the links for the new side bar. We are ready to get rolling and start making changes. Soon we hope it will be much better. There is so much information already there it just needs some organizing.&lt;/p&gt;
-
-&lt;p&gt;Each section will have its own page, Jen found some great information that was buried. The side bar alone will really help make it easier to get around.&lt;/p&gt;
-
-&lt;p&gt;We looked to improve the documentation for Bundler. Before our trip to the Distill Conference, we had analyzed the website to see what can be better organized and be more user friendly. We browsed through the issues created for the bunder site. The first issue we focused on was making a sidebar for the website. It got confusing between all the syntax; Markdown, Haml, SASS, CSS, and ERB. We got a skeleton of a navigation sidebar on the right side of the page locally and started a pull request for the first piece in creating the sidebar!&lt;/p&gt;
-
-&lt;h3 id="no-jobshttpwwwimdbcomtitlett2357129-"&gt;No &lt;a href="http://www.imdb.com/title/tt2357129/"&gt;jOBs&lt;/a&gt; :(&lt;/h3&gt;
-&lt;p&gt;After working we all went to try to see the premier of the Steve Jobs movie. We all had printed out our tickets and signed up on the website. We thought all we had to do was stand in line and we'd see it. Little did we know that there was a good chance we wouldn't get in. We stood on the sidewalk collecting friends, Ashley, Anna, Chris, Jessica Suttles, Jessicard, and Shane Becker. After 2 hour of the line slowly surge towards the red carpet we realized that we were 20 people away from getting in. Boo.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="/images/bundler-site/bundler.io-screenshot-Aug14-2013.png" alt="Bundler Screenshot" title="Bundler Website Screenshot" /&gt;&lt;/p&gt;
 </content>
   </entry>
 </feed>

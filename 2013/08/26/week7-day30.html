@@ -59,32 +59,32 @@
         <div class="span9">
           <div class="row-fluid">
             <div id="main" role="main" class="well">
-              <h1 id="week-3-day-11">Week 3 Day 11</h1>
+              <h1 id="week-7-day-30">Week 7 Day 30</h1>
 
-<h2 id="namespace-n-rspec">Namespace n Rspec</h2>
+<h2 id="not-rationale-bug-n-rake">Not Rationale Bug n' Rake</h2>
 
-<h3 id="what-we-did">What We Did</h3>
-<p>We fixed our gem to have namespace in the <code>lib/loremz/cli.rb</code>. Namespace is where the class CLI is encapsulated by module Loremz. The syntax for namespacing is <code>Loremz::CLI</code></p>
+<h3 id="jens-monday">Jen's Monday</h3>
+<p>I broke up parts of the rationale page and combined them into other pages instead of adding them on the get started page</p>
 
-<pre><code>module Loremz
-  class CLI &lt; Thor
-    #your methods
-  end
-end
-</code></pre>
+<p>per Andre's requests:
+Grouping - The section about "groups" should be merged with the page that is linked as "Grouping" in the sidebar.</p>
 
-<p>That way our <code>lib/loremz/cli.rb</code> file matches with the <code>lib/loremz.rb</code></p>
+<p><strong>Set Up</strong> - The section about "set up your application to use bundler" should be merged with the Bundler.setup page.</p>
 
-<p><strong>Why do we want our <code>lib/loremz/cli.rb</code> and <code>lib/loremz.rb</code> file to match?</strong></p>
+<p><strong>Sharing</strong> - The "check your code into version control" and "share your application with other developers" should be put into a new page named "Sharing" and linked in the sidebar Usage section.</p>
 
-<p>The <code>lib/loremz/cli.rb</code> file is just for handling what comes in the command line. While the content would be stored in the <code>lib/loremz.rb</code></p>
+<p><strong>Updating Gem</strong> - The "updating a dependency" and "updating a gem without modifying the gemfile" sections should be put into a new page named "Updating gems" and linked in the sidebar in the Usage section.</p>
 
-<p>We use <code>lib/loremz/cli.rb</code> to call <code>lib/loremz.rb</code></p>
+<p><strong>Deploying</strong> - The "deploying your application" section should be merged with the existing "deploying" page that is linked in the sidebar.</p>
 
-<p>Today we also worked on writing RSpec tests for the gem we created.</p>
+<h3 id="joyces-monday">Joyce's Monday</h3>
+<p>The Report a bug page is generated from the issues.md file placed in the source directory. The bug is the markdown file does not render to html correctly. The number <code>4</code> shows up to the right of the Bundler logo and makes the logo link not clickable. This is weird. We spent time trying to fix the <code>4</code>. Andre realized that <code>4</code> is the id of nil and then found that the markdown file can’t render <code>link_to</code> with blocks. He fixed it in the layout.haml. Now I don’t need to put the issues.md in a partial to have the page render correctly.</p>
 
-<h3 id="what-we-learned-from-our-boo-boos">What We Learned from our Boo Boos?</h3>
-<p>Joyce's ipsum command didn't work because the <code>require "loremz"</code> in <code>lib/loremz/cli.rb</code> was left out. We need to include it to load the file <code>lib/loremz.rb</code></p>
+<p>The <code>:issues</code> task was included before the <code>:build</code> task that way it gets a copy of the latest issues.md file before deploying. Also, the source/issues.md was added to <code>.gitignore</code> so that the build artifacts from the bundler repo is not in the bundler-site repo.</p>
+
+<p>The report a bug page generated from the ISSUES.md of the bundler repo was squashed and submitted the PR to bundler repo.</p>
+
+<p>Started reading about some more <a href="http://git-scm.com/2011/07/11/reset.html">git commands</a>: git clean, git reset</p>
 
             </div>
           </div>

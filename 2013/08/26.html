@@ -59,32 +59,19 @@
         <div class="span9">
           <div class="row-fluid">
             <div id="main" role="main" class="well">
-              <h1 id="week-3-day-11">Week 3 Day 11</h1>
+              <h1>Archive for
+  
+    Aug 26 2013
+  
+</h1>
 
-<h2 id="namespace-n-rspec">Namespace n Rspec</h2>
 
-<h3 id="what-we-did">What We Did</h3>
-<p>We fixed our gem to have namespace in the <code>lib/loremz/cli.rb</code>. Namespace is where the class CLI is encapsulated by module Loremz. The syntax for namespacing is <code>Loremz::CLI</code></p>
+<ul>
+  
+    <li><a href="/2013/08/26/week7-day30.html">Week 7 Day 30 Not Rationale Bug n' Rake</a> <span>Aug 26</span></li>
+  
+</ul>
 
-<pre><code>module Loremz
-  class CLI &lt; Thor
-    #your methods
-  end
-end
-</code></pre>
-
-<p>That way our <code>lib/loremz/cli.rb</code> file matches with the <code>lib/loremz.rb</code></p>
-
-<p><strong>Why do we want our <code>lib/loremz/cli.rb</code> and <code>lib/loremz.rb</code> file to match?</strong></p>
-
-<p>The <code>lib/loremz/cli.rb</code> file is just for handling what comes in the command line. While the content would be stored in the <code>lib/loremz.rb</code></p>
-
-<p>We use <code>lib/loremz/cli.rb</code> to call <code>lib/loremz.rb</code></p>
-
-<p>Today we also worked on writing RSpec tests for the gem we created.</p>
-
-<h3 id="what-we-learned-from-our-boo-boos">What We Learned from our Boo Boos?</h3>
-<p>Joyce's ipsum command didn't work because the <code>require "loremz"</code> in <code>lib/loremz/cli.rb</code> was left out. We need to include it to load the file <code>lib/loremz.rb</code></p>
 
             </div>
           </div>

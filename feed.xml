@@ -5,7 +5,7 @@
   <id>http://rgsocbundler.github.io/</id>
   <link href="http://rgsocbundler.github.io/"/>
   <link href="http://rgsocbundler.github.io/feed.xml" rel="self"/>
-  <updated>2013-08-27T00:10:00Z</updated>
+  <updated>2013-08-29T01:57:00Z</updated>
   <author>
     <name>Jen Diamond</name>
   </author>
@@ -15,6 +15,113 @@
   <author>
     <name>Jessica Suttles</name>
   </author>
+  <entry>
+    <title>Week 7 Day 32 Recreating Bundler Issue</title>
+    <link rel="alternate" href="/2013/08/28/week7-day32.html"/>
+    <id>/2013/08/28/week7-day32.html</id>
+    <published>2013-08-29T01:57:00Z</published>
+    <updated>2013-08-29T01:57:00Z</updated>
+    <author>
+      <name>RGSoCBundler</name>
+    </author>
+    <content type="html">&lt;h1 id="week-7-day-32"&gt;Week 7 Day 32&lt;/h1&gt;
+
+&lt;h2 id="recreating-bundler-issue"&gt;Recreating Bundler Issue&lt;/h2&gt;
+
+&lt;h3 id="jens-wednesday"&gt;Jen's Wednesday&lt;/h3&gt;
+&lt;p&gt;I was looking at the issue again and I noticed a link at the bottom of the page. It went to and &lt;a href="https://github.com/bundler/bundler/issues/1915"&gt;older issue.&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id="bundle-outdated-gives-success-incorrectly"&gt;'bundle outdated' gives success incorrectly&lt;/h4&gt;
+
+&lt;p&gt;No milestone No one is assigned With bundler-1.2.0.pre installed, I run "bundle outdated gemname-with-typo" — misleadingly it reports success, I think because my bundle is technically up-to-date, since is not actually a gem.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Fetching gem metadata from http://rubygems.org/........
+Fetching gem metadata from http://rubygems.org/..
+
+Outdated gems included in the bundle:
+Your bundle is up to date
+An error message like "gemname-with-typo not found" instead would be greatly clarifying.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id="re-creating-the-error"&gt;Re-creating the Error&lt;/h4&gt;
+
+&lt;p&gt;adelcambre's suggested that I make a directory with a Gemfile and run bundle outdated and see what happens when you specify a gem in the Gemfile, vs one that isn't.&lt;/p&gt;
+
+&lt;h4 id="andys-test-looked-like-this"&gt;Andy's test looked like this:&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;$ mkdir test_outdated
+$ cd test_outdated
+$ vi Gemfile
+$ bundle
+  Fetching gem metadata from https://rubygems.org/..
+  Resolving dependencies...
+  Using rake (10.1.0)
+  Using bundler (1.3.5)
+  Your bundle is complete!
+  Use `bundle show [gemname]` to see where a bundled gem is installed.
+$ bundle outdated rake
+  Fetching gem metadata from https://rubygems.org/..
+  Resolving dependencies...
+
+  Your bundle is up to date!
+  ... **He notes**: One gem in the gemfile (rake), bundle outdated rake and bundle outdated rails look exactly the same even though rake is there and rails isn't
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id="my-test-looked-like-this"&gt;My test looked like this:&lt;/h4&gt;
+
+&lt;p&gt;I ran $ bundle outdated serv to check the error because there is no serv gem listed in the Gemfile.&lt;/p&gt;
+
+&lt;p&gt;$ bundle outdated serv
+  Fetching gem metadata from https://rubygems.org/……….
+  Fetching gem metadata from https://rubygems.org/..
+  Resolving dependencies…&lt;/p&gt;
+
+&lt;p&gt;Your bundle is up to date!&lt;/p&gt;
+
+&lt;p&gt;$ bundle outdated rake
+  You have requested:
+  rake = 10.0.4&lt;/p&gt;
+
+&lt;p&gt;The bundle currently has rake locked at 10.1.0.
+  Try running &lt;code&gt;bundle update rake&lt;/code&gt;
+So yes it worked, I re-created the error or in this case the lack there of.&lt;/p&gt;
+
+&lt;p&gt;I took a break to deal with my land-lord and my broken sink and leaking toilet. I returned to find that Jessica had made comments on all my pull requests so I started doing 8 corrections then squashed them all. I am feeling pretty comfortable with squashing and rebasing now. This time when everything went awry on one of the squashings I was able to figure out how to fix it on my own.&lt;/p&gt;
+
+&lt;h3 id="joyces-wednesday"&gt;Joyce's Wednesday&lt;/h3&gt;
+&lt;p&gt;I brushed up on my Ruby by watching &lt;a href="http://ruby-kickstart.com/"&gt;videos&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I setup Rspec test for the bundler feature I am adding. I am adding a better error message if the user is trying to update the gems from git, but they don’t have git installed on their computer.&lt;/p&gt;
+
+&lt;p&gt;The Output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/usr/local/Cellar/rbenv/0.4.0/libexec/rbenv: line 6: head: command not found
+/usr/local/Cellar/rbenv/0.4.0/libexec/rbenv: line 6: rbenv: command not found
+Updating git://github.com/square/cane.git
+sh: git: command not found
+Git error: command `git fetch --force --quiet --tags 'git://github.com/square/cane.git' "refs/heads/*:refs/heads/*"` in directory /Users/xavier/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/cache/bundler/git/cane-cf0b162855cb0919196ab923be218a839f69a0aa
+has failed.
+If this error persists you could try removing the cache directory '/Users/xavier/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/cache/bundler/git/cane-cf0b162855cb0919196ab923be218a839f69a0aa'
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I wrote my test based on &lt;a href="https://github.com/bundler/bundler/blob/master/spec/update/git_spec.rb#L5-L22"&gt;this example spec&lt;/a&gt;. I got the test to pass if I “removed” git from my computer.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;describe "without git installed" do
+  it "prints a better error message" do
+
+    install_gemfile &amp;lt;&amp;lt;-G
+      git "#{lib_path('foo-1.0')}", :branch =&amp;gt; "omg" do
+        gem 'foo'
+      end
+    G
+
+    bundle "update"
+    expect(out).to include("Git error")
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+  </entry>
   <entry>
     <title>Week 7 Day 30 Not Rationale Bug n' Rake</title>
     <link rel="alternate" href="/2013/08/26/week7-day30.html"/>
@@ -199,75 +306,6 @@ Changed my partials filename to underscores and updated them on the pages. Git s
 &lt;p&gt;Added &lt;code&gt;bundle help&lt;/code&gt; to the command line reference page and created a page for it. Changed the styling so it displays a link inline with the text rather than as a green button.&lt;/p&gt;
 
 &lt;p&gt;Watched and followed along to the Peepcode Rspec video.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Week 6 Day 25 Monday Merge</title>
-    <link rel="alternate" href="/2013/08/19/week6-day25.html"/>
-    <id>/2013/08/19/week6-day25.html</id>
-    <published>2013-08-20T01:43:00Z</published>
-    <updated>2013-08-20T01:43:00Z</updated>
-    <author>
-      <name>RGSoCBundler</name>
-    </author>
-    <content type="html">&lt;h1 id="week-6-day-25"&gt;Week 6 Day 25&lt;/h1&gt;
-
-&lt;h2 id="monday-merge"&gt;Monday Merge&lt;/h2&gt;
-
-&lt;h3 id="jens-monday"&gt;Jen's Monday&lt;/h3&gt;
-
-&lt;h4 id="get-started-page"&gt;Get Started Page&lt;/h4&gt;
-
-&lt;p&gt;Today I consolidated the instructions in the http://bundler.io/v1.3/rationale.html, the "Get started-installing Bundler" directions and the "Simple work Flow" directions. They all repeated but with a few extra tidbits of info. Andre gave me the go ahead to do this on Friday.
-I also added the link to the sidebar and added a bit of css styling.
-I shortened the index page and added links to the Get Started page.&lt;/p&gt;
-
-&lt;p&gt;I was having problems doing a git push origin master I kept getting the error:
-error: failed to push some refs to 'https://github.com/jendiamond/bundler-site.git'
-hint: Updates were rejected because the tip of your current branch is behind
-hint: its remote counterpart. Merge the remote changes (e.g. 'git pull')
-hint: before pushing again.
-hint: See the 'Note about fast-forwards' in 'git push –help' for details.&lt;/p&gt;
-
-&lt;p&gt;So I checked out git push –help
-NOTE ABOUT FAST-FORWARDS
-       When an update changes a branch (or more in general, a ref) that used
-       to point at commit A to point at another commit B, it is called a
-       fast-forward update if and only if B is a descendant of A.&lt;/p&gt;
-
-&lt;p&gt;Even though I re-created my branch from the master branch where I had pulled down the new sidebar updates git was not liking the differences between my last commit on the getstarted branch. &lt;/p&gt;
-
-&lt;p&gt;I did a git fetch –all then git push -f origin  This updated all my files correctly.&lt;/p&gt;
-
-&lt;h4 id="faq-page"&gt;FAQ Page&lt;/h4&gt;
-
-&lt;p&gt;I re-styled the FAQ page and added a link to the side bar. It is ready to be merged.&lt;/p&gt;
-
-&lt;h3 id="joyces-monday"&gt;Joyce's Monday&lt;/h3&gt;
-
-&lt;p&gt;Yay! The sidebar got merged and deployed on the bundler.io website!&lt;/p&gt;
-
-&lt;p&gt;Before the sidebar was merged, minor finishing touches were made. I removed extra whitespace and it was also easier to remove the aside html tag because it was not really necessary and we would have to add a shim to implement html5 for older browsers that don’t support it. All that wasn’t worth it for one tag. But, it can be added in the future. The sidebar is a great starting point ready for use and for additional improvements now.&lt;/p&gt;
-
-&lt;p&gt;After deployment though, I realized the sidebar shows up for all versions of the bundler documentation website. That isn’t ideal when the sidebar contains links to version 1.3 of bundler and if you are browsing about version 1.2 of bundler. I made the sidebar only display for version 1.3 of bundler.&lt;/p&gt;
-
-&lt;p&gt;The update for having the sidebar only for v1.3 was merged!&lt;/p&gt;
-
-&lt;p&gt;Because the What’s New page header links has duplicate code, I changed it to use partials.&lt;/p&gt;
-
-&lt;p&gt;Also learned we can automatically close an issue, if we type “Fixes #57” in the PR(Pull Request) comments. https://github.com/blog/1506-closing-issues-via-pull-requests&lt;/p&gt;
-
-&lt;p&gt;Learned about git squashing, where if you have a bunch of little commit messages to get rid of all that clutter. Combine it into 1 or fewer commits. &lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href="http://blog.steveklabnik.com/posts/2012-11-08-how-to-squash-commits-in-a-github-pull-request"&gt;http://blog.steveklabnik.com/posts/2012-11-08-how-to-squash-commits-in-a-github-pull-request&lt;/a&gt; &lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href="http://git-scm.com/book/en/Git-Tools-Rewriting-History"&gt;http://git-scm.com/book/en/Git-Tools-Rewriting-History&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
 </content>
   </entry>
 </feed>

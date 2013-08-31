@@ -59,57 +59,70 @@
         <div class="span9">
           <div class="row-fluid">
             <div id="main" role="main" class="well">
-              <h1 id="week-2-day-7">Week 2 Day 7</h1>
+              <h1 id="week-7-day-33">Week 7 Day 33</h1>
+<p>Thursday, August 29 2013</p>
 
-<h2 id="rspec">RSpec</h2>
+<h2 id="rebasing--windows-issues">Rebasing &amp; Windows Issues</h2>
 
-<h3 id="what-we-did-and-learned">What We Did and Learned</h3>
-<p>We continued by reading the <a href="https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers/raise-error-matcher">RSpec Expectations</a> for syntax and writing a test to fail when typing <code>bundle i</code> it should not raise an error. However, neither of us could get our test to fail, which is what we want.</p>
+<h3 id="joyces-thursday">Joyce's Thursday</h3>
 
-<p>We also did not know what and where <code>Bundler.ui.error</code> does. We learned how to quickly search for code in files by either using the tool ack or using the commandline <a href="http://www.cyberciti.biz/faq/howto-use-grep-command-in-linux-unix/">grep</a>.</p>
+<p>After seeing that my test fails and passes from yesterday, I changed the include string to what 
+the better error message could be.</p>
 
-<p><code>grep -r "def ui" .</code></p>
+<pre><code>describe "without git installed" do
+it "prints a better error message" do
 
-<p>-r is short for recursive. This searches within the current directory and all directories within it with the words "def ui."</p>
-
-<p>Jessica explained recursion. It is called recursion because it calls itself. One calls one and the return is the basecase.</p>
-
-<pre><code>def one(any_int)
-  return any_int if any_int == 1
-  one(any_int - 1)
-end
-</code></pre>
-
-<p>We also learned that in Ruby convention, the name of the Class is the filename. Classes are <code>CamelCaps</code> and files are <code>snake_case</code>. Example: Class UI would have a file called ui.rb</p>
-
-<p>Our coach, Jessica, poked around the specs in Bundler and found the Bundler test is handled differently. She directed us to how our test should look like. After implementing the correct test, we got our test to fail and we are working on getting it to pass.</p>
-
-<pre><code>require 'spec_helper'
-
-describe "Argument Error when typing bundle i" do
-  it "should not raise error" do
-    bundle "i"
-    expect(err).to be_empty
+install_gemfile &lt;&lt;-G
+  git "#{lib_path('foo-1.0')}", :branch =&gt; "omg" do
+    gem 'foo'
   end
-end
+G
+
+bundle "update"
+expect(out).to include("Git is not installed!")   end end
 </code></pre>
 
-<p><br /></p>
+<p>Read some more and got the message to print when bundle update was ran without git installed.</p>
 
-<pre><code>Failures:
-
-1) Argument Error when typing bundle i should not raise error
-  Failure/Error: expect(err).to be_empty
-   expected empty? to return true, got false
- # ./spec/bundle_i_spec.rb:6:in `block (2 levels) in &lt;top (required)&gt;'
-
-Finished in 2.02 seconds
-1 example, 1 failure
-
-Failed examples:
-
-rspec ./spec/bundle_i_spec.rb:4 # Argument Error when typing bundle i should not raise error
+<pre><code>raise GitError, "Git is not installed!" if !Bundler.which("git")
 </code></pre>
+
+<p>This issue was particularly for Windows when the user tries to bundle install. I had moved to an old Mac to make learning web development easier. Now back to Windows. I then setup my Windows and tested it on my Windows.</p>
+
+<h3 id="jens-thursday">Jen's Thursday</h3>
+
+<p>I spent the day going through the messages on all the PR I have out. Fixing, squashing, rebasing.</p>
+
+<p>I spent a lot of time reading about and changing the sass files. I was trying to get the footer to do something particular. It didn't work quite right but I think it still looks good. At least now I know more about sass. It does look a lot cleaner than css. I added a lower nav bar that I hope gets approved.</p>
+
+<p>I showed the people at the Meetup group how to squash commits. We researched rebasing vs. merging. <strong><a href="http://stackoverflow.com/questions/804115/git-rebase-vs-git-merge">This is the answer I found on Stack Overflow by Rob Di Marco</a></strong></p>
+
+<p><strong>Short Version</strong></p>
+
+<ul>
+  <li>Merge takes all the changes in one branch and merge them into another branch in one commit.</li>
+  <li>Rebase says I want the point at which I branched to move to a new starting point
+So when do you use either one?</li>
+</ul>
+
+<p><strong>Merge</strong></p>
+
+<ul>
+  <li>Let's say you have created a branch for the purpose of developing 
+a single feature. When you want to bring those changes back to master, 
+you probably want merge (you don't care about maintaining all of 
+the interim commits).</li>
+</ul>
+
+<p><strong>Rebase</strong></p>
+
+<ul>
+  <li>A second scenario would be if you started doing some development and 
+then another developer made an unrelated change. You probably want to 
+pull and then rebase to base your changes from the current version 
+from the repo.</li>
+</ul>
+
 
             </div>
           </div>

@@ -5,7 +5,7 @@
   <id>http://rgsocbundler.github.io/</id>
   <link href="http://rgsocbundler.github.io/"/>
   <link href="http://rgsocbundler.github.io/feed.xml" rel="self"/>
-  <updated>2013-08-29T01:57:00Z</updated>
+  <updated>2013-08-30T02:02:00Z</updated>
   <author>
     <name>Jen Diamond</name>
   </author>
@@ -15,6 +15,81 @@
   <author>
     <name>Jessica Suttles</name>
   </author>
+  <entry>
+    <title>Week 7 Day 33 Rebasing &amp; Windows Issues</title>
+    <link rel="alternate" href="/2013/08/29/week7-day33.html"/>
+    <id>/2013/08/29/week7-day33.html</id>
+    <published>2013-08-30T02:02:00Z</published>
+    <updated>2013-08-30T02:02:00Z</updated>
+    <author>
+      <name>RGSoCBundler</name>
+    </author>
+    <content type="html">&lt;h1 id="week-7-day-33"&gt;Week 7 Day 33&lt;/h1&gt;
+&lt;p&gt;Thursday, August 29 2013&lt;/p&gt;
+
+&lt;h2 id="rebasing--windows-issues"&gt;Rebasing &amp;amp; Windows Issues&lt;/h2&gt;
+
+&lt;h3 id="joyces-thursday"&gt;Joyce's Thursday&lt;/h3&gt;
+
+&lt;p&gt;After seeing that my test fails and passes from yesterday, I changed the include string to what 
+the better error message could be.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;describe "without git installed" do
+it "prints a better error message" do
+
+install_gemfile &amp;lt;&amp;lt;-G
+  git "#{lib_path('foo-1.0')}", :branch =&amp;gt; "omg" do
+    gem 'foo'
+  end
+G
+
+bundle "update"
+expect(out).to include("Git is not installed!")   end end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Read some more and got the message to print when bundle update was ran without git installed.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;raise GitError, "Git is not installed!" if !Bundler.which("git")
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This issue was particularly for Windows when the user tries to bundle install. I had moved to an old Mac to make learning web development easier. Now back to Windows. I then setup my Windows and tested it on my Windows.&lt;/p&gt;
+
+&lt;h3 id="jens-thursday"&gt;Jen's Thursday&lt;/h3&gt;
+
+&lt;p&gt;I spent the day going through the messages on all the PR I have out. Fixing, squashing, rebasing.&lt;/p&gt;
+
+&lt;p&gt;I spent a lot of time reading about and changing the sass files. I was trying to get the footer to do something particular. It didn't work quite right but I think it still looks good. At least now I know more about sass. It does look a lot cleaner than css. I added a lower nav bar that I hope gets approved.&lt;/p&gt;
+
+&lt;p&gt;I showed the people at the Meetup group how to squash commits. We researched rebasing vs. merging. &lt;strong&gt;&lt;a href="http://stackoverflow.com/questions/804115/git-rebase-vs-git-merge"&gt;This is the answer I found on Stack Overflow by Rob Di Marco&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Short Version&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Merge takes all the changes in one branch and merge them into another branch in one commit.&lt;/li&gt;
+  &lt;li&gt;Rebase says I want the point at which I branched to move to a new starting point
+So when do you use either one?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Merge&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Let's say you have created a branch for the purpose of developing 
+a single feature. When you want to bring those changes back to master, 
+you probably want merge (you don't care about maintaining all of 
+the interim commits).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Rebase&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A second scenario would be if you started doing some development and 
+then another developer made an unrelated change. You probably want to 
+pull and then rebase to base your changes from the current version 
+from the repo.&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+  </entry>
   <entry>
     <title>Week 7 Day 32 Recreating Bundler Issue</title>
     <link rel="alternate" href="/2013/08/28/week7-day32.html"/>
@@ -120,6 +195,155 @@ If this error persists you could try removing the cache directory '/Users/xavier
   end
 end
 &lt;/code&gt;&lt;/pre&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Week 7 Day 31 Bundler Features Phase 1</title>
+    <link rel="alternate" href="/2013/08/27/week7-day31.html"/>
+    <id>/2013/08/27/week7-day31.html</id>
+    <published>2013-08-27T20:05:00Z</published>
+    <updated>2013-08-27T20:05:00Z</updated>
+    <author>
+      <name>RGSoCBundler</name>
+    </author>
+    <content type="html">&lt;h1 id="week-7-day-31"&gt;Week 7 Day 31&lt;/h1&gt;
+
+&lt;h2 id="bundler-features-phase-1"&gt;Bundler Features Phase 1&lt;/h2&gt;
+
+&lt;h3 id="tuesday-aug-28th"&gt;Tuesday Aug 28th&lt;/h3&gt;
+
+&lt;h3 id="joyces-tuesday"&gt;Joyce's Tuesday&lt;/h3&gt;
+
+&lt;p&gt;Yay! The report a bug page pulled in from the issues.md of the bundler repo got merged!&lt;/p&gt;
+
+&lt;p&gt;Reviewed material on Gemfile, Rake, setting up alias, the bundler directory, thor in preparation on adding a bundler feature.&lt;/p&gt;
+
+&lt;p&gt;Working on adding/fixing a bundler feature, got my system to reproduce the error by “removing” git.&lt;/p&gt;
+
+&lt;h3 id="jens-tuesday"&gt;Jen's Tuesday&lt;/h3&gt;
+
+&lt;h4 id="more-improvements-and-prs-pull-requests"&gt;More Improvements and PRs (pull requests)&lt;/h4&gt;
+
+&lt;p&gt;I worked on some more improvements to the &lt;a href="http://bundler.io/"&gt;bundler.io site&lt;/a&gt;
+I combined 3 things onto a new page called workflow instead of doing a get-sarted page.
++ 1. The top blurb.(the part under Bundler's Purpose and Rationale)
++ 2. A Simple Bundler Workflow from rationale page
++ 3. recommended workflow" at http://bundler.io/v1.3/bundle_update.htm&lt;/p&gt;
+
+&lt;p&gt;I deleted two sections off of the index page; the block of links called Learn About and the block of links called Use Bundler with. They were all duplicated in the sidebar. &lt;/p&gt;
+
+&lt;p&gt;I created a new footer with links similar to what used to be at the top of the Bundler page; buttons for Get Started, Report a Bug, See What's New, Read Documentation, Discuss and Contribute and I added Bundler Workflow. &lt;/p&gt;
+
+&lt;p&gt;I also added the blurb from the rationale page to the top of the index page because it describes what Bundler does in more depth. Now there is nothing left on the rationale page that is not duplicated in other places once all my pull requests are excepted. &lt;/p&gt;
+
+&lt;p&gt;I moved the Devswag image and text to the sidebar and made some improvements to the text. So buying a Bundler t-shirt and stickers will hopefully be more appealing.&lt;/p&gt;
+
+&lt;h3 id="bundler-features"&gt;bundler-features&lt;/h3&gt;
+
+&lt;p&gt;Joyce and I both started on a bundler-feature that had a small tag on it. Andre helped pick one for each of us.&lt;/p&gt;
+
+&lt;h4 id="bundle-outdated-should-return-non-zero-success-code-for-invalid-gem-name"&gt;bundle outdated should return non-zero success code for invalid gem name&lt;/h4&gt;
+
+&lt;p&gt;Andre said that the code to check if the gem name is valid is something like:
+    if Bundler.definifion.specs.search(gemname).empty?
+    # not a valid gem name, you should raise a Bundler::GemNotFound error 
+    with a message like "#{gemname} isn't a gem in your bundle, so it can't be updated"
+    end&lt;/p&gt;
+
+&lt;p&gt;I asked if I should I change this?&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;if gems.empty? &amp;amp;&amp;amp; sources.empty?
+    # We're doing a full update
+    definition = Bundler.definition(true)
+  else
+    definition = Bundler.definition(:gems =&amp;gt; gems, :sources =&amp;gt; sources)
+end
+options["local"] ? definition.resolve_with_cache! : definition.resolve_remotely!
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Andre replied: oh hmm I guess I was wrong. You will probably need to rescue the error that is raised by that code
+if the gem doesn't exist.&lt;/p&gt;
+
+&lt;h4 id="looking-for-the-files"&gt;Looking for the files&lt;/h4&gt;
+
+&lt;p&gt;Using &lt;code&gt;$ grep -f "outdated" .&lt;/code&gt; I found all the file that outdated is used in.
+    CHANGELOG
+    man/bundle.ronn
+    lib/bundler/man/bundle.txt
+    lib/bundler/man/bundle
+    lib/bundler/runtime.rb
+    lib/bundler/cli.rb
+    spec/other/platform_spec.rb
+    spec/other/outdated_spec.rb
+————————————-&lt;/p&gt;
+
+&lt;h4 id="trying-to-re-create-the-error"&gt;Trying to re-create the error&lt;/h4&gt;
+
+&lt;p&gt;I made a file based on the file in the &lt;a href="https://github.com/bundler/bundler-features/issues/6"&gt;bundler-features issue 6.&lt;/a&gt;
+It states that the following code should exit 0.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/bin/bash
+
+set -ex
+
+mkdir -p /tmp/bf-issue-6
+cd /tmp/bf-issue-6
+
+cat &amp;gt; Gemfile &amp;lt;&amp;lt;EOF
+source "https://rubygems.org"
+EOF
+
+bundle
+! bundle outdated blurgh || (echo "failed" &amp;amp;&amp;amp; exit 1)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I created the file on my desktop, named it zero and ran it. This is what I saw.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;**$ chmod +x zero
+$ ./zero
++ mkdir -p /tmp/bf-issue-6
++ cd /tmp/bf-issue-6
++ cat
++ bundle
+The Gemfile specifies no dependencies
+Resolving dependencies...
+Your bundle is complete!
+Use `bundle show [gemname]` to see where a bundled gem is installed.
++ bundle outdated blurgh
+Fetching gem metadata from https://rubygems.org/.
+Resolving dependencies...
+
+Your bundle is up to date!
++ echo failed
+failed
++ exit 1
+
+$ echo $?
+1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I changed the exit code to 0 and ran it again. This is what I saw. The command &lt;code&gt;$ echo $?&lt;/code&gt; shows what the last program exited as.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ./zero
++ mkdir -p /tmp/bf-issue-6
++ cd /tmp/bf-issue-6
++ cat
++ bundle
+The Gemfile specifies no dependencies
+Your bundle is complete!
+Use `bundle show [gemname]` to see where a bundled gem is installed.
++ bundle outdated blurgh
+Fetching gem metadata from https://rubygems.org/.
+Resolving dependencies...
+
+Your bundle is up to date!
++ echo failed
+failed
++ exit 0
+$ echo $?
+0
+&lt;/code&gt;&lt;/pre&gt;
+
 </content>
   </entry>
   <entry>
@@ -234,78 +458,6 @@ $ git rebase -i master
 &lt;p&gt;Finished watching tutorial on Chrome Dev tools&lt;/p&gt;
 
 &lt;p&gt;Made a “reporting a bug” page from ISSUES.md in the master branch of bundler repo based on the understanding of Rake learned few days ago.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Week 6 Day 27 Rspec</title>
-    <link rel="alternate" href="/2013/08/21/week6-day27.html"/>
-    <id>/2013/08/21/week6-day27.html</id>
-    <published>2013-08-21T22:17:00Z</published>
-    <updated>2013-08-21T22:17:00Z</updated>
-    <author>
-      <name>RGSoCBundler</name>
-    </author>
-    <content type="html">&lt;h1 id="week-6-day-27"&gt;Week 6 Day 27&lt;/h1&gt;
-
-&lt;h2 id="rspec"&gt;Rspec&lt;/h2&gt;
-
-&lt;h3 id="joyces-wednesday"&gt;Joyce's Wednesday&lt;/h3&gt;
-
-&lt;p&gt;The What’s New in each Release header links was merged to the bundler repo. Yay!&lt;/p&gt;
-
-&lt;p&gt;Received suggestions on how to improve the link for the bundle help page. Made changes so that all of the text link was in the green button.&lt;/p&gt;
-
-&lt;p&gt;While I was previewing the above, I noticed the "View All Commands" button in the sidebar did not have left or right padding when viewed in Firefox. :( Chrome and Firefox doesn’t really display the same things. I added padding to at least even out the button. Then, wanted to center the Firefox button. That’s when I realized Firefox doesn’t automatically add the width size while Chrome does! I only had to add a width size and they both look the same now. No padding was necessary.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="http://rakeroutes.com/blog/deliberate-git/"&gt;Read about writing better git commits&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Two Key Points:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;write in present tense and as a command&lt;/li&gt;
-  &lt;li&gt;explain what the code change does and why the change is necessary&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Finished watching last bit of Rspec video&lt;/p&gt;
-
-&lt;p&gt;Started watching tutorial on Chrome Dev tools.&lt;/p&gt;
-
-&lt;h3 id="jens-wednesday"&gt;Jen's Wednesday&lt;/h3&gt;
-
-&lt;p&gt;Watched the Peepcode video about Rspec and worked on the Get Started and FAQ pages of the Bundler site. There are problems viewing the pull requests because the text isn't wrapping. &lt;/p&gt;
-
-&lt;p&gt;&lt;a href="http://slid.es/jendiamond/createa_gem"&gt;Worked on my slides and code for my presentation a bit.&lt;/a&gt;&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Week 6 Day 26 More</title>
-    <link rel="alternate" href="/2013/08/20/week6-day26.html"/>
-    <id>/2013/08/20/week6-day26.html</id>
-    <published>2013-08-21T00:17:00Z</published>
-    <updated>2013-08-21T00:17:00Z</updated>
-    <author>
-      <name>RGSoCBundler</name>
-    </author>
-    <content type="html">&lt;h1 id="week-6-day-26"&gt;Week 6 Day 26&lt;/h1&gt;
-
-&lt;h2 id="more"&gt;More&lt;/h2&gt;
-
-&lt;h3 id="jens-tuesday"&gt;Jen's Tuesday&lt;/h3&gt;
-&lt;p&gt;Still working on the finer details of the new Get Started Pages and the new FAQ page.&lt;/p&gt;
-
-&lt;p&gt;We switched our files from the bundler-site repo to the RGSoCBundler/bundler-site so all of our pull requests and commits don't alert the entire Bundler community. I had a hard time figuring out pushing to the new location. Finally I realized that I had to make sure to change the base fork to RGSoCBundler/bundler-site master which is reached by pressing the edit button on the right after pressing the pull request button.&lt;/p&gt;
-
-&lt;p&gt;I started working on my presentation of creating a gem. Andre went over my lorem ipsum generator gem to make sure everything was in order. He had a few changes so he sent me a pull request. I was cool looking a a pull request. Now I understand what Andre and Jessica have been looking at and why certain PRs are harder to read than others. Basically you want to make similar changes and send the requests more often so they are easy to read.&lt;/p&gt;
-
-&lt;h3 id="joyces-tuesday"&gt;Joyce's Tuesday&lt;/h3&gt;
-&lt;p&gt;Today we changed our github workflow to make PRs and create issues on our RGSoCBundler repo first. That way we can make as many issues, comments, commits to our hearts content without disturbing the peace and setting off a bunch of notifications on the Bundler repo. Then, once everything looks good, we git squash our commits. Finally, submit the complete change to the bundler repo.&lt;/p&gt;
-
-&lt;p&gt;Ruby convention uses underscores for filenames that are more than one word long.
-Changed my partials filename to underscores and updated them on the pages. Git squashed, which we learned about yesterday and submitted the PR to the bundler repo.&lt;/p&gt;
-
-&lt;p&gt;Added &lt;code&gt;bundle help&lt;/code&gt; to the command line reference page and created a page for it. Changed the styling so it displays a link inline with the text rather than as a green button.&lt;/p&gt;
-
-&lt;p&gt;Watched and followed along to the Peepcode Rspec video.&lt;/p&gt;
 </content>
   </entry>
 </feed>

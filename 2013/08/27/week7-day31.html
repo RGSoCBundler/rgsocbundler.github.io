@@ -59,57 +59,144 @@
         <div class="span9">
           <div class="row-fluid">
             <div id="main" role="main" class="well">
-              <h1 id="week-2-day-7">Week 2 Day 7</h1>
+              <h1 id="week-7-day-31">Week 7 Day 31</h1>
 
-<h2 id="rspec">RSpec</h2>
+<h2 id="bundler-features-phase-1">Bundler Features Phase 1</h2>
 
-<h3 id="what-we-did-and-learned">What We Did and Learned</h3>
-<p>We continued by reading the <a href="https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers/raise-error-matcher">RSpec Expectations</a> for syntax and writing a test to fail when typing <code>bundle i</code> it should not raise an error. However, neither of us could get our test to fail, which is what we want.</p>
+<h3 id="tuesday-aug-28th">Tuesday Aug 28th</h3>
 
-<p>We also did not know what and where <code>Bundler.ui.error</code> does. We learned how to quickly search for code in files by either using the tool ack or using the commandline <a href="http://www.cyberciti.biz/faq/howto-use-grep-command-in-linux-unix/">grep</a>.</p>
+<h3 id="joyces-tuesday">Joyce's Tuesday</h3>
 
-<p><code>grep -r "def ui" .</code></p>
+<p>Yay! The report a bug page pulled in from the issues.md of the bundler repo got merged!</p>
 
-<p>-r is short for recursive. This searches within the current directory and all directories within it with the words "def ui."</p>
+<p>Reviewed material on Gemfile, Rake, setting up alias, the bundler directory, thor in preparation on adding a bundler feature.</p>
 
-<p>Jessica explained recursion. It is called recursion because it calls itself. One calls one and the return is the basecase.</p>
+<p>Working on adding/fixing a bundler feature, got my system to reproduce the error by “removing” git.</p>
 
-<pre><code>def one(any_int)
-  return any_int if any_int == 1
-  one(any_int - 1)
+<h3 id="jens-tuesday">Jen's Tuesday</h3>
+
+<h4 id="more-improvements-and-prs-pull-requests">More Improvements and PRs (pull requests)</h4>
+
+<p>I worked on some more improvements to the <a href="http://bundler.io/">bundler.io site</a>
+I combined 3 things onto a new page called workflow instead of doing a get-sarted page.
++ 1. The top blurb.(the part under Bundler's Purpose and Rationale)
++ 2. A Simple Bundler Workflow from rationale page
++ 3. recommended workflow" at http://bundler.io/v1.3/bundle_update.htm</p>
+
+<p>I deleted two sections off of the index page; the block of links called Learn About and the block of links called Use Bundler with. They were all duplicated in the sidebar. </p>
+
+<p>I created a new footer with links similar to what used to be at the top of the Bundler page; buttons for Get Started, Report a Bug, See What's New, Read Documentation, Discuss and Contribute and I added Bundler Workflow. </p>
+
+<p>I also added the blurb from the rationale page to the top of the index page because it describes what Bundler does in more depth. Now there is nothing left on the rationale page that is not duplicated in other places once all my pull requests are excepted. </p>
+
+<p>I moved the Devswag image and text to the sidebar and made some improvements to the text. So buying a Bundler t-shirt and stickers will hopefully be more appealing.</p>
+
+<h3 id="bundler-features">bundler-features</h3>
+
+<p>Joyce and I both started on a bundler-feature that had a small tag on it. Andre helped pick one for each of us.</p>
+
+<h4 id="bundle-outdated-should-return-non-zero-success-code-for-invalid-gem-name">bundle outdated should return non-zero success code for invalid gem name</h4>
+
+<p>Andre said that the code to check if the gem name is valid is something like:
+    if Bundler.definifion.specs.search(gemname).empty?
+    # not a valid gem name, you should raise a Bundler::GemNotFound error 
+    with a message like "#{gemname} isn't a gem in your bundle, so it can't be updated"
+    end</p>
+
+<p>I asked if I should I change this?</p>
+
+<pre><code>if gems.empty? &amp;&amp; sources.empty?
+    # We're doing a full update
+    definition = Bundler.definition(true)
+  else
+    definition = Bundler.definition(:gems =&gt; gems, :sources =&gt; sources)
 end
+options["local"] ? definition.resolve_with_cache! : definition.resolve_remotely!
 </code></pre>
 
-<p>We also learned that in Ruby convention, the name of the Class is the filename. Classes are <code>CamelCaps</code> and files are <code>snake_case</code>. Example: Class UI would have a file called ui.rb</p>
+<p>Andre replied: oh hmm I guess I was wrong. You will probably need to rescue the error that is raised by that code
+if the gem doesn't exist.</p>
 
-<p>Our coach, Jessica, poked around the specs in Bundler and found the Bundler test is handled differently. She directed us to how our test should look like. After implementing the correct test, we got our test to fail and we are working on getting it to pass.</p>
+<h4 id="looking-for-the-files">Looking for the files</h4>
 
-<pre><code>require 'spec_helper'
+<p>Using <code>$ grep -f "outdated" .</code> I found all the file that outdated is used in.
+    CHANGELOG
+    man/bundle.ronn
+    lib/bundler/man/bundle.txt
+    lib/bundler/man/bundle
+    lib/bundler/runtime.rb
+    lib/bundler/cli.rb
+    spec/other/platform_spec.rb
+    spec/other/outdated_spec.rb
+————————————-</p>
 
-describe "Argument Error when typing bundle i" do
-  it "should not raise error" do
-    bundle "i"
-    expect(err).to be_empty
-  end
-end
+<h4 id="trying-to-re-create-the-error">Trying to re-create the error</h4>
+
+<p>I made a file based on the file in the <a href="https://github.com/bundler/bundler-features/issues/6">bundler-features issue 6.</a>
+It states that the following code should exit 0.</p>
+
+<pre><code>#!/bin/bash
+
+set -ex
+
+mkdir -p /tmp/bf-issue-6
+cd /tmp/bf-issue-6
+
+cat &gt; Gemfile &lt;&lt;EOF
+source "https://rubygems.org"
+EOF
+
+bundle
+! bundle outdated blurgh || (echo "failed" &amp;&amp; exit 1)
 </code></pre>
 
-<p><br /></p>
+<p>I created the file on my desktop, named it zero and ran it. This is what I saw.</p>
 
-<pre><code>Failures:
+<pre><code>**$ chmod +x zero
+$ ./zero
++ mkdir -p /tmp/bf-issue-6
++ cd /tmp/bf-issue-6
++ cat
++ bundle
+The Gemfile specifies no dependencies
+Resolving dependencies...
+Your bundle is complete!
+Use `bundle show [gemname]` to see where a bundled gem is installed.
++ bundle outdated blurgh
+Fetching gem metadata from https://rubygems.org/.
+Resolving dependencies...
 
-1) Argument Error when typing bundle i should not raise error
-  Failure/Error: expect(err).to be_empty
-   expected empty? to return true, got false
- # ./spec/bundle_i_spec.rb:6:in `block (2 levels) in &lt;top (required)&gt;'
+Your bundle is up to date!
++ echo failed
+failed
++ exit 1
 
-Finished in 2.02 seconds
-1 example, 1 failure
-
-Failed examples:
-
-rspec ./spec/bundle_i_spec.rb:4 # Argument Error when typing bundle i should not raise error
+$ echo $?
+1
 </code></pre>
+
+<p>I changed the exit code to 0 and ran it again. This is what I saw. The command <code>$ echo $?</code> shows what the last program exited as.</p>
+
+<pre><code>$ ./zero
++ mkdir -p /tmp/bf-issue-6
++ cd /tmp/bf-issue-6
++ cat
++ bundle
+The Gemfile specifies no dependencies
+Your bundle is complete!
+Use `bundle show [gemname]` to see where a bundled gem is installed.
++ bundle outdated blurgh
+Fetching gem metadata from https://rubygems.org/.
+Resolving dependencies...
+
+Your bundle is up to date!
++ echo failed
+failed
++ exit 0
+$ echo $?
+0
+</code></pre>
+
 
             </div>
           </div>

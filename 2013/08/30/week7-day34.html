@@ -59,18 +59,116 @@
         <div class="span9">
           <div class="row-fluid">
             <div id="main" role="main" class="well">
-              <h1 id="week-1-day-1">Week 1 Day 1</h1>
+              <h1 id="week-7-day-34">Week 7 Day 34</h1>
 
-<h2 id="blogging-using-middleman-gem">Blogging using Middleman Gem</h2>
+<h2 id="its-optimize-friday">It's Optimize Friday</h2>
 
-<ul>
-  <li>Created our Team Blog on github using Middleman Gem </li>
-  <li>Discussed the difference between using a user page and a project page in gitpages</li>
-  <li>Created a Rakefile with the task 'rake build' and 'rake publish'</li>
-  <li>Added pages and updated them</li>
-</ul>
+<iframe width="560" height="315" src="//www.youtube.com/embed/kfVsfOSbJY0" frameborder="0" allowfullscreen=""></iframe>
 
-<p><strong>bundle exec rake publish</strong></p>
+<p>ORRRR</p>
+
+<iframe width="560" height="315" src="//www.youtube.com/embed/hxleH60hDJY" frameborder="0" allowfullscreen=""></iframe>
+
+<h3 id="jens-friday">Jen's Friday</h3>
+<p>I am back to working on the issue where when you run <code>bundle oudated gem-not-in-your-Gemfile</code> it returns that your bundle is up to date. In this example the serv gem is not in the Gemfile.</p>
+
+<pre><code>$ bundle outdated serv
+  Fetching gem metadata from https://rubygems.org/..........
+  Fetching gem metadata from https://rubygems.org/..
+  Resolving dependencies...
+
+  Your bundle is up to date!
+</code></pre>
+
+<p>I was looking at the <code>bundler/lib/bundler/cli.rb</code> files. In the bundle desc inject section I found a def not_found_message that looks similar to what I want to do; identify a missing gem.</p>
+
+<p>def not_found_message(missing_gem_name, alternatives) message = "Could not find gem '#{missing_gem_name}'."</p>
+
+<pre><code># This is called as the result of a GemNotFound, let's see if
+# there's any similarly named ones we can propose instead
+alternate_names = alternatives.map { |a| a.respond_to?(:name) ? a.name : a }
+suggestions = SimilarityDetector.new(alternate_names).similar_word_list(missing_gem_name)
+message += "\nDid you mean #{suggestions}?" if suggestions
+message
+end
+</code></pre>
+
+<p>I ran `bundle inject</p>
+
+<pre><code>$ bundle inject blurg 1.0.0
+  Fetching gem metadata from https://rubygems.org/..........
+  Fetching gem metadata from https://rubygems.org/..
+  Resolving dependencies...
+  Could not find gem 'blurg (= 1.0.0) ruby' in the gems available on this machine.
+</code></pre>
+
+<p>This seemed closer to the error I want to see when I run bundle outdated non-existing-gem so I decide to check out a few more command to see if I could find one with a message I'd like to see.</p>
+
+<p>I ran <code>bundle show serv</code> (The serv gem is NOT in the Gemfile.)</p>
+
+<pre><code>$ bundle show serv
+  Could not find gem 'serv'.
+  Did you mean sdoc?
+</code></pre>
+
+<p>This is even closer to the error I want to see. So I checked out the code in the desc show section of the bundler/lib/bundler/cli.rb file.</p>
+
+<pre><code>desc "show [GEM]", "Shows all gems that are part of the bundle, or the path to a given gem"
+long_desc &lt;&lt;-D
+  Show lists the names and versions of all gems that are required by your Gemfile.
+  Calling show with [GEM] will list the exact location of that gem on your machine.
+D
+method_option "paths", :type =&gt; :boolean,
+  :banner =&gt; "List the paths of all gems that are required by your Gemfile."
+def show(gem_name = nil)
+  Bundler.ui.silence do
+    Bundler.definition.validate_ruby!
+    Bundler.load.lock
+  end
+
+  if gem_name
+    if gem_name == "bundler"
+      path = File.expand_path("../../..", __FILE__)
+    else
+      spec = select_spec(gem_name, :regex_match)
+      return unless spec
+      path = spec.full_gem_path
+      if !File.directory?(path)
+        Bundler.ui.warn "The gem #{gem_name} has been deleted. It was installed at:"
+      end
+    end
+    return Bundler.ui.info(path)
+  end
+
+  if options[:paths]
+    Bundler.load.specs.sort_by { |s| s.name }.map do |s|
+      Bundler.ui.info s.full_gem_path
+    end
+  else
+    Bundler.ui.info "Gems included by the bundle:"
+    Bundler.load.specs.sort_by { |s| s.name }.each do |s|
+      Bundler.ui.info "  * #{s.name} (#{s.version}#{s.git_version})"
+    end
+  end
+end
+</code></pre>
+
+<p>I am now working on a path that will lead me to the answer…</p>
+
+<h3 id="joyces-friday">Joyce's Friday</h3>
+<p>Started looking at another bundler feature/issue. The feature I am looking to add is when you <code>bundle update</code>, it shows the old version of the gem being updated. I started a rspec test for it.</p>
+
+<p>I received feedback and suggestions for my first addition/fix to the Bundler repo. I made improvements to it based on the comment I received. I made a method to store <code>Bundler.which(“git”)</code> in an instance variable inside bundler.rb. According to mentor Andre, we store it in an instance variable so we only have to look for git once. Instead of having to keep looking for git again and again repeatedly. This technique is called “"memoization."</p>
+
+<p>Original:</p>
+
+<pre><code>raise GitError, “Git is not installed!” if !Bundler.which(“git”)
+</code></pre>
+
+<p>Improved:</p>
+
+<pre><code>raise GitError, "Git is not installed!" if !Bundler.git_present?
+</code></pre>
 
             </div>
           </div>

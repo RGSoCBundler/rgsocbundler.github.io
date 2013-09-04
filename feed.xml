@@ -5,7 +5,7 @@
   <id>http://rgsocbundler.github.io/</id>
   <link href="http://rgsocbundler.github.io/"/>
   <link href="http://rgsocbundler.github.io/feed.xml" rel="self"/>
-  <updated>2013-08-30T02:02:00Z</updated>
+  <updated>2013-08-31T01:48:00Z</updated>
   <author>
     <name>Jen Diamond</name>
   </author>
@@ -15,6 +15,127 @@
   <author>
     <name>Jessica Suttles</name>
   </author>
+  <entry>
+    <title>Week 7 Day 34 It's Optimize Friday</title>
+    <link rel="alternate" href="/2013/08/30/week7-day34.html"/>
+    <id>/2013/08/30/week7-day34.html</id>
+    <published>2013-08-31T01:48:00Z</published>
+    <updated>2013-08-31T01:48:00Z</updated>
+    <author>
+      <name>RGSoCBundler</name>
+    </author>
+    <content type="html">&lt;h1 id="week-7-day-34"&gt;Week 7 Day 34&lt;/h1&gt;
+
+&lt;h2 id="its-optimize-friday"&gt;It's Optimize Friday&lt;/h2&gt;
+
+&lt;iframe width="560" height="315" src="//www.youtube.com/embed/kfVsfOSbJY0" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;
+
+&lt;p&gt;ORRRR&lt;/p&gt;
+
+&lt;iframe width="560" height="315" src="//www.youtube.com/embed/hxleH60hDJY" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;
+
+&lt;h3 id="jens-friday"&gt;Jen's Friday&lt;/h3&gt;
+&lt;p&gt;I am back to working on the issue where when you run &lt;code&gt;bundle oudated gem-not-in-your-Gemfile&lt;/code&gt; it returns that your bundle is up to date. In this example the serv gem is not in the Gemfile.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ bundle outdated serv
+  Fetching gem metadata from https://rubygems.org/..........
+  Fetching gem metadata from https://rubygems.org/..
+  Resolving dependencies...
+
+  Your bundle is up to date!
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I was looking at the &lt;code&gt;bundler/lib/bundler/cli.rb&lt;/code&gt; files. In the bundle desc inject section I found a def not_found_message that looks similar to what I want to do; identify a missing gem.&lt;/p&gt;
+
+&lt;p&gt;def not_found_message(missing_gem_name, alternatives) message = "Could not find gem '#{missing_gem_name}'."&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# This is called as the result of a GemNotFound, let's see if
+# there's any similarly named ones we can propose instead
+alternate_names = alternatives.map { |a| a.respond_to?(:name) ? a.name : a }
+suggestions = SimilarityDetector.new(alternate_names).similar_word_list(missing_gem_name)
+message += "\nDid you mean #{suggestions}?" if suggestions
+message
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I ran `bundle inject&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ bundle inject blurg 1.0.0
+  Fetching gem metadata from https://rubygems.org/..........
+  Fetching gem metadata from https://rubygems.org/..
+  Resolving dependencies...
+  Could not find gem 'blurg (= 1.0.0) ruby' in the gems available on this machine.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This seemed closer to the error I want to see when I run bundle outdated non-existing-gem so I decide to check out a few more command to see if I could find one with a message I'd like to see.&lt;/p&gt;
+
+&lt;p&gt;I ran &lt;code&gt;bundle show serv&lt;/code&gt; (The serv gem is NOT in the Gemfile.)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ bundle show serv
+  Could not find gem 'serv'.
+  Did you mean sdoc?
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is even closer to the error I want to see. So I checked out the code in the desc show section of the bundler/lib/bundler/cli.rb file.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;desc "show [GEM]", "Shows all gems that are part of the bundle, or the path to a given gem"
+long_desc &amp;lt;&amp;lt;-D
+  Show lists the names and versions of all gems that are required by your Gemfile.
+  Calling show with [GEM] will list the exact location of that gem on your machine.
+D
+method_option "paths", :type =&amp;gt; :boolean,
+  :banner =&amp;gt; "List the paths of all gems that are required by your Gemfile."
+def show(gem_name = nil)
+  Bundler.ui.silence do
+    Bundler.definition.validate_ruby!
+    Bundler.load.lock
+  end
+
+  if gem_name
+    if gem_name == "bundler"
+      path = File.expand_path("../../..", __FILE__)
+    else
+      spec = select_spec(gem_name, :regex_match)
+      return unless spec
+      path = spec.full_gem_path
+      if !File.directory?(path)
+        Bundler.ui.warn "The gem #{gem_name} has been deleted. It was installed at:"
+      end
+    end
+    return Bundler.ui.info(path)
+  end
+
+  if options[:paths]
+    Bundler.load.specs.sort_by { |s| s.name }.map do |s|
+      Bundler.ui.info s.full_gem_path
+    end
+  else
+    Bundler.ui.info "Gems included by the bundle:"
+    Bundler.load.specs.sort_by { |s| s.name }.each do |s|
+      Bundler.ui.info "  * #{s.name} (#{s.version}#{s.git_version})"
+    end
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I am now working on a path that will lead me to the answer…&lt;/p&gt;
+
+&lt;h3 id="joyces-friday"&gt;Joyce's Friday&lt;/h3&gt;
+&lt;p&gt;Started looking at another bundler feature/issue. The feature I am looking to add is when you &lt;code&gt;bundle update&lt;/code&gt;, it shows the old version of the gem being updated. I started a rspec test for it.&lt;/p&gt;
+
+&lt;p&gt;I received feedback and suggestions for my first addition/fix to the Bundler repo. I made improvements to it based on the comment I received. I made a method to store &lt;code&gt;Bundler.which(“git”)&lt;/code&gt; in an instance variable inside bundler.rb. According to mentor Andre, we store it in an instance variable so we only have to look for git once. Instead of having to keep looking for git again and again repeatedly. This technique is called “"memoization."&lt;/p&gt;
+
+&lt;p&gt;Original:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;raise GitError, “Git is not installed!” if !Bundler.which(“git”)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Improved:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;raise GitError, "Git is not installed!" if !Bundler.git_present?
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+  </entry>
   <entry>
     <title>Week 7 Day 33 Rebasing &amp; Windows Issues</title>
     <link rel="alternate" href="/2013/08/29/week7-day33.html"/>
@@ -427,37 +548,6 @@ $ git rebase -i master
 &lt;p&gt;Received suggestions on how to improve the Rake task to build the issues page and made changes to it. There was a 4 to the right of the Bundler logo, which makes the the logo unclickable. I don’t know where it is coming from. I created a partial to embed it to another page and the 4 disappeared. shrugs. The page looks pretty good, except for the code block. :-/ Fixed it in the CSS. Then, updated the “Report a bug” link on the sidebar to this page and moved the partial to the correct directory. Got the code block and inline code style to match with the rest of website.&lt;/p&gt;
 
 &lt;p&gt;Squashed the sidebar button fix for Firefox and submitted PR to bundler site. &lt;strong&gt;The fix has been merged. Yay!&lt;/strong&gt;&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Week 6 Day 28 Improving Doc &amp; Gem Presentation</title>
-    <link rel="alternate" href="/2013/08/22/week6-day28.html"/>
-    <id>/2013/08/22/week6-day28.html</id>
-    <published>2013-08-23T01:52:00Z</published>
-    <updated>2013-08-23T01:52:00Z</updated>
-    <author>
-      <name>RGSoCBundler</name>
-    </author>
-    <content type="html">&lt;h1 id="week-6-day-28"&gt;Week 6 Day 28&lt;/h1&gt;
-
-&lt;h2 id="improving-doc--gem-presentation"&gt;Improving Doc &amp;amp; Gem Presentation&lt;/h2&gt;
-
-&lt;h3 id="jens-thursday"&gt;Jen's Thursday&lt;/h3&gt;
-
-&lt;h4 id="eastsidewestside-monthly-bash-august"&gt;Eastside/Westside Monthly Bash August&lt;/h4&gt;
-
-&lt;p&gt;I read about Rspec and watched some of the Rspec Peepcode video but mostly I spent my day refining my code and slides for my presentation at the Monthly L.A. Eastside/Westside Ruby Meetup. Our group is a combination of General Assembly students, Rails Girls Summer of Code teams, CS students and their friends. Most of the people attended either a Railsbridge or a Rails Girls event as their launching point into Ruby. This evening's talks were about gems and gem structure.&lt;/p&gt;
-
-&lt;h4 id="hands-on-presentation---creating-a-gem"&gt;Hands-on Presentation - Creating a Gem&lt;/h4&gt;
-
-&lt;p&gt;Ross, from Pivitol, gave a talk about Pivotal Labs and how they work pair programming. The first gem talk by Anna Mendoza explained the structure of gems and how to find good ones to use. My hands-on workshop presentation was based on the gem Joyce and I created several weeks ago. I got all 25 people in the room to create the gem, add Thor and test it successfully. The most satisfying part was going around to each person and helping them to get their gem to work. We have a very well written tutorial now. I might make some more improvements to it for ultra-clarity but everyone tonight followed along very well.&lt;/p&gt;
-
-&lt;h3 id="joyces-thursday"&gt;Joyce's Thursday&lt;/h3&gt;
-&lt;p&gt;Made mini minor changes to the PRs I have open. The two PRs are to make the sidebar button when viewed in Firefox look the same as in Chrome and adding &lt;code&gt;bundle help&lt;/code&gt; to command line reference page and also its own page. Then, submitted the &lt;code&gt;bundler help&lt;/code&gt; commands PR to bundler-site repo. The &lt;code&gt;bundler help&lt;/code&gt; PR was merged in! yay!&lt;/p&gt;
-
-&lt;p&gt;Finished watching tutorial on Chrome Dev tools&lt;/p&gt;
-
-&lt;p&gt;Made a “reporting a bug” page from ISSUES.md in the master branch of bundler repo based on the understanding of Rake learned few days ago.&lt;/p&gt;
 </content>
   </entry>
 </feed>

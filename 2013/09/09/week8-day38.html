@@ -59,13 +59,33 @@
         <div class="span9">
           <div class="row-fluid">
             <div id="main" role="main" class="well">
-              <h1 id="week-1-day-3">Week 1 Day 3</h1>
+              <h1 id="week-8-day-38">Week 8 Day 38</h1>
 
-<h2 id="github-workflow">Github Workflow</h2>
-<p>Combined the intricacies of Git Branching and Pull Requests together to form the proper Github Workflow</p>
+<h2 id="gem-features">Gem Features</h2>
 
-<p>Performed the steps and made the Cheat Sheet - <a href="http://localhost:4567/cheatsheets/pull.html">Pull Request Cheat Sheet</a></p>
+<h3 id="jens-friday">Jen's Friday</h3>
+<p>I worked on finalizing all my pull requests. Almost all of them were merged including the invalid gemname issue on the actual bundler site. WOOOO!</p>
 
+<h3 id="joyces-friday">Joyce's Friday</h3>
+<p>Installed ctags to make it easier to navigate/jump between code in a text editor.</p>
+
+<p>Installed the debugger gem, required it in our file, <code>lib/source/rubygems.rb</code>, and added the word <code>debugger</code> on the line where you want to check out what the code is doing. It is similar to irb. We added it in line 71 of <code>lib/bundler/source/rubygems.rb</code></p>
+
+<p>We looked at where the old version of the gem should be added. For example, the <code>was (2.3.5)</code> part of the message should go in the “Using” and the “Installing” messages.</p>
+
+<p><code>locked_spec</code> - references the gemfile gems with the gem in the lockfile.</p>
+
+<p><code>locked_spec_version</code> - stores the gem version from the gemfile.lock if the locked_spec matches</p>
+
+<p>Stored the original message, “Using #{spec.name} (#{spec.version})”, in the variable <code>using_message</code>.</p>
+
+<p>We only want to add the old version if the version of the gem is not the same as the one in the gemfile.lock (lockfile)</p>
+
+<p>So, we append the old_version to our “Using” and “Installing” message if that is true.</p>
+
+<p>Had to remove the debugger from our file so Rspec at least runs.</p>
+
+<p>Adding our code, broke the <code>spec/install/gemspec_spec.rb</code> and <code>spec/update/gems_spec.rb</code> Rspec tests because it can’t find a lockfile?</p>
 
             </div>
           </div>

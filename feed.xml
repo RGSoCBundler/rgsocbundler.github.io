@@ -5,7 +5,7 @@
   <id>http://rgsocbundler.github.io/</id>
   <link href="http://rgsocbundler.github.io/"/>
   <link href="http://rgsocbundler.github.io/feed.xml" rel="self"/>
-  <updated>2013-08-31T01:48:00Z</updated>
+  <updated>2013-09-09T20:15:00Z</updated>
   <author>
     <name>Jen Diamond</name>
   </author>
@@ -15,6 +15,111 @@
   <author>
     <name>Jessica Suttles</name>
   </author>
+  <entry>
+    <title>Week 8 Day 38 Gem Features</title>
+    <link rel="alternate" href="/2013/09/09/week8-day38.html"/>
+    <id>/2013/09/09/week8-day38.html</id>
+    <published>2013-09-09T20:15:00Z</published>
+    <updated>2013-09-09T20:15:00Z</updated>
+    <author>
+      <name>RGSoCBundler</name>
+    </author>
+    <content type="html">&lt;h1 id="week-8-day-38"&gt;Week 8 Day 38&lt;/h1&gt;
+
+&lt;h2 id="gem-features"&gt;Gem Features&lt;/h2&gt;
+
+&lt;h3 id="jens-friday"&gt;Jen's Friday&lt;/h3&gt;
+&lt;p&gt;I worked on finalizing all my pull requests. Almost all of them were merged including the invalid gemname issue on the actual bundler site. WOOOO!&lt;/p&gt;
+
+&lt;h3 id="joyces-friday"&gt;Joyce's Friday&lt;/h3&gt;
+&lt;p&gt;Installed ctags to make it easier to navigate/jump between code in a text editor.&lt;/p&gt;
+
+&lt;p&gt;Installed the debugger gem, required it in our file, &lt;code&gt;lib/source/rubygems.rb&lt;/code&gt;, and added the word &lt;code&gt;debugger&lt;/code&gt; on the line where you want to check out what the code is doing. It is similar to irb. We added it in line 71 of &lt;code&gt;lib/bundler/source/rubygems.rb&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;We looked at where the old version of the gem should be added. For example, the &lt;code&gt;was (2.3.5)&lt;/code&gt; part of the message should go in the “Using” and the “Installing” messages.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;locked_spec&lt;/code&gt; - references the gemfile gems with the gem in the lockfile.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;locked_spec_version&lt;/code&gt; - stores the gem version from the gemfile.lock if the locked_spec matches&lt;/p&gt;
+
+&lt;p&gt;Stored the original message, “Using #{spec.name} (#{spec.version})”, in the variable &lt;code&gt;using_message&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;We only want to add the old version if the version of the gem is not the same as the one in the gemfile.lock (lockfile)&lt;/p&gt;
+
+&lt;p&gt;So, we append the old_version to our “Using” and “Installing” message if that is true.&lt;/p&gt;
+
+&lt;p&gt;Had to remove the debugger from our file so Rspec at least runs.&lt;/p&gt;
+
+&lt;p&gt;Adding our code, broke the &lt;code&gt;spec/install/gemspec_spec.rb&lt;/code&gt; and &lt;code&gt;spec/update/gems_spec.rb&lt;/code&gt; Rspec tests because it can’t find a lockfile?&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Week 8 Day 37 Silverlake Library &amp; Syrup</title>
+    <link rel="alternate" href="/2013/09/04/week8-day37.html"/>
+    <id>/2013/09/04/week8-day37.html</id>
+    <published>2013-09-04T22:28:00Z</published>
+    <updated>2013-09-04T22:28:00Z</updated>
+    <author>
+      <name>RGSoCBundler</name>
+    </author>
+    <content type="html">&lt;h1 id="week-8-day-37"&gt;Week 8 Day 37&lt;/h1&gt;
+
+&lt;h2 id="silverlake-library--syrup"&gt;Silverlake Library &amp;amp; Syrup&lt;/h2&gt;
+
+&lt;h3 id="knowledge-exchange"&gt;Knowledge Exchange&lt;/h3&gt;
+
+&lt;p&gt;We met up at the Silverlake Library. We showed each other what we have been working on. Joyce showed the ronn files and the rake files that made the man pages. Jen showed the invalid gem issue she had been working on. We looked at the cli.rb file together.&lt;/p&gt;
+
+&lt;p&gt;We worked on our own issues and gave each other suggestions.&lt;/p&gt;
+
+&lt;p&gt;Joyce continued working on the Rspec test with a revised version that Andre gave, but it still doesn’t work. Worked on using the locked_gems method in lib/bundler.rb to find and display the old version from the lockfile. Navigated through the forest of files in the directory to see where the methods of locked_gems went.&lt;/p&gt;
+
+&lt;p&gt;We headed over to Syrup for the meetup but due to the summer's heat only one other showed up to join us. We did however get some work done.&lt;/p&gt;
+
+</content>
+  </entry>
+  <entry>
+    <title>Week 8 Day 35 We Have Issues</title>
+    <link rel="alternate" href="/2013/09/04/week8-day35.html"/>
+    <id>/2013/09/04/week8-day35.html</id>
+    <published>2013-09-04T22:25:00Z</published>
+    <updated>2013-09-04T22:25:00Z</updated>
+    <author>
+      <name>RGSoCBundler</name>
+    </author>
+    <content type="html">&lt;h1 id="week-8-day-35"&gt;Week 8 Day 35&lt;/h1&gt;
+
+&lt;h2 id="we-have-issues"&gt;We Have Issues&lt;/h2&gt;
+
+&lt;h3 id="joyces-tuesday"&gt;Joyce's Tuesday&lt;/h3&gt;
+
+&lt;p&gt;Learned to set the path to blank for rspec test, that way it can’t find 
+git. Before, I manually “removed” git to get the test to pass.&lt;/p&gt;
+
+&lt;p&gt;Wrote the rspec test based on spec/update/ directory and separated into 
+3 files based on if the gem source is from rubygems, git, or path. 
+I haven’t gotten the rspec to pass yet though.&lt;/p&gt;
+
+&lt;p&gt;Andre gave the method to display the old gem version, which I added 
+in to the lib/bundler/source/rubygems.rb.&lt;/p&gt;
+
+&lt;h3 id="jens-tuesday"&gt;Jen's Tuesday&lt;/h3&gt;
+
+&lt;p&gt;It seemed like a Monday because of the Labor holiday. I re-did all my 
+pull requests from scratch so they would contain only the changes I 
+made with the changes from the pull upstream master. I was getting 
+confused that the FAQ page kept coming back into the branches that 
+I was working on. I thought that maybe I had made the other branches 
+from the FAQ branch. &lt;/p&gt;
+
+&lt;p&gt;This is what was actually happening: even though it has not been 
+published the FAQ page has been merged into the master repo so when 
+I did a &lt;code&gt;git pull -i upstream master&lt;/code&gt; the FAQ page is included into my 
+files and that it supposed to be happening and it is not supposed to be deleted.&lt;/p&gt;
+
+&lt;p&gt;After fixing all the PRs I started another issue in the bundler-feature area. #6 &lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Week 7 Day 34 It's Optimize Friday</title>
     <link rel="alternate" href="/2013/08/30/week7-day34.html"/>
@@ -316,238 +421,6 @@ If this error persists you could try removing the cache directory '/Users/xavier
   end
 end
 &lt;/code&gt;&lt;/pre&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Week 7 Day 31 Bundler Features Phase 1</title>
-    <link rel="alternate" href="/2013/08/27/week7-day31.html"/>
-    <id>/2013/08/27/week7-day31.html</id>
-    <published>2013-08-27T20:05:00Z</published>
-    <updated>2013-08-27T20:05:00Z</updated>
-    <author>
-      <name>RGSoCBundler</name>
-    </author>
-    <content type="html">&lt;h1 id="week-7-day-31"&gt;Week 7 Day 31&lt;/h1&gt;
-
-&lt;h2 id="bundler-features-phase-1"&gt;Bundler Features Phase 1&lt;/h2&gt;
-
-&lt;h3 id="tuesday-aug-28th"&gt;Tuesday Aug 28th&lt;/h3&gt;
-
-&lt;h3 id="joyces-tuesday"&gt;Joyce's Tuesday&lt;/h3&gt;
-
-&lt;p&gt;Yay! The report a bug page pulled in from the issues.md of the bundler repo got merged!&lt;/p&gt;
-
-&lt;p&gt;Reviewed material on Gemfile, Rake, setting up alias, the bundler directory, thor in preparation on adding a bundler feature.&lt;/p&gt;
-
-&lt;p&gt;Working on adding/fixing a bundler feature, got my system to reproduce the error by “removing” git.&lt;/p&gt;
-
-&lt;h3 id="jens-tuesday"&gt;Jen's Tuesday&lt;/h3&gt;
-
-&lt;h4 id="more-improvements-and-prs-pull-requests"&gt;More Improvements and PRs (pull requests)&lt;/h4&gt;
-
-&lt;p&gt;I worked on some more improvements to the &lt;a href="http://bundler.io/"&gt;bundler.io site&lt;/a&gt;
-I combined 3 things onto a new page called workflow instead of doing a get-sarted page.
-+ 1. The top blurb.(the part under Bundler's Purpose and Rationale)
-+ 2. A Simple Bundler Workflow from rationale page
-+ 3. recommended workflow" at http://bundler.io/v1.3/bundle_update.htm&lt;/p&gt;
-
-&lt;p&gt;I deleted two sections off of the index page; the block of links called Learn About and the block of links called Use Bundler with. They were all duplicated in the sidebar. &lt;/p&gt;
-
-&lt;p&gt;I created a new footer with links similar to what used to be at the top of the Bundler page; buttons for Get Started, Report a Bug, See What's New, Read Documentation, Discuss and Contribute and I added Bundler Workflow. &lt;/p&gt;
-
-&lt;p&gt;I also added the blurb from the rationale page to the top of the index page because it describes what Bundler does in more depth. Now there is nothing left on the rationale page that is not duplicated in other places once all my pull requests are excepted. &lt;/p&gt;
-
-&lt;p&gt;I moved the Devswag image and text to the sidebar and made some improvements to the text. So buying a Bundler t-shirt and stickers will hopefully be more appealing.&lt;/p&gt;
-
-&lt;h3 id="bundler-features"&gt;bundler-features&lt;/h3&gt;
-
-&lt;p&gt;Joyce and I both started on a bundler-feature that had a small tag on it. Andre helped pick one for each of us.&lt;/p&gt;
-
-&lt;h4 id="bundle-outdated-should-return-non-zero-success-code-for-invalid-gem-name"&gt;bundle outdated should return non-zero success code for invalid gem name&lt;/h4&gt;
-
-&lt;p&gt;Andre said that the code to check if the gem name is valid is something like:
-    if Bundler.definifion.specs.search(gemname).empty?
-    # not a valid gem name, you should raise a Bundler::GemNotFound error 
-    with a message like "#{gemname} isn't a gem in your bundle, so it can't be updated"
-    end&lt;/p&gt;
-
-&lt;p&gt;I asked if I should I change this?&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;if gems.empty? &amp;amp;&amp;amp; sources.empty?
-    # We're doing a full update
-    definition = Bundler.definition(true)
-  else
-    definition = Bundler.definition(:gems =&amp;gt; gems, :sources =&amp;gt; sources)
-end
-options["local"] ? definition.resolve_with_cache! : definition.resolve_remotely!
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Andre replied: oh hmm I guess I was wrong. You will probably need to rescue the error that is raised by that code
-if the gem doesn't exist.&lt;/p&gt;
-
-&lt;h4 id="looking-for-the-files"&gt;Looking for the files&lt;/h4&gt;
-
-&lt;p&gt;Using &lt;code&gt;$ grep -f "outdated" .&lt;/code&gt; I found all the file that outdated is used in.
-    CHANGELOG
-    man/bundle.ronn
-    lib/bundler/man/bundle.txt
-    lib/bundler/man/bundle
-    lib/bundler/runtime.rb
-    lib/bundler/cli.rb
-    spec/other/platform_spec.rb
-    spec/other/outdated_spec.rb
-————————————-&lt;/p&gt;
-
-&lt;h4 id="trying-to-re-create-the-error"&gt;Trying to re-create the error&lt;/h4&gt;
-
-&lt;p&gt;I made a file based on the file in the &lt;a href="https://github.com/bundler/bundler-features/issues/6"&gt;bundler-features issue 6.&lt;/a&gt;
-It states that the following code should exit 0.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;#!/bin/bash
-
-set -ex
-
-mkdir -p /tmp/bf-issue-6
-cd /tmp/bf-issue-6
-
-cat &amp;gt; Gemfile &amp;lt;&amp;lt;EOF
-source "https://rubygems.org"
-EOF
-
-bundle
-! bundle outdated blurgh || (echo "failed" &amp;amp;&amp;amp; exit 1)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I created the file on my desktop, named it zero and ran it. This is what I saw.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;**$ chmod +x zero
-$ ./zero
-+ mkdir -p /tmp/bf-issue-6
-+ cd /tmp/bf-issue-6
-+ cat
-+ bundle
-The Gemfile specifies no dependencies
-Resolving dependencies...
-Your bundle is complete!
-Use `bundle show [gemname]` to see where a bundled gem is installed.
-+ bundle outdated blurgh
-Fetching gem metadata from https://rubygems.org/.
-Resolving dependencies...
-
-Your bundle is up to date!
-+ echo failed
-failed
-+ exit 1
-
-$ echo $?
-1
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I changed the exit code to 0 and ran it again. This is what I saw. The command &lt;code&gt;$ echo $?&lt;/code&gt; shows what the last program exited as.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ ./zero
-+ mkdir -p /tmp/bf-issue-6
-+ cd /tmp/bf-issue-6
-+ cat
-+ bundle
-The Gemfile specifies no dependencies
-Your bundle is complete!
-Use `bundle show [gemname]` to see where a bundled gem is installed.
-+ bundle outdated blurgh
-Fetching gem metadata from https://rubygems.org/.
-Resolving dependencies...
-
-Your bundle is up to date!
-+ echo failed
-failed
-+ exit 0
-$ echo $?
-0
-&lt;/code&gt;&lt;/pre&gt;
-
-</content>
-  </entry>
-  <entry>
-    <title>Week 7 Day 30 Not Rationale Bug n' Rake</title>
-    <link rel="alternate" href="/2013/08/26/week7-day30.html"/>
-    <id>/2013/08/26/week7-day30.html</id>
-    <published>2013-08-27T00:10:00Z</published>
-    <updated>2013-08-27T00:10:00Z</updated>
-    <author>
-      <name>RGSoCBundler</name>
-    </author>
-    <content type="html">&lt;h1 id="week-7-day-30"&gt;Week 7 Day 30&lt;/h1&gt;
-
-&lt;h2 id="not-rationale-bug-n-rake"&gt;Not Rationale Bug n' Rake&lt;/h2&gt;
-
-&lt;h3 id="jens-monday"&gt;Jen's Monday&lt;/h3&gt;
-&lt;p&gt;I broke up parts of the rationale page and combined them into other pages instead of adding them on the get started page&lt;/p&gt;
-
-&lt;p&gt;per Andre's requests:
-Grouping - The section about "groups" should be merged with the page that is linked as "Grouping" in the sidebar.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Set Up&lt;/strong&gt; - The section about "set up your application to use bundler" should be merged with the Bundler.setup page.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Sharing&lt;/strong&gt; - The "check your code into version control" and "share your application with other developers" should be put into a new page named "Sharing" and linked in the sidebar Usage section.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Updating Gem&lt;/strong&gt; - The "updating a dependency" and "updating a gem without modifying the gemfile" sections should be put into a new page named "Updating gems" and linked in the sidebar in the Usage section.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Deploying&lt;/strong&gt; - The "deploying your application" section should be merged with the existing "deploying" page that is linked in the sidebar.&lt;/p&gt;
-
-&lt;h3 id="joyces-monday"&gt;Joyce's Monday&lt;/h3&gt;
-&lt;p&gt;The Report a bug page is generated from the issues.md file placed in the source directory. The bug is the markdown file does not render to html correctly. The number &lt;code&gt;4&lt;/code&gt; shows up to the right of the Bundler logo and makes the logo link not clickable. This is weird. We spent time trying to fix the &lt;code&gt;4&lt;/code&gt;. Andre realized that &lt;code&gt;4&lt;/code&gt; is the id of nil and then found that the markdown file can’t render &lt;code&gt;link_to&lt;/code&gt; with blocks. He fixed it in the layout.haml. Now I don’t need to put the issues.md in a partial to have the page render correctly.&lt;/p&gt;
-
-&lt;p&gt;The &lt;code&gt;:issues&lt;/code&gt; task was included before the &lt;code&gt;:build&lt;/code&gt; task that way it gets a copy of the latest issues.md file before deploying. Also, the source/issues.md was added to &lt;code&gt;.gitignore&lt;/code&gt; so that the build artifacts from the bundler repo is not in the bundler-site repo.&lt;/p&gt;
-
-&lt;p&gt;The report a bug page generated from the ISSUES.md of the bundler repo was squashed and submitted the PR to bundler repo.&lt;/p&gt;
-
-&lt;p&gt;Started reading about some more &lt;a href="http://git-scm.com/2011/07/11/reset.html"&gt;git commands&lt;/a&gt;: git clean, git reset&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Week 6 Day 29 Partially Squish Squashed</title>
-    <link rel="alternate" href="/2013/08/23/week6-day29.html"/>
-    <id>/2013/08/23/week6-day29.html</id>
-    <published>2013-08-24T01:43:00Z</published>
-    <updated>2013-08-24T01:43:00Z</updated>
-    <author>
-      <name>RGSoCBundler</name>
-    </author>
-    <content type="html">&lt;h1 id="week-6-day-29"&gt;Week 6 Day 29&lt;/h1&gt;
-
-&lt;h4 id="friday-august-23-2013"&gt;Friday, August 23, 2013&lt;/h4&gt;
-
-&lt;h2 id="partially-squish-squashed"&gt;Partially Squish Squashed&lt;/h2&gt;
-
-&lt;h3 id="jen-friday"&gt;Jen' Friday&lt;/h3&gt;
-
-&lt;p&gt;I read about Rspec and spent the rest of day wrapping up the FAQ page. I worked on doing my first commit squash and I ran into problem after problem with git which Andre walked me through.&lt;/p&gt;
-
-&lt;p&gt;These are the basic commands:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ git checkout master 
-
-$ git pull upstream master 
-
-$ git checkout faqpage 
-
-$ git rebase -i master
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Successfully rebased and updated refs/heads/master.  &lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Change the word "pick" to "s"&lt;/strong&gt; Then run:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ git push -f origin faqpage
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;a href="https://gist.github.com/jendiamond/6325286#file-gistfile1-md"&gt;and here's a link to the rest of the directions.&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id="joyces-friday"&gt;Joyce's Friday&lt;/h3&gt;
-
-&lt;p&gt;Received suggestions on how to improve the Rake task to build the issues page and made changes to it. There was a 4 to the right of the Bundler logo, which makes the the logo unclickable. I don’t know where it is coming from. I created a partial to embed it to another page and the 4 disappeared. shrugs. The page looks pretty good, except for the code block. :-/ Fixed it in the CSS. Then, updated the “Report a bug” link on the sidebar to this page and moved the partial to the correct directory. Got the code block and inline code style to match with the rest of website.&lt;/p&gt;
-
-&lt;p&gt;Squashed the sidebar button fix for Firefox and submitted PR to bundler site. &lt;strong&gt;The fix has been merged. Yay!&lt;/strong&gt;&lt;/p&gt;
 </content>
   </entry>
 </feed>

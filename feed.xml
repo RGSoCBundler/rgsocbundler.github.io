@@ -5,7 +5,7 @@
   <id>http://rgsocbundler.github.io/</id>
   <link href="http://rgsocbundler.github.io/"/>
   <link href="http://rgsocbundler.github.io/feed.xml" rel="self"/>
-  <updated>2013-09-06T20:15:00Z</updated>
+  <updated>2013-09-09T20:15:00Z</updated>
   <author>
     <name>Jen Diamond</name>
   </author>
@@ -15,6 +15,107 @@
   <author>
     <name>Jessica Suttles</name>
   </author>
+  <entry>
+    <title>Week 9 Day 39 Fixer Uppers</title>
+    <link rel="alternate" href="/2013/09/09/week9-day39.html"/>
+    <id>/2013/09/09/week9-day39.html</id>
+    <published>2013-09-09T20:15:00Z</published>
+    <updated>2013-09-09T20:15:00Z</updated>
+    <author>
+      <name>RGSoCBundler</name>
+    </author>
+    <content type="html">&lt;h1 id="week-9-day-39"&gt;Week 9 Day 39&lt;/h1&gt;
+
+&lt;h2 id="fixer-uppers"&gt;Fixer Uppers&lt;/h2&gt;
+
+&lt;h3 id="joyces-monday"&gt;Joyce's Monday&lt;/h3&gt;
+
+&lt;p&gt;I received comments on my first Bundler feature pull request. My first Bundler 
+feature pull request was on printing a better error message to let the user know 
+that they need to install Git if they are trying to grab the gems from git repositories.&lt;/p&gt;
+
+&lt;p&gt;I removed some unnecessary blank lines and changed the error message to be more 
+useful. Updated rspec test to create a git repository and updated the test to 
+match the more useful error message in git_proxy.rb.&lt;/p&gt;
+
+&lt;p&gt;I also reviewed what I had worked on on Friday and what was git merge vs. rebase.&lt;/p&gt;
+
+&lt;h3 id="jens-monday"&gt;Jen's Monday&lt;/h3&gt;
+
+&lt;h4 id="samegemtwiceboo"&gt;same_gem_twice_boo&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;$ echo $?&lt;/code&gt;&lt;/strong&gt; gives you the exit code of the last command that was run&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;$ :w !ruby -c&lt;/code&gt;&lt;/strong&gt; check your ruby code in gvim to make sure it is all good ruby&lt;/p&gt;
+
+&lt;p&gt;line 1129
+    spec/other/platform_spec "bundle outdated"&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  context "bundle outdated" do
+    before do
+      build_repo2 do
+        build_git "foo", :path =&amp;gt; lib_path("foo")
+      end
+
+      install_gemfile &amp;lt;&amp;lt;-G
+        source "file://#{gem_repo2}"
+        gem "activesupport", "2.3.5"
+        gem "foo", :git =&amp;gt; "#{lib_path('foo')}"
+      G
+    end __________________________________ from last Tuesday https://bundler.campfirenow.com/room/566068/transcript/2013/09/03
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;rspec spec/bundler/dsl_spec.rb:63&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;describe "syntax errors" do
+  it "will raise a Bundler::GemfileError" do
+    gemfile "gem 'foo', :path =&amp;gt; /unquoted/string/syntax/error"
+    expect { Bundler::Dsl.evaluate(bundled_app("Gemfile"), nil, true) }.
+      to raise_error(Bundler::GemfileError)
+  end
+end
+
+describe '#gem' do
+  it "will raise an Error if the gem is duplicated" do
+    gemfile """
+      source 'https://rubygems.org'
+        gem 'rails', '~&amp;gt; 4.0.0'
+        gem 'rails', '~&amp;gt; 4.0.0'
+        """
+    expect { Bundler::Dsl.evaluate(bundled_app("Gemfile"), nil, true) }.
+      to raise_error(Bundler::GemfileError)
+  end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;lib/bundler/dsl.rb&lt;/p&gt;
+
+&lt;p&gt;def gem
+&lt;strong&gt;__&lt;/strong&gt;&lt;strong&gt;__&lt;/strong&gt;&lt;strong&gt;__&lt;/strong&gt;&lt;strong&gt;__&lt;/strong&gt;&lt;strong&gt;__&lt;/strong&gt;___&lt;/p&gt;
+
+&lt;p&gt;When I get use this code in &lt;code&gt;lib/bundler/dsl.rb&lt;/code&gt; line78&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# duplication of same exact gem, same version too 
+  if gem(name, *args)
+    gemfile &amp;lt;&amp;lt;-G
+      gem 'rails', '~&amp;gt; 4.0.0'
+      gem 'rails', '~&amp;gt; 4.0.0'
+      G
+      raise GemfileError, "Gem #{name.to_s} is duplicated in your Gemfile. Please delete one."
+  end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I get this error&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$  dbundle outdated jen
+Unfortunately, a fatal error has occurred. Please see the Bundler
+troubleshooting documentation at http://bit.ly/bundler-issues. Thanks!
+/home/jen/Desktop/railsgirls/bundler/lib/bundler/friendly_errors.rb:40: stack level 
+ too deep (SystemStackError)
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+  </entry>
   <entry>
     <title>Week 8 Day 38 Gem Features</title>
     <link rel="alternate" href="/2013/09/06/week8-day38.html"/>
@@ -287,81 +388,6 @@ end
 
 &lt;pre&gt;&lt;code&gt;raise GitError, "Git is not installed!" if !Bundler.git_present?
 &lt;/code&gt;&lt;/pre&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Week 7 Day 33 Rebasing &amp; Windows Issues</title>
-    <link rel="alternate" href="/2013/08/29/week7-day33.html"/>
-    <id>/2013/08/29/week7-day33.html</id>
-    <published>2013-08-30T02:02:00Z</published>
-    <updated>2013-08-30T02:02:00Z</updated>
-    <author>
-      <name>RGSoCBundler</name>
-    </author>
-    <content type="html">&lt;h1 id="week-7-day-33"&gt;Week 7 Day 33&lt;/h1&gt;
-&lt;p&gt;Thursday, August 29 2013&lt;/p&gt;
-
-&lt;h2 id="rebasing--windows-issues"&gt;Rebasing &amp;amp; Windows Issues&lt;/h2&gt;
-
-&lt;h3 id="joyces-thursday"&gt;Joyce's Thursday&lt;/h3&gt;
-
-&lt;p&gt;After seeing that my test fails and passes from yesterday, I changed the include string to what 
-the better error message could be.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;describe "without git installed" do
-it "prints a better error message" do
-
-install_gemfile &amp;lt;&amp;lt;-G
-  git "#{lib_path('foo-1.0')}", :branch =&amp;gt; "omg" do
-    gem 'foo'
-  end
-G
-
-bundle "update"
-expect(out).to include("Git is not installed!")   end end
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Read some more and got the message to print when bundle update was ran without git installed.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;raise GitError, "Git is not installed!" if !Bundler.which("git")
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This issue was particularly for Windows when the user tries to bundle install. I had moved to an old Mac to make learning web development easier. Now back to Windows. I then setup my Windows and tested it on my Windows.&lt;/p&gt;
-
-&lt;h3 id="jens-thursday"&gt;Jen's Thursday&lt;/h3&gt;
-
-&lt;p&gt;I spent the day going through the messages on all the PR I have out. Fixing, squashing, rebasing.&lt;/p&gt;
-
-&lt;p&gt;I spent a lot of time reading about and changing the sass files. I was trying to get the footer to do something particular. It didn't work quite right but I think it still looks good. At least now I know more about sass. It does look a lot cleaner than css. I added a lower nav bar that I hope gets approved.&lt;/p&gt;
-
-&lt;p&gt;I showed the people at the Meetup group how to squash commits. We researched rebasing vs. merging. &lt;strong&gt;&lt;a href="http://stackoverflow.com/questions/804115/git-rebase-vs-git-merge"&gt;This is the answer I found on Stack Overflow by Rob Di Marco&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Short Version&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Merge takes all the changes in one branch and merge them into another branch in one commit.&lt;/li&gt;
-  &lt;li&gt;Rebase says I want the point at which I branched to move to a new starting point
-So when do you use either one?&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;Merge&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Let's say you have created a branch for the purpose of developing 
-a single feature. When you want to bring those changes back to master, 
-you probably want merge (you don't care about maintaining all of 
-the interim commits).&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;Rebase&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;A second scenario would be if you started doing some development and 
-then another developer made an unrelated change. You probably want to 
-pull and then rebase to base your changes from the current version 
-from the repo.&lt;/li&gt;
-&lt;/ul&gt;
-
 </content>
   </entry>
 </feed>

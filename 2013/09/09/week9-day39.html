@@ -59,19 +59,96 @@
         <div class="span9">
           <div class="row-fluid">
             <div id="main" role="main" class="well">
-              <h1>Archive for
-  
-    Aug 29 2013
-  
-</h1>
+              <h1 id="week-9-day-39">Week 9 Day 39</h1>
 
+<h2 id="fixer-uppers">Fixer Uppers</h2>
 
-<ul>
-  
-    <li><a href="/2013/08/29/week7-day33.html">Week 7 Day 33 Rebasing & Windows Issues</a> <span>Aug 29</span></li>
-  
-</ul>
+<h3 id="joyces-monday">Joyce's Monday</h3>
 
+<p>I received comments on my first Bundler feature pull request. My first Bundler 
+feature pull request was on printing a better error message to let the user know 
+that they need to install Git if they are trying to grab the gems from git repositories.</p>
+
+<p>I removed some unnecessary blank lines and changed the error message to be more 
+useful. Updated rspec test to create a git repository and updated the test to 
+match the more useful error message in git_proxy.rb.</p>
+
+<p>I also reviewed what I had worked on on Friday and what was git merge vs. rebase.</p>
+
+<h3 id="jens-monday">Jen's Monday</h3>
+
+<h4 id="samegemtwiceboo">same_gem_twice_boo</h4>
+
+<p><strong><code>$ echo $?</code></strong> gives you the exit code of the last command that was run</p>
+
+<p><strong><code>$ :w !ruby -c</code></strong> check your ruby code in gvim to make sure it is all good ruby</p>
+
+<p>line 1129
+    spec/other/platform_spec "bundle outdated"</p>
+
+<pre><code>  context "bundle outdated" do
+    before do
+      build_repo2 do
+        build_git "foo", :path =&gt; lib_path("foo")
+      end
+
+      install_gemfile &lt;&lt;-G
+        source "file://#{gem_repo2}"
+        gem "activesupport", "2.3.5"
+        gem "foo", :git =&gt; "#{lib_path('foo')}"
+      G
+    end __________________________________ from last Tuesday https://bundler.campfirenow.com/room/566068/transcript/2013/09/03
+</code></pre>
+
+<p>rspec spec/bundler/dsl_spec.rb:63</p>
+
+<pre><code>describe "syntax errors" do
+  it "will raise a Bundler::GemfileError" do
+    gemfile "gem 'foo', :path =&gt; /unquoted/string/syntax/error"
+    expect { Bundler::Dsl.evaluate(bundled_app("Gemfile"), nil, true) }.
+      to raise_error(Bundler::GemfileError)
+  end
+end
+
+describe '#gem' do
+  it "will raise an Error if the gem is duplicated" do
+    gemfile """
+      source 'https://rubygems.org'
+        gem 'rails', '~&gt; 4.0.0'
+        gem 'rails', '~&gt; 4.0.0'
+        """
+    expect { Bundler::Dsl.evaluate(bundled_app("Gemfile"), nil, true) }.
+      to raise_error(Bundler::GemfileError)
+  end
+</code></pre>
+
+<hr />
+
+<p>lib/bundler/dsl.rb</p>
+
+<p>def gem
+<strong>__</strong><strong>__</strong><strong>__</strong><strong>__</strong><strong>__</strong>___</p>
+
+<p>When I get use this code in <code>lib/bundler/dsl.rb</code> line78</p>
+
+<pre><code># duplication of same exact gem, same version too 
+  if gem(name, *args)
+    gemfile &lt;&lt;-G
+      gem 'rails', '~&gt; 4.0.0'
+      gem 'rails', '~&gt; 4.0.0'
+      G
+      raise GemfileError, "Gem #{name.to_s} is duplicated in your Gemfile. Please delete one."
+  end
+</code></pre>
+
+<p>I get this error</p>
+
+<pre><code>$  dbundle outdated jen
+Unfortunately, a fatal error has occurred. Please see the Bundler
+troubleshooting documentation at http://bit.ly/bundler-issues. Thanks!
+/home/jen/Desktop/railsgirls/bundler/lib/bundler/friendly_errors.rb:40: stack level 
+ too deep (SystemStackError)
+</code></pre>
 
             </div>
           </div>

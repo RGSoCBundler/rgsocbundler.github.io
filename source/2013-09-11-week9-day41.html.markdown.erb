@@ -1,0 +1,48 @@
+---
+title: Week 9 Day 41 Humpty Dumpty
+date: 2013-09-11 13:15 PDT
+tags: log
+---
+
+# Week 9 Day 41
+
+## Humpty Dumpty
+
+### Joyce's Wednesday
+
+**The first bundler feature I was working on has been merged in! yay!** It was the one where I added a better error message letting the user know they don’t have git installed when they try to grab gems from git repositories.
+
+I received suggestions on my second bundler feature. The one where it displays the old gem version if you run bundle update or bundle install.
+
+To display that for all three sources, I had the same repeated code in three different places. I moved the same code in all 3 source files (`git.rb`, `path.rb`, `rubygems.rb`) into 1 file. It was moved to the `source.rb` as a method named `version_message` that all 3 files calls. The Bundler::Source module was converted into a class instead.
+
+    module Bundler
+      class Source
+        [other code]
+
+        def version_message(spec)
+          [your repeated code goes here]
+        end
+
+      end
+    end
+
+    if installed_specs[spec].any?
+     return ["Using #{version_message(spec)}", nil]
+    else
+     install_message = "Installing #{version_message(spec)}"
+    end
+
+Since we changed the Source module into a class, all the Source module in `git.rb`, `path.rb`, `rubygems.rb` need to be changed to Source class. However, I got an error when trying to run bundle update after I made the changes.  
+
+    TypeError: Source is not a module
+
+This error occurred because there were still other files that referenced `module Source` instead of the new `class Source`
+
+Next, worked on getting the locked_gems method in` bundler.rb` to not raise an error if the file does not exist.
+
+### Jen's Wednesday
+
+#### All my tests are broken. Waaah.
+
+I ran `$ rspec spec/bundler/dsl_spec.rb` and received an error `$ expected Bundler::GemfileError, got #<SystemStackError: stack level too deep>` Andre thought that I added an infinite loop somewhere. I tested a few files I had not worked on and realized that ALL the tests were failing. Finally I just reforked the whole project and started from scratch. I added my files again and everything worked. Yay!

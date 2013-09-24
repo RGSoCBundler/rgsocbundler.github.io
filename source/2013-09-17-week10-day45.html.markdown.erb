@@ -1,0 +1,57 @@
+---
+title: Week 10 Day 45 Gemfile.lock
+date: 2013-09-17 15:09 PDT
+tags: log
+---
+
+# Week 10 Day 45
+
+## Gemfile.lock
+
+### Joyce's Tuesday
+
+I started writing a reflection of my RG experience, and which part of it can be used for 
+the post for the RGSoC main blog post.
+
+### Jen's Tuesday
+
+#### Gemfile.lock
+
+I researched Gemfile.lock 
+
+#### [From the Railscast #201](http://railscasts.com/episodes/201-bundler?view=asciicast) - Locking Gems
+
+Another useful command is bundle lock. This locks down the specific versions of the gems 
+your application is using. After we run it our project will have a new file in it called 
+Gemfile.lock. This file lists all of the gems that are installed for our application along 
+with specific version that is used. After running bundle lock only the specific versions 
+listed in the Gemfile.lock file will be installed when we run bundle install, even if 
+there are never versions available.
+
+You might be wondering when you’d want to use bundle lock. Well, it’s worth using whenever 
+a project is used in other locations. If we’re working with other Rails developers on a 
+project we can use bundle lock to ensure that everyone is using the same versions of the gems 
+that the application uses. The same applies when the application is being deployed to production. 
+As the application will be being deployed to a different server we’ll want to be sure that exactly 
+the same versions are used on the production server as they are on our development machine.
+
+If we do need to make changes to an application’s gems after running bundle lock we shouldn’t 
+change the Gemfile.lock file directly. Instead we should update the Gemfile as we did before. 
+Once we’ve made our changes to the Gemfile, however, running bundle install won’t update the 
+application’s gems as the Gemfile is locked. To update the gems we need to pass the --relock option.
+
+#### [Dylan Markow wrote this on Stack Overflow.](http://stackoverflow.com/questions/6927442/what-is-the-difference-between-gemfile-and-gemfile-lock-in-ruby-on-rails)
+
+The Gemfile is where you specify which gems you want to use, and lets you specify which versions.
+
+The Gemfile.lock file is where Bundler records the exact versions that were installed. This way, 
+when the same library/project is loaded on another machine, running bundle install will look at 
+the Gemfile.lock and install the exact same versions, rather than just using the Gemfile and 
+installing the most recent versions. (Running different versions on different machines could lead 
+to broken tests, etc.) You shouldn't ever have to directly edit the lock file.
+
+#### [Yahuda Katz - Clarifying the Roles of the .gemspec and Gemfile](http://yehudakatz.com/2010/12/16/clarifying-the-roles-of-the-gemspec-and-gemfile/)
+
+Gemfile.lock remembers the exact versions and sources of every piece of third-party code that you use. 
+For applications, you want this. When developing a gem, this can obscure issues that will occur 
+because gems are deployed (using the gem command) without the benefit of bundler.

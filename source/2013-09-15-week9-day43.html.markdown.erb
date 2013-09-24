@@ -1,0 +1,73 @@
+---
+title: Week 9 Day 43 Prime
+date: 2013-09-15 23:46 PDT
+tags: log
+---
+
+# Week 9 Day 43
+
+## Prime
+
+### Joyce's Friday
+
+I removed the line spaces from the version_message method and in the source/git.rb file. Moved the rspec tests for gems, git, and source to the correct file in the spec/update directory and the proper place in the file.
+
+Add rspec test for when you run bundle outdated with the wrong gem name it returns non-zero exit code.
+
+Started working on adding a -all flag to bundle update. Instead of updating the gems when users run bundle update, move that functionality to bundle update --all. Then, bundle update should print instructions/messages on how to update because “many people think that they should run bundle update after git pull, but that mostly just messes everything up.”
+
+### Jen's Friday
+
+#### Started working on bundler-features issues #17 
+
+[Warn if using a version of bundler older than that specified in the lockfile](https://github.com/bundler/bundler-features/issues/17)
+
+From Issue #2239 in bundler/bundler
+
+>>**gucki:**
+bundler does not enforce version of itself specified in Gemfile.lock
+No milestone No one is assigned
+My Gemfile.lock has bundler locked at 1.2.3. Now on a different where bundler 1.0.21 is installed, I can run bundle exec cap deploy. However the deploy fails, because the capistrano version is incompatible with that bundler version.
+
+>>The main problem is that bundler does not enforce the locked version of 1.2.3 for itself. It silently uses 1.0.21.
+
+>>**Andre:**
+If you want the version enforced, put it in your Gemfile. The locked version is for reference, so you know which version of Bundler created the lockfile.
+
+>>**gucki:**
+If there any special reason why it's different to the normal behavior of all other gems? At least a warning should be emitted?
+
+>>**Andre:**
+Yes, it's different because otherwise you would never be able to upgrade Bundler.
+
+>>I know that we had agreed to print a warning if you try to use an older version, but I'm not sure if that code was ever written. It's definitely a good idea.
+
+./lib/bundler/cli.rb:    def exec(*args)
+
+lib/bundler/cli.rb line 526
+  def exec(*args)
+      Bundler.definition.validate_bundler!
+      Bundler.definition.validate_ruby!
+      Bundler.load.setup_environment
+
+add a validate bundler method
+./lib/bundler/definition.rb:
+
+find version of bundler in Gemfile.lock
+
+If you run bundle exec it should the version of bundler in the lockfile or print a warning.
+bundler is already loaded and it's too late but it should check the lock for a bundler version constraint and abort if it doesn't meet it
+
+`bundle exec` should check for a bundler version constraint, and print a warning if it doesn't meet it
+
+bundle show bundler
+
+gem list bundler
+
+specify a version in the Gemfile.lock that is not the version on my computer . 
+Get it to give an error.
+
+What does it do now?
+
+
+line 398 lib/bundler/definition.rb

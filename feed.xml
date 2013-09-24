@@ -5,7 +5,7 @@
   <id>http://rgsocbundler.github.io/</id>
   <link href="http://rgsocbundler.github.io/"/>
   <link href="http://rgsocbundler.github.io/feed.xml" rel="self"/>
-  <updated>2013-09-09T20:15:00Z</updated>
+  <updated>2013-09-23T22:10:00Z</updated>
   <author>
     <name>Jen Diamond</name>
   </author>
@@ -16,378 +16,207 @@
     <name>Jessica Suttles</name>
   </author>
   <entry>
-    <title>Week 9 Day 39 Fixer Uppers</title>
-    <link rel="alternate" href="/2013/09/09/week9-day39.html"/>
-    <id>/2013/09/09/week9-day39.html</id>
-    <published>2013-09-09T20:15:00Z</published>
-    <updated>2013-09-09T20:15:00Z</updated>
+    <title>Week 10 Day 50 Come in Travis</title>
+    <link rel="alternate" href="/2013/09/23/week10-day50.html"/>
+    <id>/2013/09/23/week10-day50.html</id>
+    <published>2013-09-23T22:10:00Z</published>
+    <updated>2013-09-23T22:10:00Z</updated>
     <author>
       <name>RGSoCBundler</name>
     </author>
-    <content type="html">&lt;h1 id="week-9-day-39"&gt;Week 9 Day 39&lt;/h1&gt;
+    <content type="html">&lt;h1 id="week-10-day-50"&gt;Week 10 Day 50&lt;/h1&gt;
 
-&lt;h2 id="fixer-uppers"&gt;Fixer Uppers&lt;/h2&gt;
+&lt;h2 id="come-in-travis"&gt;Come in Travis&lt;/h2&gt;
 
 &lt;h3 id="joyces-monday"&gt;Joyce's Monday&lt;/h3&gt;
 
-&lt;p&gt;I received comments on my first Bundler feature pull request. My first Bundler 
-feature pull request was on printing a better error message to let the user know 
-that they need to install Git if they are trying to grab the gems from git repositories.&lt;/p&gt;
+&lt;p&gt;Looks like the bundle update &amp;#8211;all rspec tests pass now according to Travis CI.&lt;/p&gt;
 
-&lt;p&gt;I removed some unnecessary blank lines and changed the error message to be more 
-useful. Updated rspec test to create a git repository and updated the test to 
-match the more useful error message in git_proxy.rb.&lt;/p&gt;
-
-&lt;p&gt;I also reviewed what I had worked on on Friday and what was git merge vs. rebase.&lt;/p&gt;
+&lt;p&gt;So because I changed the format of the message that gets displayed when a user runs bundle update (the previous gem version PR), it broke some other tests. I went to go fix those and get them to pass. Continued to make commits and squash them all together to one commit with a summarized, reworded message.&lt;/p&gt;
 
 &lt;h3 id="jens-monday"&gt;Jen's Monday&lt;/h3&gt;
 
-&lt;h4 id="samegemtwiceboo"&gt;same_gem_twice_boo&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;code&gt;$ echo $?&lt;/code&gt;&lt;/strong&gt; gives you the exit code of the last command that was run&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;code&gt;$ :w !ruby -c&lt;/code&gt;&lt;/strong&gt; check your ruby code in gvim to make sure it is all good ruby&lt;/p&gt;
-
-&lt;p&gt;line 1129
-    spec/other/platform_spec "bundle outdated"&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;  context "bundle outdated" do
-    before do
-      build_repo2 do
-        build_git "foo", :path =&amp;gt; lib_path("foo")
-      end
-
-      install_gemfile &amp;lt;&amp;lt;-G
-        source "file://#{gem_repo2}"
-        gem "activesupport", "2.3.5"
-        gem "foo", :git =&amp;gt; "#{lib_path('foo')}"
-      G
-    end __________________________________ from last Tuesday https://bundler.campfirenow.com/room/566068/transcript/2013/09/03
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;rspec spec/bundler/dsl_spec.rb:63&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;describe "syntax errors" do
-  it "will raise a Bundler::GemfileError" do
-    gemfile "gem 'foo', :path =&amp;gt; /unquoted/string/syntax/error"
-    expect { Bundler::Dsl.evaluate(bundled_app("Gemfile"), nil, true) }.
-      to raise_error(Bundler::GemfileError)
-  end
-end
-
-describe '#gem' do
-  it "will raise an Error if the gem is duplicated" do
-    gemfile """
-      source 'https://rubygems.org'
-        gem 'rails', '~&amp;gt; 4.0.0'
-        gem 'rails', '~&amp;gt; 4.0.0'
-        """
-    expect { Bundler::Dsl.evaluate(bundled_app("Gemfile"), nil, true) }.
-      to raise_error(Bundler::GemfileError)
-  end
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;lib/bundler/dsl.rb&lt;/p&gt;
-
-&lt;p&gt;def gem
-&lt;strong&gt;__&lt;/strong&gt;&lt;strong&gt;__&lt;/strong&gt;&lt;strong&gt;__&lt;/strong&gt;&lt;strong&gt;__&lt;/strong&gt;&lt;strong&gt;__&lt;/strong&gt;___&lt;/p&gt;
-
-&lt;p&gt;When I get use this code in &lt;code&gt;lib/bundler/dsl.rb&lt;/code&gt; line78&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# duplication of same exact gem, same version too 
-  if gem(name, *args)
-    gemfile &amp;lt;&amp;lt;-G
-      gem 'rails', '~&amp;gt; 4.0.0'
-      gem 'rails', '~&amp;gt; 4.0.0'
-      G
-      raise GemfileError, "Gem #{name.to_s} is duplicated in your Gemfile. Please delete one."
-  end
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I get this error&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$  dbundle outdated jen
-Unfortunately, a fatal error has occurred. Please see the Bundler
-troubleshooting documentation at http://bit.ly/bundler-issues. Thanks!
-/home/jen/Desktop/railsgirls/bundler/lib/bundler/friendly_errors.rb:40: stack level 
- too deep (SystemStackError)
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Catching up on posting in the park. Listening to the birds and watching deer stroll by.
+Doing more research on the Rocky Mountain Rocky talks and git.&lt;/p&gt;
 </content>
   </entry>
   <entry>
-    <title>Week 8 Day 38 Gem Features</title>
-    <link rel="alternate" href="/2013/09/06/week8-day38.html"/>
-    <id>/2013/09/06/week8-day38.html</id>
-    <published>2013-09-06T20:15:00Z</published>
-    <updated>2013-09-06T20:15:00Z</updated>
+    <title>Week 10 Day 48 Friday</title>
+    <link rel="alternate" href="/2013/09/20/week10-day48.html"/>
+    <id>/2013/09/20/week10-day48.html</id>
+    <published>2013-09-20T22:04:00Z</published>
+    <updated>2013-09-20T22:04:00Z</updated>
     <author>
       <name>RGSoCBundler</name>
     </author>
-    <content type="html">&lt;h1 id="week-8-day-38"&gt;Week 8 Day 38&lt;/h1&gt;
+    <content type="html">&lt;h1 id="week-10-day-48"&gt;Week 10 Day 48&lt;/h1&gt;
 
-&lt;h2 id="gem-features"&gt;Gem Features&lt;/h2&gt;
+&lt;h2 id="friday"&gt;Friday&lt;/h2&gt;
 
 &lt;h3 id="jens-friday"&gt;Jen's Friday&lt;/h3&gt;
-&lt;p&gt;I worked on finalizing all my pull requests. Almost all of them were merged including the invalid gemname issue on the actual bundler site. WOOOO!&lt;/p&gt;
+&lt;p&gt;I researched and reviewed the workshops and presentations for the conference I am attending next week, &lt;a href="http://rockymtnruby.com/"&gt;Rock Mountain Ruby in Boulder&lt;/a&gt;, Colorado. This conference wasn't on the RGSOC list but I found it and noticed that they were offering a scholarship for a free ticket and a guide for the conference. I applied and I won it!&lt;/p&gt;
+
+&lt;p&gt;There are going to be around eight speakers a day and there workshops on the first day. I am very excited to take the workshop on &lt;a href="http://rockymtnruby.com/workshops#workshop_3"&gt;Git and Github&lt;/a&gt;. and the &lt;a href="http://rockymtnruby.com/workshops#workshop_6"&gt;Arduino workshop&lt;/a&gt;. I am also very excited to see one of the people who has been helping us this summer, Andy Delcambre, speak about Ruby Systems and Katrina Owens speak on refactoring.&lt;/p&gt;
+
+&lt;p&gt;This is the first Rubycentric conference I will have attended. I hope to learn a lot, meet some more fellow Rubyists and get inspired to keep on coding long past the RGSOC.&lt;/p&gt;
+
+&lt;p&gt;I also worked on getting caught up with my blogging.&lt;/p&gt;
 
 &lt;h3 id="joyces-friday"&gt;Joyce's Friday&lt;/h3&gt;
-&lt;p&gt;Installed ctags to make it easier to navigate/jump between code in a text editor.&lt;/p&gt;
 
-&lt;p&gt;Installed the debugger gem, required it in our file, &lt;code&gt;lib/source/rubygems.rb&lt;/code&gt;, and added the word &lt;code&gt;debugger&lt;/code&gt; on the line where you want to check out what the code is doing. It is similar to irb. We added it in line 71 of &lt;code&gt;lib/bundler/source/rubygems.rb&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;I fixed the last bit of the &lt;code&gt;bundle update&lt;/code&gt; rspec test that I missed, squashed down all the commits, and rewrote the commits using &lt;code&gt;git rebase -i&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;We looked at where the old version of the gem should be added. For example, the &lt;code&gt;was (2.3.5)&lt;/code&gt; part of the message should go in the “Using” and the “Installing” messages.&lt;/p&gt;
+&lt;p&gt;The submitted PR to show the previous version of the gem had some discussion comments. I learned what “promote that check to block level” means. I changed this bit from:&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;locked_spec&lt;/code&gt; - references the gemfile gems with the gem in the lockfile.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;locked_spec_version&lt;/code&gt; - stores the gem version from the gemfile.lock if the locked_spec matches&lt;/p&gt;
-
-&lt;p&gt;Stored the original message, “Using #{spec.name} (#{spec.version})”, in the variable &lt;code&gt;using_message&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;We only want to add the old version if the version of the gem is not the same as the one in the gemfile.lock (lockfile)&lt;/p&gt;
-
-&lt;p&gt;So, we append the old_version to our “Using” and “Installing” message if that is true.&lt;/p&gt;
-
-&lt;p&gt;Had to remove the debugger from our file so Rspec at least runs.&lt;/p&gt;
-
-&lt;p&gt;Adding our code, broke the &lt;code&gt;spec/install/gemspec_spec.rb&lt;/code&gt; and &lt;code&gt;spec/update/gems_spec.rb&lt;/code&gt; Rspec tests because it can’t find a lockfile?&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Week 8 Day 37 Silverlake Library &amp; Syrup</title>
-    <link rel="alternate" href="/2013/09/05/week8-day37.html"/>
-    <id>/2013/09/05/week8-day37.html</id>
-    <published>2013-09-05T22:28:00Z</published>
-    <updated>2013-09-05T22:28:00Z</updated>
-    <author>
-      <name>RGSoCBundler</name>
-    </author>
-    <content type="html">&lt;h1 id="week-8-day-37"&gt;Week 8 Day 37&lt;/h1&gt;
-
-&lt;h2 id="silverlake-library--syrup"&gt;Silverlake Library &amp;amp; Syrup&lt;/h2&gt;
-
-&lt;h3 id="knowledge-exchange"&gt;Knowledge Exchange&lt;/h3&gt;
-
-&lt;p&gt;We met up at the Silverlake Library. We showed each other what we have been working on. Joyce showed the ronn files and the rake files that made the man pages. Jen showed the invalid gem issue she had been working on. We looked at the cli.rb file together.&lt;/p&gt;
-
-&lt;p&gt;We worked on our own issues and gave each other suggestions.&lt;/p&gt;
-
-&lt;p&gt;Joyce continued working on the Rspec test with a revised version that Andre gave, but it still doesn’t work. Worked on using the locked_gems method in lib/bundler.rb to find and display the old version from the lockfile. Navigated through the forest of files in the directory to see where the methods of locked_gems went.&lt;/p&gt;
-
-&lt;p&gt;We headed over to Syrup for the meetup but due to the summer's heat only one other showed up to join us. We did however get some work done.&lt;/p&gt;
-
-</content>
-  </entry>
-  <entry>
-    <title>Week 8 Day 36 Thinking through Wednesday</title>
-    <link rel="alternate" href="/2013/09/04/week8-day36.html"/>
-    <id>/2013/09/04/week8-day36.html</id>
-    <published>2013-09-05T00:10:00Z</published>
-    <updated>2013-09-05T00:10:00Z</updated>
-    <author>
-      <name>RGSoCBundler</name>
-    </author>
-    <content type="html">&lt;h1 id="week-8-day-36"&gt;Week 8 Day 36&lt;/h1&gt;
-
-&lt;h2 id="thinking-through-wednesday"&gt;Thinking through Wednesday&lt;/h2&gt;
-
-&lt;h3 id="jens-wednesday"&gt;Jen's Wednesday&lt;/h3&gt;
-&lt;p&gt;Met with Jessica at Pivotal Labs. We checked out the issue I am working on about returning a message when the gem name is invalid. We wrote a test for it and realized that my rspec wasn't working with the bundler files. Jessica, then Steve, then Lars tried a bunch of different things to make it work. In the end the only solution was to re-install my computer.&lt;/p&gt;
-
-&lt;p&gt;When my computer was re-installed my test passed.&lt;/p&gt;
-
-&lt;p&gt;When I was using Middleman earlier I was working in a branch. I signed back into it and I got this message:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ git checkout invalid_gemname
-  M Rakefile
-  M bin/bundle_ruby
-  M lib/bundler/templates/Executable
-  M spec/bundler/dsl_spec.rb
-  Switched to branch 'invalid_gemname'
+&lt;pre&gt;&lt;code&gt;old_version = " was (#{locked_spec_version})"
+message &amp;lt;&amp;lt; old_version if locked_spec_version &amp;amp;&amp;amp; spec.version != locked_spec_version
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;a href="http://stackoverflow.com/questions/4949652/git-checkout-what-does-this-weird-output-mean"&gt;http://stackoverflow.com/questions/4949652/git-checkout-what-does-this-weird-output-mean&lt;/a&gt; (I figured that it was something like this but this is much clearer than what i was thinking.)&lt;/p&gt;
+&lt;p&gt;to this:&lt;/p&gt;
 
-&lt;p&gt;That's the output of git status; git is showing you that after checking out master there are still uncommited changes to your working copy (one modified file and one deleted file).&lt;/p&gt;
-
-&lt;p&gt;Check man git-status:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;M = modified
-A = added
-D = deleted
-R = renamed
-C = copied
-U = updated but unmerged
+&lt;pre&gt;&lt;code&gt;if locked_spec_version &amp;amp;&amp;amp; spec.version != locked_spec_version
+  message &amp;lt;&amp;lt; " (was #{locked_spec_version})"
+end
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id="joyces-wednesday"&gt;Joyce's Wednesday&lt;/h3&gt;
-&lt;p&gt;Worked on displaying the old version of the gem when bundle update gets run. The initial code added and tested with &lt;code&gt;dbundle update&lt;/code&gt; works to display the old version of the gem. But even if the gem did not update to a newer version, it displays the same version as the old version.&lt;/p&gt;
-
-&lt;p&gt;Working on getting the rspec to pass. It isn’t working. There might be a bug?&lt;/p&gt;
+&lt;p&gt;During the discussion they threw out some ideas on how to format the message. I changed to what was suggested and changed the rspec for that to match.&lt;/p&gt;
 </content>
   </entry>
   <entry>
-    <title>Week 8 Day 35 We Have Issues</title>
-    <link rel="alternate" href="/2013/09/03/week8-day35.html"/>
-    <id>/2013/09/03/week8-day35.html</id>
-    <published>2013-09-03T22:25:00Z</published>
-    <updated>2013-09-03T22:25:00Z</updated>
+    <title>Week 10 Day 47 begin end bundle update</title>
+    <link rel="alternate" href="/2013/09/19/week10-day47.html"/>
+    <id>/2013/09/19/week10-day47.html</id>
+    <published>2013-09-19T22:09:00Z</published>
+    <updated>2013-09-19T22:09:00Z</updated>
     <author>
       <name>RGSoCBundler</name>
     </author>
-    <content type="html">&lt;h1 id="week-8-day-35"&gt;Week 8 Day 35&lt;/h1&gt;
+    <content type="html">&lt;h1 id="week-10-day-47"&gt;Week 10 Day 47&lt;/h1&gt;
 
-&lt;h2 id="we-have-issues"&gt;We Have Issues&lt;/h2&gt;
+&lt;h2 id="begin-end-bundle-update"&gt;begin end bundle update&lt;/h2&gt;
+
+&lt;h3 id="joyces-thurday"&gt;Joyce's Thurday&lt;/h3&gt;
+
+&lt;p&gt;Worked on editing our post for the main RGSoC blog.&lt;/p&gt;
+
+&lt;p&gt;I received word to tweak what the message displays when someone runs bundle 
+update and then to squash my commits and send the PR to the 2-0-dev branch. 
+However, before that, I realized the message should also let the user know 
+how to update a specific gem like bundle update &lt;gem_name&gt;. Although, I was 
+suppose to submit my PR...the Travis CI build test didn’t pass. I went and 
+fixed all the bundle update failures in the spec directory, made commits 
+as I went along.&lt;/gem_name&gt;&lt;/p&gt;
+
+&lt;h3 id="jens-thursday"&gt;Jen's Thursday&lt;/h3&gt;
+
+&lt;p&gt;I added &lt;a href="http://www.gistboxapp.com/"&gt;GistBox&lt;/a&gt; to organize my gists. Now I can sort 
+through my gists so much easier. I had created so many that they were getting unwieldy.&lt;/p&gt;
+
+&lt;p&gt;I was working looking at some code in bundler and I noticed a lot of blocks that started 
+with begin and ended with end. They all had several exceptions in them. I researched that 
+and read about it for a while. &lt;a href="http://blog.rubybestpractices.com/posts/rklemme/003-The_Universe_between_begin_and_end.html"&gt;begin end&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://www.meetup.com/Los-Angeles-Womens-Ruby-on-Rails-Group/events/137696602/"&gt;Tonight the meetup group I organize met for the monthly meetup.&lt;/a&gt; The theme of the night was "How to Build a Programmer from Scratch." 
+It was a really inspiring evening. Almost the entire summer class from General Assembly
+ attended to watch their class mates do their first public presentation. Machiko Yasuda, 
+Theresa Luu, Emilia Kubo Kirschenbaum &amp;amp; Shana Weitzen all talked about the projects they 
+did in GA and about studying together. They also talked about having algorithm parties, the 
+importance of pairing, talking out your problems and marking your progress with a blog. 
+Giles Bowkett talked about learning Lisp as a way to get a good basis for computer knowledge 
+that isn't going to change. He laid out a path to learning Ruby and Rails. &lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Unit test the Standard Library&lt;/li&gt;
+  &lt;li&gt;Write code EVERY day&lt;/li&gt;
+  &lt;li&gt;Build something new every week&lt;/li&gt;
+  &lt;li&gt;Watch tons of screencasts&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Week 10 Day 45 Gemfile.lock</title>
+    <link rel="alternate" href="/2013/09/17/week10-day45.html"/>
+    <id>/2013/09/17/week10-day45.html</id>
+    <published>2013-09-17T22:09:00Z</published>
+    <updated>2013-09-17T22:09:00Z</updated>
+    <author>
+      <name>RGSoCBundler</name>
+    </author>
+    <content type="html">&lt;h1 id="week-10-day-45"&gt;Week 10 Day 45&lt;/h1&gt;
+
+&lt;h2 id="gemfilelock"&gt;Gemfile.lock&lt;/h2&gt;
 
 &lt;h3 id="joyces-tuesday"&gt;Joyce's Tuesday&lt;/h3&gt;
 
-&lt;p&gt;Learned to set the path to blank for rspec test, that way it can’t find
-git. Before, I manually “removed” git to get the test to pass.&lt;/p&gt;
-
-&lt;p&gt;Wrote the rspec test based on spec/update/ directory and separated into
-3 files based on if the gem source is from rubygems, git, or path.
-I haven’t gotten the rspec to pass yet though.&lt;/p&gt;
-
-&lt;p&gt;Andre gave the method to display the old gem version, which I added
-in to the lib/bundler/source/rubygems.rb.&lt;/p&gt;
+&lt;p&gt;I started writing a reflection of my RG experience, and which part of it can be used for 
+the post for the RGSoC main blog post.&lt;/p&gt;
 
 &lt;h3 id="jens-tuesday"&gt;Jen's Tuesday&lt;/h3&gt;
 
-&lt;p&gt;It seemed like a Monday because of the Labor holiday. I re-did all my
-pull requests from scratch so they would contain only the changes I
-made with the changes from the pull upstream master. I was getting
-confused that the FAQ page kept coming back into the branches that
-I was working on. I thought that maybe I had made the other branches
-from the FAQ branch.&lt;/p&gt;
+&lt;h4 id="gemfilelock-1"&gt;Gemfile.lock&lt;/h4&gt;
 
-&lt;p&gt;This is what was actually happening: even though it has not been
-published the FAQ page has been merged into the master repo so when
-I did a &lt;code&gt;git pull -i upstream master&lt;/code&gt; the FAQ page is included into my
-files and that it supposed to be happening and it is not supposed to be deleted.&lt;/p&gt;
+&lt;p&gt;I researched Gemfile.lock &lt;/p&gt;
 
-&lt;p&gt;After fixing all the PRs I started another issue in the bundler-feature area. #6&lt;/p&gt;
+&lt;h4 id="from-the-railscast-201httprailscastscomepisodes201-bundlerviewasciicast---locking-gems"&gt;&lt;a href="http://railscasts.com/episodes/201-bundler?view=asciicast"&gt;From the Railscast #201&lt;/a&gt; - Locking Gems&lt;/h4&gt;
+
+&lt;p&gt;Another useful command is bundle lock. This locks down the specific versions of the gems 
+your application is using. After we run it our project will have a new file in it called 
+Gemfile.lock. This file lists all of the gems that are installed for our application along 
+with specific version that is used. After running bundle lock only the specific versions 
+listed in the Gemfile.lock file will be installed when we run bundle install, even if 
+there are never versions available.&lt;/p&gt;
+
+&lt;p&gt;You might be wondering when you’d want to use bundle lock. Well, it’s worth using whenever 
+a project is used in other locations. If we’re working with other Rails developers on a 
+project we can use bundle lock to ensure that everyone is using the same versions of the gems 
+that the application uses. The same applies when the application is being deployed to production. 
+As the application will be being deployed to a different server we’ll want to be sure that exactly 
+the same versions are used on the production server as they are on our development machine.&lt;/p&gt;
+
+&lt;p&gt;If we do need to make changes to an application’s gems after running bundle lock we shouldn’t 
+change the Gemfile.lock file directly. Instead we should update the Gemfile as we did before. 
+Once we’ve made our changes to the Gemfile, however, running bundle install won’t update the 
+application’s gems as the Gemfile is locked. To update the gems we need to pass the –relock option.&lt;/p&gt;
+
+&lt;h4 id="dylan-markow-wrote-this-on-stack-overflowhttpstackoverflowcomquestions6927442what-is-the-difference-between-gemfile-and-gemfile-lock-in-ruby-on-rails"&gt;&lt;a href="http://stackoverflow.com/questions/6927442/what-is-the-difference-between-gemfile-and-gemfile-lock-in-ruby-on-rails"&gt;Dylan Markow wrote this on Stack Overflow.&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;The Gemfile is where you specify which gems you want to use, and lets you specify which versions.&lt;/p&gt;
+
+&lt;p&gt;The Gemfile.lock file is where Bundler records the exact versions that were installed. This way, 
+when the same library/project is loaded on another machine, running bundle install will look at 
+the Gemfile.lock and install the exact same versions, rather than just using the Gemfile and 
+installing the most recent versions. (Running different versions on different machines could lead 
+to broken tests, etc.) You shouldn't ever have to directly edit the lock file.&lt;/p&gt;
+
+&lt;h4 id="yahuda-katz---clarifying-the-roles-of-the-gemspec-and-gemfilehttpyehudakatzcom20101216clarifying-the-roles-of-the-gemspec-and-gemfile"&gt;&lt;a href="http://yehudakatz.com/2010/12/16/clarifying-the-roles-of-the-gemspec-and-gemfile/"&gt;Yahuda Katz - Clarifying the Roles of the .gemspec and Gemfile&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;Gemfile.lock remembers the exact versions and sources of every piece of third-party code that you use. 
+For applications, you want this. When developing a gem, this can obscure issues that will occur 
+because gems are deployed (using the gem command) without the benefit of bundler.&lt;/p&gt;
 </content>
   </entry>
   <entry>
-    <title>Week 7 Day 34 It's Optimize Friday</title>
-    <link rel="alternate" href="/2013/08/30/week7-day34.html"/>
-    <id>/2013/08/30/week7-day34.html</id>
-    <published>2013-08-31T01:48:00Z</published>
-    <updated>2013-08-31T01:48:00Z</updated>
+    <title>week10-day50</title>
+    <link rel="alternate" href="/2013/09/16/week10-day50.html"/>
+    <id>/2013/09/16/week10-day50.html</id>
+    <published>2013-09-16T22:10:00Z</published>
+    <updated>2013-09-16T22:10:00Z</updated>
     <author>
       <name>RGSoCBundler</name>
     </author>
-    <content type="html">&lt;h1 id="week-7-day-34"&gt;Week 7 Day 34&lt;/h1&gt;
-
-&lt;h2 id="its-optimize-friday"&gt;It's Optimize Friday&lt;/h2&gt;
-
-&lt;iframe width="560" height="315" src="//www.youtube.com/embed/kfVsfOSbJY0" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;
-
-&lt;p&gt;ORRRR&lt;/p&gt;
-
-&lt;iframe width="560" height="315" src="//www.youtube.com/embed/hxleH60hDJY" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;
-
-&lt;h3 id="jens-friday"&gt;Jen's Friday&lt;/h3&gt;
-&lt;p&gt;I am back to working on the issue where when you run &lt;code&gt;bundle oudated gem-not-in-your-Gemfile&lt;/code&gt; it returns that your bundle is up to date. In this example the serv gem is not in the Gemfile.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ bundle outdated serv
-  Fetching gem metadata from https://rubygems.org/..........
-  Fetching gem metadata from https://rubygems.org/..
-  Resolving dependencies...
-
-  Your bundle is up to date!
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I was looking at the &lt;code&gt;bundler/lib/bundler/cli.rb&lt;/code&gt; files. In the bundle desc inject section I found a def not_found_message that looks similar to what I want to do; identify a missing gem.&lt;/p&gt;
-
-&lt;p&gt;def not_found_message(missing_gem_name, alternatives) message = "Could not find gem '#{missing_gem_name}'."&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# This is called as the result of a GemNotFound, let's see if
-# there's any similarly named ones we can propose instead
-alternate_names = alternatives.map { |a| a.respond_to?(:name) ? a.name : a }
-suggestions = SimilarityDetector.new(alternate_names).similar_word_list(missing_gem_name)
-message += "\nDid you mean #{suggestions}?" if suggestions
-message
-end
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I ran `bundle inject&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ bundle inject blurg 1.0.0
-  Fetching gem metadata from https://rubygems.org/..........
-  Fetching gem metadata from https://rubygems.org/..
-  Resolving dependencies...
-  Could not find gem 'blurg (= 1.0.0) ruby' in the gems available on this machine.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This seemed closer to the error I want to see when I run bundle outdated non-existing-gem so I decide to check out a few more command to see if I could find one with a message I'd like to see.&lt;/p&gt;
-
-&lt;p&gt;I ran &lt;code&gt;bundle show serv&lt;/code&gt; (The serv gem is NOT in the Gemfile.)&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ bundle show serv
-  Could not find gem 'serv'.
-  Did you mean sdoc?
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This is even closer to the error I want to see. So I checked out the code in the desc show section of the bundler/lib/bundler/cli.rb file.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;desc "show [GEM]", "Shows all gems that are part of the bundle, or the path to a given gem"
-long_desc &amp;lt;&amp;lt;-D
-  Show lists the names and versions of all gems that are required by your Gemfile.
-  Calling show with [GEM] will list the exact location of that gem on your machine.
-D
-method_option "paths", :type =&amp;gt; :boolean,
-  :banner =&amp;gt; "List the paths of all gems that are required by your Gemfile."
-def show(gem_name = nil)
-  Bundler.ui.silence do
-    Bundler.definition.validate_ruby!
-    Bundler.load.lock
-  end
-
-  if gem_name
-    if gem_name == "bundler"
-      path = File.expand_path("../../..", __FILE__)
-    else
-      spec = select_spec(gem_name, :regex_match)
-      return unless spec
-      path = spec.full_gem_path
-      if !File.directory?(path)
-        Bundler.ui.warn "The gem #{gem_name} has been deleted. It was installed at:"
-      end
-    end
-    return Bundler.ui.info(path)
-  end
-
-  if options[:paths]
-    Bundler.load.specs.sort_by { |s| s.name }.map do |s|
-      Bundler.ui.info s.full_gem_path
-    end
-  else
-    Bundler.ui.info "Gems included by the bundle:"
-    Bundler.load.specs.sort_by { |s| s.name }.each do |s|
-      Bundler.ui.info "  * #{s.name} (#{s.version}#{s.git_version})"
-    end
-  end
-end
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I am now working on a path that will lead me to the answer…&lt;/p&gt;
-
-&lt;h3 id="joyces-friday"&gt;Joyce's Friday&lt;/h3&gt;
-&lt;p&gt;Started looking at another bundler feature/issue. The feature I am looking to add is when you &lt;code&gt;bundle update&lt;/code&gt;, it shows the old version of the gem being updated. I started a rspec test for it.&lt;/p&gt;
-
-&lt;p&gt;I received feedback and suggestions for my first addition/fix to the Bundler repo. I made improvements to it based on the comment I received. I made a method to store &lt;code&gt;Bundler.which(“git”)&lt;/code&gt; in an instance variable inside bundler.rb. According to mentor Andre, we store it in an instance variable so we only have to look for git once. Instead of having to keep looking for git again and again repeatedly. This technique is called “"memoization."&lt;/p&gt;
-
-&lt;p&gt;Original:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;raise GitError, “Git is not installed!” if !Bundler.which(“git”)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Improved:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;raise GitError, "Git is not installed!" if !Bundler.git_present?
-&lt;/code&gt;&lt;/pre&gt;
+    <content type="html">
+</content>
+  </entry>
+  <entry>
+    <title>week10-day52</title>
+    <link rel="alternate" href="/2013/09/16/week10-day52.html"/>
+    <id>/2013/09/16/week10-day52.html</id>
+    <published>2013-09-16T22:10:00Z</published>
+    <updated>2013-09-16T22:10:00Z</updated>
+    <author>
+      <name>RGSoCBundler</name>
+    </author>
+    <content type="html">
 </content>
   </entry>
 </feed>

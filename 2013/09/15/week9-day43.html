@@ -1,0 +1,218 @@
+<!doctype html>
+<html>
+  <head>
+    <title>RGSoCBundler Team Blog</title>
+    <meta charset="utf-8" />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RGSoC Bundler Team Blog">
+    <meta name="author" content="Jen Diamond, Joyce Hsu, Jessica Lynn Suttles">
+    <link rel="alternate" type="application/rss+xml"
+      title="RGSoCBundler Team Blog - RSS"
+      href="http://rgsocbundler.github.io/feed.xml"
+    />
+    <link rel="alternate" type="application/atom+xml"
+      title="RGSoCBundler Team Blog - RSS"
+      href="http://rgsocbundler.github.io/feed.xml"
+    />
+
+    <link href="/stylesheets/all.css" rel="stylesheet">
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="/stylesheets/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="/stylesheets/social-buttons.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/stylesheets/buttons.css" rel="stylesheet">
+
+
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="/stylesheets/html5shiv.js"></script>
+    <![endif]-->
+
+  </head>
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="/"><i class="icon-fixed-width icon-home"></i> RGSoC Bundler Team</a>
+          <div class="nav-collapse collapse">
+            <p class="navbar-text pull-right">
+              Fork this blog on <a href="https://github.com/RGSoCBundler/rgsocbundler.github.io" class="navbar-link">Github</a>!
+            </p>
+            <ul class="nav">
+              <li><a rel="alternate" href="/feed.xml">RSS</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span9">
+          <div class="row-fluid">
+            <div id="main" role="main" class="well">
+              <h1 id="week-9-day-43">Week 9 Day 43</h1>
+
+<h2 id="prime">Prime</h2>
+
+<h3 id="joyces-friday">Joyce's Friday</h3>
+
+<p>I removed the line spaces from the version_message method and in the source/git.rb file. Moved the rspec tests for gems, git, and source to the correct file in the spec/update directory and the proper place in the file.</p>
+
+<p>Add rspec test for when you run bundle outdated with the wrong gem name it returns non-zero exit code.</p>
+
+<p>Started working on adding a -all flag to bundle update. Instead of updating the gems when users run bundle update, move that functionality to bundle update –all. Then, bundle update should print instructions/messages on how to update because “many people think that they should run bundle update after git pull, but that mostly just messes everything up.”</p>
+
+<h3 id="jens-friday">Jen's Friday</h3>
+
+<h4 id="started-working-on-bundler-features-issues-17">Started working on bundler-features issues #17</h4>
+
+<p><a href="https://github.com/bundler/bundler-features/issues/17">Warn if using a version of bundler older than that specified in the lockfile</a></p>
+
+<p>From Issue #2239 in bundler/bundler</p>
+
+<blockquote>
+  <blockquote>
+    <p><strong>gucki:</strong>
+bundler does not enforce version of itself specified in Gemfile.lock
+No milestone No one is assigned
+My Gemfile.lock has bundler locked at 1.2.3. Now on a different where bundler 1.0.21 is installed, I can run bundle exec cap deploy. However the deploy fails, because the capistrano version is incompatible with that bundler version.</p>
+  </blockquote>
+</blockquote>
+
+<blockquote>
+  <blockquote>
+    <p>The main problem is that bundler does not enforce the locked version of 1.2.3 for itself. It silently uses 1.0.21.</p>
+  </blockquote>
+</blockquote>
+
+<blockquote>
+  <blockquote>
+    <p><strong>Andre:</strong>
+If you want the version enforced, put it in your Gemfile. The locked version is for reference, so you know which version of Bundler created the lockfile.</p>
+  </blockquote>
+</blockquote>
+
+<blockquote>
+  <blockquote>
+    <p><strong>gucki:</strong>
+If there any special reason why it's different to the normal behavior of all other gems? At least a warning should be emitted?</p>
+  </blockquote>
+</blockquote>
+
+<blockquote>
+  <blockquote>
+    <p><strong>Andre:</strong>
+Yes, it's different because otherwise you would never be able to upgrade Bundler.</p>
+  </blockquote>
+</blockquote>
+
+<blockquote>
+  <blockquote>
+    <p>I know that we had agreed to print a warning if you try to use an older version, but I'm not sure if that code was ever written. It's definitely a good idea.</p>
+  </blockquote>
+</blockquote>
+
+<p>./lib/bundler/cli.rb:    def exec(*args)</p>
+
+<p>lib/bundler/cli.rb line 526
+  def exec(*args)
+      Bundler.definition.validate_bundler!
+      Bundler.definition.validate_ruby!
+      Bundler.load.setup_environment</p>
+
+<p>add a validate bundler method
+./lib/bundler/definition.rb:</p>
+
+<p>find version of bundler in Gemfile.lock</p>
+
+<p>If you run bundle exec it should the version of bundler in the lockfile or print a warning.
+bundler is already loaded and it's too late but it should check the lock for a bundler version constraint and abort if it doesn't meet it</p>
+
+<p><code>bundle exec</code> should check for a bundler version constraint, and print a warning if it doesn't meet it</p>
+
+<p>bundle show bundler</p>
+
+<p>gem list bundler</p>
+
+<p>specify a version in the Gemfile.lock that is not the version on my computer . 
+Get it to give an error.</p>
+
+<p>What does it do now?</p>
+
+<p>line 398 lib/bundler/definition.rb</p>
+
+            </div>
+          </div>
+        </div>
+        <div class="span3">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Recent Posts</li>
+              
+                <li><a href="/2013/09/23/week10-day50.html">Week 10 Day 50 Come in Travis</a></li>
+              
+                <li><a href="/2013/09/20/week10-day48.html">Week 10 Day 48 Friday</a></li>
+              
+                <li><a href="/2013/09/19/week10-day47.html">Week 10 Day 47 begin end bundle update</a></li>
+              
+                <li><a href="/2013/09/17/week10-day45.html">Week 10 Day 45 Gemfile.lock</a></li>
+              
+                <li><a href="/2013/09/16/week10-day50.html">week10-day50</a></li>
+              
+                <li><a href="/2013/09/16/week10-day52.html">week10-day52</a></li>
+              
+                <li><a href="/2013/09/16/week10-day54.html">week10-day54</a></li>
+              
+                <li><a href="/2013/09/16/week10-day45.html">week10-day45</a></li>
+              
+                <li><a href="/2013/09/16/week10-day47.html">week10-day47</a></li>
+              
+                <li><a href="/2013/09/16/week10-day44.html">Week 10 Day 44 Testing & Committing</a></li>
+              
+              <li class="nav-header">Tags</li>
+              
+                <li><a href="/tags/goals.html">#goals (1)</a></a></li>
+              
+                <li><a href="/tags/tools.html">#tools (4)</a></a></li>
+              
+                <li><a href="/tags/log.html">#log (43)</a></a></li>
+              
+              <li class="nav-header">Contributors</li>
+              <li><a href="/jen-diamond">Jen Diamond / Student</a></li>
+              <li><a href="/joyce-hsu">Joyce Hsu / Student</a></li>
+              <li><a href="/jessica-lynn-suttles">Jessica Suttles / Coach</a></li>
+              <li><a href="/andre-arko">André Arko / Mentor</a></li>
+              <li class="nav-header">Elsewhere</li>
+
+              <li><a href="http://github.com/RGSoCBundler"><button class="btn btn-github"><i class="icon-github"></i>Github</button></a></li>
+              <li><a href="http://twitter.com/RGSoCBundler"><button class="btn btn-twitter"><i class="icon-twitter"></i>Twitter</button></a></li>
+            </ul>
+          </div><!--/.well -->
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">References</li>
+              <li><a href="/links">Links</a></li>
+              <li class="nav-header">Cheat Sheets</li>
+              <li><a href="/cheatsheets/pull.html">Pull Requesting</a></li>
+              <li><a href="/cheatsheets/bundlerfordev.html">Bundler for Development</a></li>
+              <li><a href="/cheatsheets/create_gem.html">Create a Gem</a></li>
+              <li><a href="/cheatsheets/adding-cli-to-a-gem-using-thor.html">Using Thor to Add CLI</a></li>
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+      </div>
+    </div>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+  </body>
+</html>
+

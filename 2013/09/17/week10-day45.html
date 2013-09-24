@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+  <head>
+    <title>RGSoCBundler Team Blog</title>
+    <meta charset="utf-8" />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RGSoC Bundler Team Blog">
+    <meta name="author" content="Jen Diamond, Joyce Hsu, Jessica Lynn Suttles">
+    <link rel="alternate" type="application/rss+xml"
+      title="RGSoCBundler Team Blog - RSS"
+      href="http://rgsocbundler.github.io/feed.xml"
+    />
+    <link rel="alternate" type="application/atom+xml"
+      title="RGSoCBundler Team Blog - RSS"
+      href="http://rgsocbundler.github.io/feed.xml"
+    />
+
+    <link href="/stylesheets/all.css" rel="stylesheet">
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="/stylesheets/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="/stylesheets/social-buttons.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/stylesheets/buttons.css" rel="stylesheet">
+
+
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="/stylesheets/html5shiv.js"></script>
+    <![endif]-->
+
+  </head>
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="/"><i class="icon-fixed-width icon-home"></i> RGSoC Bundler Team</a>
+          <div class="nav-collapse collapse">
+            <p class="navbar-text pull-right">
+              Fork this blog on <a href="https://github.com/RGSoCBundler/rgsocbundler.github.io" class="navbar-link">Github</a>!
+            </p>
+            <ul class="nav">
+              <li><a rel="alternate" href="/feed.xml">RSS</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span9">
+          <div class="row-fluid">
+            <div id="main" role="main" class="well">
+              <h1 id="week-10-day-45">Week 10 Day 45</h1>
+
+<h2 id="gemfilelock">Gemfile.lock</h2>
+
+<h3 id="joyces-tuesday">Joyce's Tuesday</h3>
+
+<p>I started writing a reflection of my RG experience, and which part of it can be used for 
+the post for the RGSoC main blog post.</p>
+
+<h3 id="jens-tuesday">Jen's Tuesday</h3>
+
+<h4 id="gemfilelock-1">Gemfile.lock</h4>
+
+<p>I researched Gemfile.lock </p>
+
+<h4 id="from-the-railscast-201httprailscastscomepisodes201-bundlerviewasciicast---locking-gems"><a href="http://railscasts.com/episodes/201-bundler?view=asciicast">From the Railscast #201</a> - Locking Gems</h4>
+
+<p>Another useful command is bundle lock. This locks down the specific versions of the gems 
+your application is using. After we run it our project will have a new file in it called 
+Gemfile.lock. This file lists all of the gems that are installed for our application along 
+with specific version that is used. After running bundle lock only the specific versions 
+listed in the Gemfile.lock file will be installed when we run bundle install, even if 
+there are never versions available.</p>
+
+<p>You might be wondering when you’d want to use bundle lock. Well, it’s worth using whenever 
+a project is used in other locations. If we’re working with other Rails developers on a 
+project we can use bundle lock to ensure that everyone is using the same versions of the gems 
+that the application uses. The same applies when the application is being deployed to production. 
+As the application will be being deployed to a different server we’ll want to be sure that exactly 
+the same versions are used on the production server as they are on our development machine.</p>
+
+<p>If we do need to make changes to an application’s gems after running bundle lock we shouldn’t 
+change the Gemfile.lock file directly. Instead we should update the Gemfile as we did before. 
+Once we’ve made our changes to the Gemfile, however, running bundle install won’t update the 
+application’s gems as the Gemfile is locked. To update the gems we need to pass the –relock option.</p>
+
+<h4 id="dylan-markow-wrote-this-on-stack-overflowhttpstackoverflowcomquestions6927442what-is-the-difference-between-gemfile-and-gemfile-lock-in-ruby-on-rails"><a href="http://stackoverflow.com/questions/6927442/what-is-the-difference-between-gemfile-and-gemfile-lock-in-ruby-on-rails">Dylan Markow wrote this on Stack Overflow.</a></h4>
+
+<p>The Gemfile is where you specify which gems you want to use, and lets you specify which versions.</p>
+
+<p>The Gemfile.lock file is where Bundler records the exact versions that were installed. This way, 
+when the same library/project is loaded on another machine, running bundle install will look at 
+the Gemfile.lock and install the exact same versions, rather than just using the Gemfile and 
+installing the most recent versions. (Running different versions on different machines could lead 
+to broken tests, etc.) You shouldn't ever have to directly edit the lock file.</p>
+
+<h4 id="yahuda-katz---clarifying-the-roles-of-the-gemspec-and-gemfilehttpyehudakatzcom20101216clarifying-the-roles-of-the-gemspec-and-gemfile"><a href="http://yehudakatz.com/2010/12/16/clarifying-the-roles-of-the-gemspec-and-gemfile/">Yahuda Katz - Clarifying the Roles of the .gemspec and Gemfile</a></h4>
+
+<p>Gemfile.lock remembers the exact versions and sources of every piece of third-party code that you use. 
+For applications, you want this. When developing a gem, this can obscure issues that will occur 
+because gems are deployed (using the gem command) without the benefit of bundler.</p>
+
+            </div>
+          </div>
+        </div>
+        <div class="span3">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Recent Posts</li>
+              
+                <li><a href="/2013/09/23/week10-day50.html">Week 10 Day 50 Come in Travis</a></li>
+              
+                <li><a href="/2013/09/20/week10-day48.html">Week 10 Day 48 Friday</a></li>
+              
+                <li><a href="/2013/09/19/week10-day47.html">Week 10 Day 47 begin end bundle update</a></li>
+              
+                <li><a href="/2013/09/17/week10-day45.html">Week 10 Day 45 Gemfile.lock</a></li>
+              
+                <li><a href="/2013/09/16/week10-day50.html">week10-day50</a></li>
+              
+                <li><a href="/2013/09/16/week10-day52.html">week10-day52</a></li>
+              
+                <li><a href="/2013/09/16/week10-day54.html">week10-day54</a></li>
+              
+                <li><a href="/2013/09/16/week10-day45.html">week10-day45</a></li>
+              
+                <li><a href="/2013/09/16/week10-day47.html">week10-day47</a></li>
+              
+                <li><a href="/2013/09/16/week10-day44.html">Week 10 Day 44 Testing & Committing</a></li>
+              
+              <li class="nav-header">Tags</li>
+              
+                <li><a href="/tags/goals.html">#goals (1)</a></a></li>
+              
+                <li><a href="/tags/tools.html">#tools (4)</a></a></li>
+              
+                <li><a href="/tags/log.html">#log (43)</a></a></li>
+              
+              <li class="nav-header">Contributors</li>
+              <li><a href="/jen-diamond">Jen Diamond / Student</a></li>
+              <li><a href="/joyce-hsu">Joyce Hsu / Student</a></li>
+              <li><a href="/jessica-lynn-suttles">Jessica Suttles / Coach</a></li>
+              <li><a href="/andre-arko">André Arko / Mentor</a></li>
+              <li class="nav-header">Elsewhere</li>
+
+              <li><a href="http://github.com/RGSoCBundler"><button class="btn btn-github"><i class="icon-github"></i>Github</button></a></li>
+              <li><a href="http://twitter.com/RGSoCBundler"><button class="btn btn-twitter"><i class="icon-twitter"></i>Twitter</button></a></li>
+            </ul>
+          </div><!--/.well -->
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">References</li>
+              <li><a href="/links">Links</a></li>
+              <li class="nav-header">Cheat Sheets</li>
+              <li><a href="/cheatsheets/pull.html">Pull Requesting</a></li>
+              <li><a href="/cheatsheets/bundlerfordev.html">Bundler for Development</a></li>
+              <li><a href="/cheatsheets/create_gem.html">Create a Gem</a></li>
+              <li><a href="/cheatsheets/adding-cli-to-a-gem-using-thor.html">Using Thor to Add CLI</a></li>
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+      </div>
+    </div>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+  </body>
+</html>
+

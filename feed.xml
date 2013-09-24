@@ -196,27 +196,139 @@ because gems are deployed (using the gem command) without the benefit of bundler
 </content>
   </entry>
   <entry>
-    <title>week10-day50</title>
-    <link rel="alternate" href="/2013/09/16/week10-day50.html"/>
-    <id>/2013/09/16/week10-day50.html</id>
-    <published>2013-09-16T22:10:00Z</published>
-    <updated>2013-09-16T22:10:00Z</updated>
+    <title>Week 10 Day 44 Testing &amp; Committing</title>
+    <link rel="alternate" href="/2013/09/16/week10-day44.html"/>
+    <id>/2013/09/16/week10-day44.html</id>
+    <published>2013-09-16T18:50:00Z</published>
+    <updated>2013-09-16T18:50:00Z</updated>
     <author>
       <name>RGSoCBundler</name>
     </author>
-    <content type="html">
+    <content type="html">&lt;h1 id="week-10-day-44"&gt;Week 10 Day 44&lt;/h1&gt;
+
+&lt;h2 id="testing--committing"&gt;Testing &amp;amp; Committing&lt;/h2&gt;
+
+&lt;h3 id="jens-monday"&gt;Jen's Monday&lt;/h3&gt;
+&lt;p&gt;My new test for the warning that you have multiple gems. I forgot that you have to run the command in the test so it will see the error. That is what &lt;code&gt;bundle :install&lt;/code&gt; is doing in there.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;describe "#gem" do
+    it "will display a Warning if the gem is duplicated" do
+      gemfile &amp;lt;&amp;lt;-G
+      gem 'rails', '~&amp;gt; 4.0.0'
+      gem 'rails', '~&amp;gt; 4.0.0'
+      G
+
+      bundle :install
+      expect(out).to include("You specified:")
+    end
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id="joyces-monday"&gt;Joyce's Monday&lt;/h3&gt;
+&lt;p&gt;I worked on writing better &lt;a href="http://rakeroutes.com/blog/deliberate-git/"&gt;commit messages&lt;/a&gt; by reading and watching about &lt;code&gt;git rebase -i&lt;/code&gt; and editing &lt;a href="https://github.com/RGSoCBundler/bundler/pull/6"&gt;a pull request&lt;/a&gt; I have open. Previously, I had learned about squashing commits. Now, I worked on writing shorter messages and adding the issues link on the second line by using the reword command when typing the `git rebase -i [commit's hash].&lt;/p&gt;
+
+&lt;p&gt;Also read about WIP commits while coding, which I will have to keep in mind now.&lt;/p&gt;
 </content>
   </entry>
   <entry>
-    <title>week10-day52</title>
-    <link rel="alternate" href="/2013/09/16/week10-day52.html"/>
-    <id>/2013/09/16/week10-day52.html</id>
-    <published>2013-09-16T22:10:00Z</published>
-    <updated>2013-09-16T22:10:00Z</updated>
+    <title>Week 9 Day 43 Prime</title>
+    <link rel="alternate" href="/2013/09/15/week9-day43.html"/>
+    <id>/2013/09/15/week9-day43.html</id>
+    <published>2013-09-16T06:46:00Z</published>
+    <updated>2013-09-16T06:46:00Z</updated>
     <author>
       <name>RGSoCBundler</name>
     </author>
-    <content type="html">
+    <content type="html">&lt;h1 id="week-9-day-43"&gt;Week 9 Day 43&lt;/h1&gt;
+
+&lt;h2 id="prime"&gt;Prime&lt;/h2&gt;
+
+&lt;h3 id="joyces-friday"&gt;Joyce's Friday&lt;/h3&gt;
+
+&lt;p&gt;I removed the line spaces from the version_message method and in the source/git.rb file. Moved the rspec tests for gems, git, and source to the correct file in the spec/update directory and the proper place in the file.&lt;/p&gt;
+
+&lt;p&gt;Add rspec test for when you run bundle outdated with the wrong gem name it returns non-zero exit code.&lt;/p&gt;
+
+&lt;p&gt;Started working on adding a -all flag to bundle update. Instead of updating the gems when users run bundle update, move that functionality to bundle update –all. Then, bundle update should print instructions/messages on how to update because “many people think that they should run bundle update after git pull, but that mostly just messes everything up.”&lt;/p&gt;
+
+&lt;h3 id="jens-friday"&gt;Jen's Friday&lt;/h3&gt;
+
+&lt;h4 id="started-working-on-bundler-features-issues-17"&gt;Started working on bundler-features issues #17&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/bundler/bundler-features/issues/17"&gt;Warn if using a version of bundler older than that specified in the lockfile&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;From Issue #2239 in bundler/bundler&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;blockquote&gt;
+    &lt;p&gt;&lt;strong&gt;gucki:&lt;/strong&gt;
+bundler does not enforce version of itself specified in Gemfile.lock
+No milestone No one is assigned
+My Gemfile.lock has bundler locked at 1.2.3. Now on a different where bundler 1.0.21 is installed, I can run bundle exec cap deploy. However the deploy fails, because the capistrano version is incompatible with that bundler version.&lt;/p&gt;
+  &lt;/blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;blockquote&gt;
+    &lt;p&gt;The main problem is that bundler does not enforce the locked version of 1.2.3 for itself. It silently uses 1.0.21.&lt;/p&gt;
+  &lt;/blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;blockquote&gt;
+    &lt;p&gt;&lt;strong&gt;Andre:&lt;/strong&gt;
+If you want the version enforced, put it in your Gemfile. The locked version is for reference, so you know which version of Bundler created the lockfile.&lt;/p&gt;
+  &lt;/blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;blockquote&gt;
+    &lt;p&gt;&lt;strong&gt;gucki:&lt;/strong&gt;
+If there any special reason why it's different to the normal behavior of all other gems? At least a warning should be emitted?&lt;/p&gt;
+  &lt;/blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;blockquote&gt;
+    &lt;p&gt;&lt;strong&gt;Andre:&lt;/strong&gt;
+Yes, it's different because otherwise you would never be able to upgrade Bundler.&lt;/p&gt;
+  &lt;/blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;blockquote&gt;
+    &lt;p&gt;I know that we had agreed to print a warning if you try to use an older version, but I'm not sure if that code was ever written. It's definitely a good idea.&lt;/p&gt;
+  &lt;/blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;./lib/bundler/cli.rb:    def exec(*args)&lt;/p&gt;
+
+&lt;p&gt;lib/bundler/cli.rb line 526
+  def exec(*args)
+      Bundler.definition.validate_bundler!
+      Bundler.definition.validate_ruby!
+      Bundler.load.setup_environment&lt;/p&gt;
+
+&lt;p&gt;add a validate bundler method
+./lib/bundler/definition.rb:&lt;/p&gt;
+
+&lt;p&gt;find version of bundler in Gemfile.lock&lt;/p&gt;
+
+&lt;p&gt;If you run bundle exec it should the version of bundler in the lockfile or print a warning.
+bundler is already loaded and it's too late but it should check the lock for a bundler version constraint and abort if it doesn't meet it&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;bundle exec&lt;/code&gt; should check for a bundler version constraint, and print a warning if it doesn't meet it&lt;/p&gt;
+
+&lt;p&gt;bundle show bundler&lt;/p&gt;
+
+&lt;p&gt;gem list bundler&lt;/p&gt;
+
+&lt;p&gt;specify a version in the Gemfile.lock that is not the version on my computer . 
+Get it to give an error.&lt;/p&gt;
+
+&lt;p&gt;What does it do now?&lt;/p&gt;
+
+&lt;p&gt;line 398 lib/bundler/definition.rb&lt;/p&gt;
 </content>
   </entry>
 </feed>
